@@ -1,2 +1,2 @@
 # EpicCatVoyage
-개쩌는게임
+도전! 집냥이
