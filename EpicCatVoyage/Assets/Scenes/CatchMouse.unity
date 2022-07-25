@@ -264,7 +264,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 387737349}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9508be4448b8d324d9a99cb77c86d3d5, type: 3}
+  m_Script: {fileID: 11500000, guid: 05f76e373d248754580ebb48d8148115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &387737351
@@ -376,9 +376,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05f76e373d248754580ebb48d8148115, type: 3}
+  m_Script: {fileID: 11500000, guid: 96bb98d7fb30b2349bc4c0dbc8c20755, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cursorImg: {fileID: 2800000, guid: b36fe462605da13409c999f01f9c4409, type: 3}
 --- !u!1 &1209761335
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,9 +406,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1209761335}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d67f54712c0c6764fa399e8703764090, type: 3}
+  m_Script: {fileID: 11500000, guid: e3767f93b29e5b64dbd7f493f81835c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnTime: 5
+  spawnCount: 10
+  prefab: {fileID: 1406920367}
+  MouseRoot: {fileID: 27463297}
 --- !u!4 &1209761337
 Transform:
   m_ObjectHideFlags: 0
@@ -426,6 +431,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1406920367 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6657700028813720276, guid: c1a65d032d070eb4298e72836515f439, type: 3}
+  m_PrefabInstance: {fileID: 2086234175}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1412057201
 GameObject:
   m_ObjectHideFlags: 0
