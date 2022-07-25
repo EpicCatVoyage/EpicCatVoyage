@@ -409,9 +409,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3767f93b29e5b64dbd7f493f81835c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTime: 5
-  spawnCount: 10
-  prefab: {fileID: 1406920367}
+  spawnTime: 3
+  spawnCount: 5
+  prefab: {fileID: 6657700028813720276, guid: c1a65d032d070eb4298e72836515f439, type: 3}
   MouseRoot: {fileID: 27463297}
 --- !u!4 &1209761337
 Transform:
@@ -431,11 +431,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1406920367 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6657700028813720276, guid: c1a65d032d070eb4298e72836515f439, type: 3}
-  m_PrefabInstance: {fileID: 2086234175}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1412057201
 GameObject:
   m_ObjectHideFlags: 0
