@@ -23,10 +23,7 @@ public class Level_Controller : MonoBehaviour
 
         SaveNPCdataToJson();
         LoadNPCdataFromJson();
-    }
 
-    private void Update()
-    {
         //json data 불러오기
         studentLike.text = "호감도 : " + npcData[0].friendship_level.ToString();
         bakeryOwnerLike.text = "호감도 : " + npcData[1].friendship_level.ToString();
