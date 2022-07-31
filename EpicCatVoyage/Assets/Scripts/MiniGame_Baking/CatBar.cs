@@ -7,7 +7,7 @@ public class CatBar : MonoBehaviour
     private Rigidbody2D PlayerRb;
     private Animator anim;
 
-    private float speed = 5.0f; //감도 조절. 낮출까 고민 중.
+    private float speed = 3.0f; //감도 조절.
     private string test = "Check";
 
     private float time = 0f;
