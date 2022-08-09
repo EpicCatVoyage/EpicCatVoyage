@@ -41,6 +41,8 @@ public class Fade : MonoBehaviour
 
             yield return null;
         }
+
+        fadeimage.SetActive(false);
     }
 
     IEnumerator Fadeout(string Name) //æ¿ ¿Ãµø
@@ -62,6 +64,7 @@ public class Fade : MonoBehaviour
 
     public void B_Fadeout(string Name)
     {
+        fadeimage.SetActive(true);
         StartCoroutine(Fadeout(Name));
     }
 }
