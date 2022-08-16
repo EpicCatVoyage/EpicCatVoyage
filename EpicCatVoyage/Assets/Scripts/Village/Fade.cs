@@ -57,7 +57,8 @@ public class Fade : MonoBehaviour
 
         if (color.a >= 1)
         {
-            LoadingSceneController.LoadScene(Name);
+            SceneManager.LoadScene(Name);
+            /*LoadingSceneController.LoadScene(Name);*/ //로딩씬을 이용한 로딩.
             yield break;
         }
     }
