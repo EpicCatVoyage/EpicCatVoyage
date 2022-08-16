@@ -7,15 +7,17 @@ using UnityEngine.SceneManagement;
 public class LoadingSceneController : MonoBehaviour
 {
     static string NextScene;
+
+    private float timer;
   
     public static void LoadScene(string SceneName)
     {
-        NextScene = SceneName;
         SceneManager.LoadScene("LoadingScene");
+        NextScene = SceneName;
     }
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         StartCoroutine(LoadSceneProcess());
     }
@@ -25,24 +27,25 @@ public class LoadingSceneController : MonoBehaviour
         AsyncOperation op = SceneManager.LoadSceneAsync(NextScene);
         op.allowSceneActivation = false;
 
-        float timer = 0f;
+        timer = 0f;
 
         while(!op.isDone)
         {
-            Debug.Log("로딩 중");
             yield return null;
 
-            if(op.progress > 0.9f)
+            Debug.Log("로딩 중"); //디버그용
+
+            if(op.progress >= 0.9f)
             {
-                timer += Time.deltaTime;
-                Debug.Log(timer);
+                timer += Time.unscaledDeltaTime;
+                Debug.Log(timer); //디버그용
+
                 if(timer >= 1f)
                 {
                     op.allowSceneActivation = true;
                     yield break;
                 }
             }
-
         }
     }
 }

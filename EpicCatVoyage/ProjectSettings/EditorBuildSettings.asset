@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/ArrowGame/MainScene.unity
     guid: d977cdc12c89fa44989f640e0b44026a
   - enabled: 1
+    path: Assets/Scenes/village/LoadingScene.unity
+    guid: 56cab19ab2c59744f897bf7fe75902c9
+  - enabled: 1
     path: Assets/Scenes/village/Center.unity
     guid: 81af19bcb699f294c8cdb1f89e161501
   - enabled: 1
