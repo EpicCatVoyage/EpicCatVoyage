@@ -41,6 +41,8 @@ public class Fade : MonoBehaviour
 
             yield return null;
         }
+
+        fadeimage.SetActive(false);
     }
 
     IEnumerator Fadeout(string Name) //씬 이동
@@ -56,12 +58,14 @@ public class Fade : MonoBehaviour
         if (color.a >= 1)
         {
             SceneManager.LoadScene(Name);
+            /*LoadingSceneController.LoadScene(Name);*/ //로딩씬을 이용한 로딩.
             yield break;
         }
     }
 
     public void B_Fadeout(string Name)
     {
+        fadeimage.SetActive(true);
         StartCoroutine(Fadeout(Name));
     }
 }
