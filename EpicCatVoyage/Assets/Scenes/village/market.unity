@@ -1167,9 +1167,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 458980701}
+      - m_Target: {fileID: 458980700}
         m_TargetAssemblyTypeName: Fade, Assembly-CSharp
-        m_MethodName: B_Fadeout
+        m_MethodName: 
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
