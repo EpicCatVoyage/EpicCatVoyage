@@ -65,9 +65,15 @@ public class Fade : MonoBehaviour
         }
     }
 
-    public void B_Fadeout(string Name, bool Loading)
+    public void B_Fadeout(string Name)
     {
         fadeimage.SetActive(true);
-        StartCoroutine(Fadeout(Name, Loading));
+        StartCoroutine(Fadeout(Name, false));
+    }
+
+    public void L_Fadeout(string Name)
+    {
+        fadeimage.SetActive(true);
+        StartCoroutine(Fadeout(Name, true));
     }
 }
