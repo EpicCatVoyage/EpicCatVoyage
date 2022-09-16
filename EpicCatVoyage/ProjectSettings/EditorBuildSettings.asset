@@ -9,6 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/miniGame_kneading.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/Baking.unity
+    guid: 2c4e08ad02d50c542819422213593c6a
+  - enabled: 1
+    path: Assets/Scenes/CatchMouse.unity
+    guid: 2b19808ebafe31542aeb633584827429
+  - enabled: 1
+    path: Assets/Scenes/Friendship_Level.unity
+    guid: 05fbd9a6f80cf714ebf56c0dc870334d
+  - enabled: 1
     path: Assets/Scenes/ArrowGame/GameExplain.unity
     guid: bf1df1c686864244baf08183020fabb6
   - enabled: 1
@@ -65,4 +74,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NoteGame/NoteGameMain.unity
     guid: 226e8a161af749246988b9476504bf22
+  - enabled: 1
+    path: Assets/Scenes/HowToPlay/HTP_CatchMouse.unity
+    guid: 69276016baaec4a46975cdefde325b50
   m_configObjects: {}
