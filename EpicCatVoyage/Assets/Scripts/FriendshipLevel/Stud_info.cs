@@ -19,7 +19,7 @@ public class Stud_info : MonoBehaviour
     void Start()
     {
         screenAnim = studInfoScreen.GetComponent<Animator>();
-        string jdata = File.ReadAllText(Application.dataPath + "/NPCdata.json");
+        string jdata = File.ReadAllText(Application.dataPath + "/JSON_files/NPCdata.json");
         npcData = JsonConvert.DeserializeObject<List<NPCdata>>(jdata);
         studInfoLike.text = "È£°¨µµ : " + npcData[0].friendship_level.ToString();
     }
