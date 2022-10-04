@@ -6,8 +6,23 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Title.unity
+    guid: 0f15b2f677a0aa5469186bca552aec1d
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: d4f7f5c4bf69e1e4581059ecd42147d2
+  - enabled: 1
     path: Assets/Scenes/miniGame_kneading.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Baking.unity
+    guid: 2c4e08ad02d50c542819422213593c6a
+  - enabled: 1
+    path: Assets/Scenes/CatchMouse.unity
+    guid: 2b19808ebafe31542aeb633584827429
+  - enabled: 1
+    path: Assets/Scenes/Friendship_Level.unity
+    guid: 05fbd9a6f80cf714ebf56c0dc870334d
   - enabled: 1
     path: Assets/Scenes/ArrowGame/GameExplain.unity
     guid: bf1df1c686864244baf08183020fabb6
@@ -26,6 +41,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ArrowGame/Clear.unity
     guid: 2a6e6dfa568b23e4eb2a291a4153932a
+  - enabled: 1
+    path: Assets/Scenes/HowToPlay/HTP_ArrowGame.unity
+    guid: 9dd0dace48984c841b4686395ff08266
+  - enabled: 1
+    path: Assets/Scenes/HowToPlay/HTP_Baking.unity
+    guid: 0d645b451b36f9744882c5ae817cfa51
+  - enabled: 1
+    path: Assets/Scenes/HowToPlay/HTP_CatchMouse.unity
+    guid: 69276016baaec4a46975cdefde325b50
   - enabled: 1
     path: Assets/Scenes/ArrowGame/MainScene.unity
     guid: d977cdc12c89fa44989f640e0b44026a

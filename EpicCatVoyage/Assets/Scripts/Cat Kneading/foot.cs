@@ -44,7 +44,7 @@ public class foot : MonoBehaviour
         checkTiming.Stop();
         timingCheck = checkTiming.ElapsedMilliseconds;
         checkTiming.Reset();
-        print("점수 체크하는 함수로 이동");
+        //print("점수 체크하는 함수로 이동");
         GameController.GetComponent<GameController>().CheckScore(animationSpeed, timingCheck, MousePosition);
     }
 }
