@@ -33,6 +33,10 @@ public class InventoryGameManager : MonoBehaviour
     public RectTransform[] SlotPos;
     public RectTransform CanvasRect;
     IEnumerator PointerCoroutine;
+    RectTransform ExplainRect;
+
+    //디버그
+    public InputField ItemNameInput, ItemNumberInput;
 
 
     void Start()
@@ -42,7 +46,8 @@ public class InventoryGameManager : MonoBehaviour
         // 전체 아이템 리스트 불러오기
         // 마지막 엔터 지우기
         string[] line = ItemDatabase.text.Substring(0, ItemDatabase.text.Length - 1).Split('\n');
-        // print(line.Length);
+        print(line.Length);
+      
         for (int i = 0; i < line.Length; i++)
         {
             string[] row = line[i].Split('\t');
@@ -50,6 +55,8 @@ public class InventoryGameManager : MonoBehaviour
             AllItemList.Add(new Item(row[0], row[1], row[2], row[3], row[4] == "TRUE"));
         }
         Load();
+        //캐싱
+        //ExplainRect = ExplainPanel.GetComponent<RectTransform>();
 
     }
 
@@ -59,6 +66,67 @@ public class InventoryGameManager : MonoBehaviour
 
         RectTransformUtility.ScreenPointToLocalPointInRectangle(CanvasRect, Input.mousePosition, Camera.main, out Vector2 anchoredPos);
         ExplainPanel.GetComponent<RectTransform>().anchoredPosition = anchoredPos + new Vector2(-180, -165);
+    }
+
+    // 디버그
+    public void GetItemClick()
+    {
+        Item curItem = MyItemList.Find(x => x.Name == ItemNameInput.text);
+        ItemNumberInput.text = ItemNumberInput.text == "" ? "1" : ItemNumberInput.text;
+        
+
+        if(curItem != null)
+        {
+            curItem.Number = (int.Parse(curItem.Number) + int.Parse(ItemNumberInput.text)).ToString();
+        }
+        else
+        {
+            // 전체에서 얻을 아이템을 찾아 내 아이템에 추가
+            Item curAllItem = AllItemList.Find(x => x.Name == ItemNameInput.text);
+            // 자동 1개 추가
+           
+
+            if(curAllItem != null)
+            {
+                curAllItem.Number = ItemNumberInput.text;
+                MyItemList.Add(curAllItem);
+            }
+        }
+        
+        Save();
+    }
+
+    // 디버그
+    public void RemoveItemClick()
+    {
+        Item curItem = MyItemList.Find(x => x.Name == ItemNameInput.text);
+        if(curItem != null)
+        {
+            int curNumber = int.Parse(curItem.Number) - int.Parse(ItemNumberInput.text == "" ? "1" : ItemNumberInput.text);
+
+            if(curNumber <= 0)
+            {
+                MyItemList.Remove(curItem);
+
+            }
+            else
+            {
+                curItem.Number = curNumber.ToString();
+            }
+            
+            Save();
+        }
+    }
+
+    //디버그
+    public void ResetItemClick()
+    {
+        Item BasicItem = AllItemList.Find(x => x.Name == "식탁");
+        MyItemList = new List<Item>()
+        {
+            BasicItem
+        };
+        Save();
     }
 
     public void SlotClick(int slotNum)
@@ -145,6 +213,7 @@ public class InventoryGameManager : MonoBehaviour
     // 설명 보이기
     public void PointerEnter(int slotNum)
     {
+        // 슬롯에 마우스 올리면 0.5초 후에 설명창
         PointerCoroutine = PointerEnterDelay(slotNum);
         StartCoroutine(PointerCoroutine);
 
