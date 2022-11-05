@@ -24,7 +24,7 @@ public class ShopItem
 public class ShopGameManager : MonoBehaviour
 {
     public TextAsset ShopItemDatabase;
-    public List<ShopItem> ShopItemList, MyItemList, CurItemList;
+    public List<ShopItem> AllShopItemList, ShopItemList, CurItemList;
     public string curType = "Snack";
     public GameObject[] Slot;
     public Image[] TabImage, ShopItemImage;
@@ -34,6 +34,7 @@ public class ShopGameManager : MonoBehaviour
     public RectTransform CanvasRect;
     IEnumerator PointerCoroutine;
     RectTransform ExplainRect;
+    string shopfilePath;
 
 
 
@@ -45,9 +46,10 @@ public class ShopGameManager : MonoBehaviour
         {
             string[] row = line[i].Split('\t');
 
-            ShopItemList.Add(new ShopItem(row[0], row[1], row[2], row[3], row[4] == "TRUE"));
+            AllShopItemList.Add(new ShopItem(row[0], row[1], row[2], row[3], row[4] == "TRUE"));
         }
-        //print(Slot.Length);
+        shopfilePath = Application.persistentDataPath + "/ShopItemText.txt";
+        //Save();
         Load();
         ExplainRect = ExplainPanel.GetComponent<RectTransform>();
     }
@@ -58,6 +60,18 @@ public class ShopGameManager : MonoBehaviour
         RectTransformUtility.ScreenPointToLocalPointInRectangle(CanvasRect, Input.mousePosition, Camera.main, out Vector2 anchoredPos);
         ExplainRect.anchoredPosition = anchoredPos + new Vector2(-180, -165);
     }
+    public void ResetItemClick()
+    {
+        ShopItem BasicItem = AllShopItemList.Find(x => x.Name == "");
+        ShopItemList = new List<ShopItem>()
+        {
+            BasicItem
+        };
+        Save();
+        Load();
+    }
+
+
 
     public void SlotClick(int slotNum)
     {
@@ -69,7 +83,7 @@ public class ShopGameManager : MonoBehaviour
     {
         // 현재 아이템 리스트에 클릭한 타입만 추가
         curType = tabName;
-        CurItemList = ShopItemList.FindAll(x => x.Type == tabName);
+        CurItemList = AllShopItemList.FindAll(x => x.Type == tabName);
 
         // 슬롯과 텍스트 보이기
         for(int i=0; i < Slot.Length; i++)
@@ -80,11 +94,11 @@ public class ShopGameManager : MonoBehaviour
             Slot[i].transform.GetChild(3).GetComponentInChildren<Text>().text = isExist ? CurItemList[i].Number : "";
 
             // 아이템 이미지
-            if (isExist)
+            /*if (isExist)
             {
 
                 //ShopItemImage[i].sprite = ShopItemSprite[ShopItemList.FindIndex(x => x.Name == CurItemList[i].Name)];
-                /*try
+                *//*try
                 {
                     ShopItemImage[i].sprite = ShopItemSprite[ShopItemList.FindIndex(x => x.Name == CurItemList[i].Name)];
                 }
@@ -94,10 +108,10 @@ public class ShopGameManager : MonoBehaviour
                     print("예외가 발생한 곳(namespace): {0}", e.Source);
                     print("예외가 발생한 곳(method): {0}", e.TargetSite);
                     print("예외가 발생한 곳(line): {0}", e.StackTrace);
-                }*/
+                }*//*
 
 
-            }
+            }*/
         }
 
         // 탭 이미지
@@ -145,12 +159,22 @@ public class ShopGameManager : MonoBehaviour
 
     void Save()
     {
+
+        //File.WriteAllText(shopfilePath,"하이");
         string jdata = JsonConvert.SerializeObject(ShopItemList);
-        File.WriteAllText(Application.dataPath + "/JSON_files/ShopItemText.txt",jdata);
+        File.WriteAllText(Application.dataPath + "/JSON_files/ShopItemText.txt", jdata);
+        TabClick(curType);
     }
 
     void Load()
     {
+        /*if (!File.Exists(shopfilePath))
+        {
+            ResetItemClick();
+            return;
+        }*/
+        //string jdata = File.ReadAllText(shopfilePath);
+        //ShopItemList = JsonConvert.DeserializeObject<List<ShopItem>>(jdata);
         string jdata = File.ReadAllText(Application.dataPath + "/JSON_files/ShopItemText.txt");
         ShopItemList = JsonConvert.DeserializeObject<List<ShopItem>>(jdata);
 
