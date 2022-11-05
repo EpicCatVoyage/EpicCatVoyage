@@ -56,7 +56,7 @@ public class InventoryGameManager : MonoBehaviour
         }
         Load();
         //Ä³½Ì
-        //ExplainRect = ExplainPanel.GetComponent<RectTransform>();
+        ExplainRect = ExplainPanel.GetComponent<RectTransform>();
 
     }
 
@@ -65,7 +65,7 @@ public class InventoryGameManager : MonoBehaviour
         
 
         RectTransformUtility.ScreenPointToLocalPointInRectangle(CanvasRect, Input.mousePosition, Camera.main, out Vector2 anchoredPos);
-        ExplainPanel.GetComponent<RectTransform>().anchoredPosition = anchoredPos + new Vector2(-180, -165);
+        ExplainRect.anchoredPosition = anchoredPos + new Vector2(-180, -165);
     }
 
     // µð¹ö±×
@@ -236,7 +236,7 @@ public class InventoryGameManager : MonoBehaviour
 
     public void PointerExit(int slotNum)
     {
-        StopCoroutine(PointerEnterDelay(slotNum));
+        StopCoroutine(PointerCoroutine);
         ExplainPanel.SetActive(false);
     }
 
