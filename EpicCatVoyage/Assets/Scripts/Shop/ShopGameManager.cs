@@ -21,20 +21,25 @@ public class ShopItem
 }
 
 
+
+
 public class ShopGameManager : MonoBehaviour
 {
     public TextAsset ShopItemDatabase;
-    public List<ShopItem> AllShopItemList, ShopItemList, CurItemList;
+    public List<ShopItem> AllShopItemList, ShopItemList, CurItemList, MyItemList;
     public string curType = "Snack";
     public GameObject[] Slot;
     public Image[] TabImage, ShopItemImage;
     public Sprite TabIdleSprite, TabSelectSprite;
     public Sprite[] ShopItemSprite;
     public GameObject ExplainPanel;
+    public GameObject BuyPanel;
     public RectTransform CanvasRect;
     IEnumerator PointerCoroutine;
     RectTransform ExplainRect;
     string shopfilePath;
+    public GameObject buyBtn;
+    public GameObject cancleBtn;
 
 
 
@@ -75,7 +80,36 @@ public class ShopGameManager : MonoBehaviour
 
     public void SlotClick(int slotNum)
     {
+        BuyPanel.SetActive(true);
+    }
 
+    public void BuyClick(int slotNum)
+    {
+        ShopItem curItem = CurItemList[slotNum];
+        if(curItem != null)
+        {
+            curItem.Number = (int.Parse(curItem.Number) + 1).ToString();
+        }
+        else
+        {
+            ShopItem curAllItem = AllShopItemList.Find(x => x.Name == curItem.Name);
+            if(curAllItem != null)
+            {
+                curAllItem.Number = "1";
+                MyItemList.Add(curItem);
+            }
+            
+        }
+        
+        
+
+        Save();
+        BuyPanel.SetActive(false);
+    }
+
+    public void CancleClick(int slotNum)
+    {
+        BuyPanel.SetActive(false);
     }
 
 
@@ -163,6 +197,9 @@ public class ShopGameManager : MonoBehaviour
         //File.WriteAllText(shopfilePath,"гоюл");
         string jdata = JsonConvert.SerializeObject(ShopItemList);
         File.WriteAllText(Application.dataPath + "/JSON_files/ShopItemText.txt", jdata);
+
+        string jdata_my = JsonConvert.SerializeObject(MyItemList);
+        File.WriteAllText(Application.dataPath + "/JSON_files/MyItemText.txt", jdata_my);
         TabClick(curType);
     }
 
@@ -175,8 +212,12 @@ public class ShopGameManager : MonoBehaviour
         }*/
         //string jdata = File.ReadAllText(shopfilePath);
         //ShopItemList = JsonConvert.DeserializeObject<List<ShopItem>>(jdata);
+
         string jdata = File.ReadAllText(Application.dataPath + "/JSON_files/ShopItemText.txt");
         ShopItemList = JsonConvert.DeserializeObject<List<ShopItem>>(jdata);
+
+        string jdata_my = File.ReadAllText(Application.dataPath + "/JSON_files/MyItemText.txt");
+        MyItemList = JsonConvert.DeserializeObject<List<ShopItem>>(jdata_my);
 
 
         TabClick(curType);
