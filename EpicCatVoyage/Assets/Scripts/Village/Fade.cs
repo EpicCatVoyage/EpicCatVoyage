@@ -77,3 +77,7 @@ public class Fade : MonoBehaviour
         StartCoroutine(Fadeout(Name, true));
     }
 }
+/*사용설명서 
+ * 1. 로딩 안 하고 씬 전환하고 싶다 >> B_Fadeout 호출
+ * 2. 로딩하고 씬 전환하고 싶다 >> L_Fadeout 호출
+ */
