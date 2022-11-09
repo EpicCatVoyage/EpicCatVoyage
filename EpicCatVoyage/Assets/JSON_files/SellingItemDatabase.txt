@@ -1,0 +1,12 @@
+Snack	생선	체력 30 상승	1	FALSE
+Snack	참치캔	체력 10 상승	1	FALSE
+Snack	고구마	체력 15 상승	1	FALSE
+Snack	바나나	체력 10 상승	1	FALSE
+Snack	고기	고양이는 육식이지 체력 20 상승	1	FALSE
+Home	그릇	그릇에 먹는 고상한 고양이가 되어보자	1	FALSE
+Home	스크래처	스트레스를 여기에 풀어보자	1	FALSE
+Home	빗	자기관리하는 멋진 고양이	1	FALSE
+Home	캣타워	이것만 있다면 나도 인싸 고양이	1	FALSE
+Home	장난감	장난감으로 무료함을 달래보자	1	FALSE
+Home	모래	깨끗한 고양이는 모래에서 볼일을 본다	1	FALSE
+Home	식탁	무난한 식탁	1	FALSE
