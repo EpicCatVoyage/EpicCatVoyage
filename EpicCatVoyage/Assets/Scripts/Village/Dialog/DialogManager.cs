@@ -47,7 +47,7 @@ public class DialogManager : MonoBehaviour
 
     void choiceEnd()
     {
-        if (endNum == 1) //마을 주민 npc에게 말을 건 경우
+        if (endNum == 1) //애교부리기, 선물하기, 미니게임 하기 등의 초이스 박스 등장.
         {
             openChoiceBox();
         }
