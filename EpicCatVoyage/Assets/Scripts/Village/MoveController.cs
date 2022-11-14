@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class MoveController : MonoBehaviour
@@ -10,18 +11,33 @@ public class MoveController : MonoBehaviour
     public GameObject Market;
     public GameObject Residential;
     public GameObject School;
+    public GameObject UI;
+
+    private Animator anim;
+    private bool animState = false;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        anim = UI.GetComponent<Animator>();
+        anim.SetBool("State", animState);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void moveUI()
+    {
+        if (animState == false)
+            animState = true;
+        else
+            animState = false;
+
+        anim.SetBool("State", animState);
     }
 
     public void ToCenter()
