@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class MoveController : MonoBehaviour
 {
+    string[] game = {"NoteGameMain", "MainGame", "Baking", "CatchMouse", "miniGame_kneading" };
+
     public GameObject Center;
     public GameObject City;
     public GameObject Home;
@@ -12,6 +14,7 @@ public class MoveController : MonoBehaviour
     public GameObject Residential;
     public GameObject School;
     public GameObject UI;
+    public GameObject Fade;
 
     private Animator anim;
     private bool animState = false;
@@ -28,6 +31,13 @@ public class MoveController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void startGame()
+    {
+        int num = Random.Range(0, 5);
+        Fade f = Fade.GetComponent<Fade>();
+        f.L_Fadeout(game[num]);
     }
 
     public void moveUI()

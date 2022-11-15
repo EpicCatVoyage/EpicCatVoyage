@@ -59,6 +59,7 @@ public class DialogManager : MonoBehaviour
 
     void openChoiceBox()
     {
-        choiceBox.SetActive(true);
+        Animator anim = choiceBox.GetComponent<Animator>();
+        anim.SetBool("choice", true);
     }
 }

@@ -1306,7 +1306,7 @@ GameObject:
   - component: {fileID: 348059627}
   - component: {fileID: 348059626}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: MiniGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1376,7 +1376,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 348059627}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1155970848}
+        m_TargetAssemblyTypeName: MoveController, Assembly-CSharp
+        m_MethodName: startGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &348059627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1565,7 +1577,7 @@ GameObject:
   - component: {fileID: 511905102}
   - component: {fileID: 511905101}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: Cute
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2174,7 +2186,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &622850283
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2192,8 +2204,8 @@ RectTransform:
   - {fileID: 1733273816}
   - {fileID: 511905100}
   - {fileID: 1527611692}
-  m_Father: {fileID: 2088126693}
-  m_RootOrder: 5
+  m_Father: {fileID: 1483290554}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -3687,6 +3699,7 @@ MonoBehaviour:
   Residential: {fileID: 2143221160}
   School: {fileID: 1710532063}
   UI: {fileID: 1155970843}
+  Fade: {fileID: 0}
 --- !u!1 &974854593
 GameObject:
   m_ObjectHideFlags: 0
@@ -4095,6 +4108,7 @@ MonoBehaviour:
   Residential: {fileID: 2143221160}
   School: {fileID: 1710532063}
   UI: {fileID: 1155970843}
+  Fade: {fileID: 0}
 --- !u!1 &1025233628
 GameObject:
   m_ObjectHideFlags: 0
@@ -4108,7 +4122,7 @@ GameObject:
   - component: {fileID: 1025233631}
   - component: {fileID: 1025233630}
   m_Layer: 5
-  m_Name: Button
+  m_Name: talk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4602,7 +4616,7 @@ RectTransform:
   - {fileID: 230793153}
   - {fileID: 1065794142}
   m_Father: {fileID: 1483290554}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4686,6 +4700,7 @@ MonoBehaviour:
   Residential: {fileID: 0}
   School: {fileID: 0}
   UI: {fileID: 1155970843}
+  Fade: {fileID: 841082559}
 --- !u!1 &1168598291
 GameObject:
   m_ObjectHideFlags: 0
@@ -6302,6 +6317,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 622850283}
   - {fileID: 1155970844}
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -7061,6 +7077,7 @@ MonoBehaviour:
   Residential: {fileID: 2143221160}
   School: {fileID: 1710532063}
   UI: {fileID: 1155970843}
+  Fade: {fileID: 0}
 --- !u!1 &1711698197
 GameObject:
   m_ObjectHideFlags: 0
@@ -7158,7 +7175,7 @@ GameObject:
   - component: {fileID: 1733273818}
   - component: {fileID: 1733273817}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: GiveGift
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8060,6 +8077,7 @@ MonoBehaviour:
   Residential: {fileID: 2143221160}
   School: {fileID: 1710532063}
   UI: {fileID: 1155970843}
+  Fade: {fileID: 0}
 --- !u!1 &2023100930
 GameObject:
   m_ObjectHideFlags: 0
@@ -8562,7 +8580,6 @@ RectTransform:
   - {fileID: 2287517}
   - {fileID: 839296479}
   - {fileID: 1283628008}
-  - {fileID: 622850283}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8590,6 +8607,7 @@ MonoBehaviour:
   Residential: {fileID: 2143221160}
   School: {fileID: 1710532063}
   UI: {fileID: 1155970843}
+  Fade: {fileID: 0}
 --- !u!1 &2111655004
 GameObject:
   m_ObjectHideFlags: 0
@@ -8848,6 +8866,7 @@ MonoBehaviour:
   Residential: {fileID: 2143221160}
   School: {fileID: 1710532063}
   UI: {fileID: 1155970843}
+  Fade: {fileID: 0}
 --- !u!1 &2146689979
 GameObject:
   m_ObjectHideFlags: 0
