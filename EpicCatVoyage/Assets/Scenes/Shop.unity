@@ -7036,6 +7036,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShopItemDatabase: {fileID: 4900000, guid: 58aae04be9e38e64595a5cff374e025e, type: 3}
+  CatData: {fileID: 4900000, guid: e9e854867faf01c48b1b7fe34214c7c2, type: 3}
+  CatList: []
   AllShopItemList: []
   ShopItemList: []
   CurItemList: []
@@ -7051,6 +7053,8 @@ MonoBehaviour:
   - {fileID: 1084884447}
   - {fileID: 340437110}
   - {fileID: 382527827}
+  Money:
+  - {fileID: 535534475}
   TabImage:
   - {fileID: 1206896115}
   - {fileID: 615530957}

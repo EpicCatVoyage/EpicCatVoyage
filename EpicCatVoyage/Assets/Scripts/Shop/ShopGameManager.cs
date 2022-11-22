@@ -68,8 +68,6 @@ public class ShopGameManager : MonoBehaviour
 
             AllShopItemList.Add(new ShopItem(row[0], row[1], row[2], row[3], row[4] == "TRUE"));
         }
-        //shopfilePath = Application.persistentDataPath + "/ShopItemText.txt";
-        //Save();
         Load();
         
 
@@ -81,14 +79,13 @@ public class ShopGameManager : MonoBehaviour
 
             CatList.Add(new Cat(cat_row[0], cat_row[1], cat_row[2]));
         }
-        //catfilePath = Application.persistentDataPath + "/CatData.txt";
-
-        //Save();
         Load();
+        //Save();
+        
         ExplainRect = ExplainPanel.GetComponent<RectTransform>();
 
         // 돈 출력하기
-        // Money[0].GetComponentInChildren<Text>().text = CatList[0].Money;
+        Money[0].GetComponentInChildren<Text>().text = CatList[0].Money;
     }
 
     private void Update()
@@ -132,8 +129,6 @@ public class ShopGameManager : MonoBehaviour
             
         }
         
-        
-
         Save();
         BuyPanel.SetActive(false);
     }
@@ -159,11 +154,11 @@ public class ShopGameManager : MonoBehaviour
             Slot[i].transform.GetChild(3).GetComponentInChildren<Text>().text = isExist ? CurItemList[i].Number : "";
 
             // 아이템 이미지
-            /*if (isExist)
+            if (isExist)
             {
 
                 //ShopItemImage[i].sprite = ShopItemSprite[ShopItemList.FindIndex(x => x.Name == CurItemList[i].Name)];
-                *//*try
+                /*try
                 {
                     ShopItemImage[i].sprite = ShopItemSprite[ShopItemList.FindIndex(x => x.Name == CurItemList[i].Name)];
                 }
@@ -173,10 +168,10 @@ public class ShopGameManager : MonoBehaviour
                     print("예외가 발생한 곳(namespace): {0}", e.Source);
                     print("예외가 발생한 곳(method): {0}", e.TargetSite);
                     print("예외가 발생한 곳(line): {0}", e.StackTrace);
-                }*//*
+                }*/
 
 
-            }*/
+            }
         }
 
         // 탭 이미지
@@ -224,14 +219,16 @@ public class ShopGameManager : MonoBehaviour
 
     void Save()
     {
-
+        // 상점 전체
         string jdata = JsonConvert.SerializeObject(ShopItemList);
         File.WriteAllText(Application.dataPath + "/JSON_files/ShopItemText.txt", jdata);
 
+        // 상점 리스트
         string jdata_my = JsonConvert.SerializeObject(MyItemList);
         File.WriteAllText(Application.dataPath + "/JSON_files/MyItemText.txt", jdata_my);
         TabClick(curType);
 
+        // 고양이 리스트
         string jdata_cat = JsonConvert.SerializeObject(CatList);
         File.WriteAllText(Application.dataPath + "/JSON_files/CatData.txt", jdata_cat);
     }
@@ -245,8 +242,9 @@ public class ShopGameManager : MonoBehaviour
         string jdata_my = File.ReadAllText(Application.dataPath + "/JSON_files/MyItemText.txt");
         MyItemList = JsonConvert.DeserializeObject<List<ShopItem>>(jdata_my);
 
-        string jdata_cat = File.ReadAllText(Application.dataPath + "/JSON_files/CatData.txt");
-        CatList = JsonConvert.DeserializeObject<List<Cat>>(jdata_cat);
+        // 여기서 오류남 왜지?????
+        /*string jdata_cat = File.ReadAllText(Application.dataPath + "/JSON_files/CatData.txt");
+        CatList = JsonConvert.DeserializeObject<List<Cat>>(jdata_cat);*/
 
         TabClick(curType);
     }
