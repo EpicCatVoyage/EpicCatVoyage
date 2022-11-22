@@ -71,7 +71,7 @@ public class ShopGameManager : MonoBehaviour
         //shopfilePath = Application.persistentDataPath + "/ShopItemText.txt";
         //Save();
         Load();
-        ExplainRect = ExplainPanel.GetComponent<RectTransform>();
+        
 
         // 고양이 정보(돈) 불러오기
         string[] cat = CatData.text.Substring(0, CatData.text.Length - 1).Split('\n');
@@ -82,16 +82,17 @@ public class ShopGameManager : MonoBehaviour
             CatList.Add(new Cat(cat_row[0], cat_row[1], cat_row[2]));
         }
         //catfilePath = Application.persistentDataPath + "/CatData.txt";
-        Save();
-        //Load();
+
+        //Save();
+        Load();
+        ExplainRect = ExplainPanel.GetComponent<RectTransform>();
 
         // 돈 출력하기
-
+        // Money[0].GetComponentInChildren<Text>().text = CatList[0].Money;
     }
 
     private void Update()
     {
-
         RectTransformUtility.ScreenPointToLocalPointInRectangle(CanvasRect, Input.mousePosition, Camera.main, out Vector2 anchoredPos);
         ExplainRect.anchoredPosition = anchoredPos + new Vector2(-180, -165);
     }
@@ -224,7 +225,6 @@ public class ShopGameManager : MonoBehaviour
     void Save()
     {
 
-        //File.WriteAllText(shopfilePath,"하이");
         string jdata = JsonConvert.SerializeObject(ShopItemList);
         File.WriteAllText(Application.dataPath + "/JSON_files/ShopItemText.txt", jdata);
 
@@ -238,13 +238,6 @@ public class ShopGameManager : MonoBehaviour
 
     void Load()
     {
-        /*if (!File.Exists(shopfilePath))
-        {
-            ResetItemClick();
-            return;
-        }*/
-        //string jdata = File.ReadAllText(shopfilePath);
-        //ShopItemList = JsonConvert.DeserializeObject<List<ShopItem>>(jdata);
 
         string jdata = File.ReadAllText(Application.dataPath + "/JSON_files/ShopItemText.txt");
         ShopItemList = JsonConvert.DeserializeObject<List<ShopItem>>(jdata);
@@ -252,8 +245,8 @@ public class ShopGameManager : MonoBehaviour
         string jdata_my = File.ReadAllText(Application.dataPath + "/JSON_files/MyItemText.txt");
         MyItemList = JsonConvert.DeserializeObject<List<ShopItem>>(jdata_my);
 
-        /*string jdata_cat = File.ReadAllText(Application.dataPath + "/JSON_files/CatData.txt");
-        CatList = JsonConvert.DeserializeObject<List<Cat>>(jdata_cat);*/
+        string jdata_cat = File.ReadAllText(Application.dataPath + "/JSON_files/CatData.txt");
+        CatList = JsonConvert.DeserializeObject<List<Cat>>(jdata_cat);
 
         TabClick(curType);
     }

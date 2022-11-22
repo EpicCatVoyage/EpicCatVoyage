@@ -1,1 +1,1 @@
-[{"Type":"Cat","Money":"3000","Hungry":"40\r"}]
+Cat	3000	40
