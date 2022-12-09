@@ -26,6 +26,11 @@ public class StoreGameManager : MonoBehaviour
     public Image[] TabImage, ItemImage;
     public Sprite TabIdleSprite, TabSelectSprite;
     public Sprite[] ItemSprite;
+    public GameObject ExplainPanel;
+    public RectTransform CanvasRect;
+    IEnumerator PointerCoroutine;
+    RectTransform ExplainRect;
+
 
     void Start()
     {
@@ -41,6 +46,19 @@ public class StoreGameManager : MonoBehaviour
 
 
         Load();
+
+        ExplainRect = ExplainPanel.GetComponent<RectTransform>();
+    }
+
+    private void Update()
+    {
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(CanvasRect, Input.mousePosition, Camera.main, out Vector2 anchoredPos);
+        ExplainRect.anchoredPosition = anchoredPos + new Vector2(-180, -165);
+    }
+
+    public void SlotClick(int slotNum)
+    {
+        //BuyPanel.SetActive(true);
     }
 
     public void TabClick(string tabName)
@@ -76,6 +94,34 @@ public class StoreGameManager : MonoBehaviour
         {
             TabImage[i].sprite = i == tabNum ? TabSelectSprite : TabIdleSprite;
         }
+    }
+
+    // 마우스 올려놓으면 설명창
+    public void PointerEnter(int slotNum)
+    {
+        PointerCoroutine = PointerEnterDelay(slotNum);
+        StartCoroutine(PointerCoroutine);
+
+        // 이름
+        ExplainPanel.GetComponentInChildren<Text>().text = CurItemList[slotNum].Name;
+        // 이미지
+        ExplainPanel.transform.GetChild(2).GetComponent<Image>().sprite = Slot[slotNum].transform.GetChild(3).GetComponent<Image>().sprite;
+        // 가격
+        ExplainPanel.transform.GetChild(3).GetComponent<Text>().text = CurItemList[slotNum].Price;
+        // 설명
+        ExplainPanel.transform.GetChild(4).GetComponent<Text>().text = CurItemList[slotNum].Explain;
+    }
+
+    IEnumerator PointerEnterDelay(int slotNum)
+    {
+        yield return new WaitForSeconds(0.5f);
+        ExplainPanel.SetActive(true);
+    }
+
+    public void PointerExit(int slotNum)
+    {
+        StopCoroutine(PointerCoroutine);
+        ExplainPanel.SetActive(false);
     }
 
     void Save()
