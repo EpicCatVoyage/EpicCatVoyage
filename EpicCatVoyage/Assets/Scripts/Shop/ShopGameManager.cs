@@ -247,8 +247,8 @@ public class ShopGameManager : MonoBehaviour
         MyItemList = JsonConvert.DeserializeObject<List<ShopItem>>(jdata_my);
 
         // 여기서 오류남 왜지?????
-        /*string jdata_cat = File.ReadAllText(Application.dataPath + "/JSON_files/CatData.txt");
-        CatList = JsonConvert.DeserializeObject<List<Cat>>(jdata_cat);*/
+        string jdata_cat = File.ReadAllText(Application.dataPath + "/JSON_files/CatData.txt");
+        CatList = JsonConvert.DeserializeObject<List<Cat>>(jdata_cat);
 
         TabClick(curType);
     }
