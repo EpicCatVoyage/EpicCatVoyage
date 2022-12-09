@@ -92,6 +92,7 @@ public class ShopGameManager : MonoBehaviour
     {
         RectTransformUtility.ScreenPointToLocalPointInRectangle(CanvasRect, Input.mousePosition, Camera.main, out Vector2 anchoredPos);
         ExplainRect.anchoredPosition = anchoredPos + new Vector2(-180, -165);
+        Money[0].GetComponentInChildren<Text>().text = CatList[0].Money;
     }
     public void ResetItemClick()
     {
@@ -111,6 +112,7 @@ public class ShopGameManager : MonoBehaviour
         BuyPanel.SetActive(true);
     }
 
+    // 구매하기 눌렀을 때
     public void BuyClick(int slotNum)
     {
         ShopItem curItem = CurItemList[slotNum];
@@ -123,8 +125,10 @@ public class ShopGameManager : MonoBehaviour
             ShopItem curAllItem = AllShopItemList.Find(x => x.Name == curItem.Name);
             if(curAllItem != null)
             {
-                curAllItem.Number = "1";
+                //curAllItem.Number = "1";
                 MyItemList.Add(curItem);
+                CatList[0].Money = (int.Parse(CatList[0].Money) - int.Parse(curItem.Number)).ToString();
+
             }
             
         }
@@ -223,7 +227,7 @@ public class ShopGameManager : MonoBehaviour
         string jdata = JsonConvert.SerializeObject(ShopItemList);
         File.WriteAllText(Application.dataPath + "/JSON_files/ShopItemText.txt", jdata);
 
-        // 상점 리스트
+        // 내아이템 리스트
         string jdata_my = JsonConvert.SerializeObject(MyItemList);
         File.WriteAllText(Application.dataPath + "/JSON_files/MyItemText.txt", jdata_my);
         TabClick(curType);
