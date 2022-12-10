@@ -15,12 +15,34 @@ public class StoreItem
     public string Type, Name, Explain, Price, Number;
     public bool isUsing;
 }
+[System.Serializable]
+public class Coin
+{
+    public Coin(string _Money)
+    {
+        Money = _Money;
+    }
+    public string Money;
+}
+[System.Serializable]
+public class Hungry
+{
+    public Hungry(string _HP)
+    {
+        HP = _HP;
+    }
+    public string HP;
+}
 
 public class StoreGameManager : MonoBehaviour
 {
 
     public TextAsset ItemDatabase;
-    public List<StoreItem> AllItemList, StoreItemList, CurItemList;
+    public TextAsset CoinData;
+    public TextAsset HungryData;
+    public List<StoreItem> AllItemList, StoreItemList, CurItemList, MyItemList;
+    public List<Coin> CoinList;
+    public List<Hungry> HPList;
     public string curType = "Snack";
     public GameObject[] Slot;
     public Image[] TabImage, ItemImage;
@@ -30,6 +52,8 @@ public class StoreGameManager : MonoBehaviour
     public RectTransform CanvasRect;
     IEnumerator PointerCoroutine;
     RectTransform ExplainRect;
+    public GameObject[] Coin;
+    public GameObject[] Hungry;
 
 
     void Start()
@@ -43,6 +67,28 @@ public class StoreGameManager : MonoBehaviour
             AllItemList.Add(new StoreItem(row[0], row[1], row[2], row[3], row[4], row[5] == "TRUE"));
         }
 
+        // 돈 정보 불러오기
+        string[] line_coin = CoinData.text.Substring(0, CoinData.text.Length - 1).Split('\n');
+        for (int i = 0; i < line_coin.Length; i++)
+        {
+            string[] row_coin = line_coin[i].Split('\t');
+            CoinList.Add(new Coin(row_coin[0]));
+        }
+
+        // 체력 정보 불러오기
+        string[] line_hungry = HungryData.text.Substring(0, HungryData.text.Length - 1).Split('\n');
+        for (int i = 0; i < line_hungry.Length; i++)
+        {
+            string[] row_hungry = line_hungry[i].Split('\t');
+            HPList.Add(new Hungry(row_hungry[0]));
+            print(HPList[0].HP);
+        }
+
+        // 돈 출력하기
+        Coin[0].GetComponentInChildren<Text>().text = CoinList[0].Money;
+
+        // 배고픔 출력하기
+        Hungry[0].GetComponentInChildren<Text>().text = HPList[0].HP;
 
 
         Load();
@@ -129,12 +175,19 @@ public class StoreGameManager : MonoBehaviour
         // 상점 전체리스트 저장
         string jdata = JsonConvert.SerializeObject(AllItemList);
         File.WriteAllText(Application.dataPath + "/JSON_files/StoreItemText.txt", jdata);
+
+        string jdata_money = File.ReadAllText(Application.dataPath + "/JSON_files/MoneyData.txt");
     }
 
     void Load()
     {
         string jdata = File.ReadAllText(Application.dataPath + "/JSON_files/StoreItemText.txt");
         StoreItemList = JsonConvert.DeserializeObject<List<StoreItem>>(jdata);
+
+        string jdata_my = File.ReadAllText(Application.dataPath + "/JSON_files/MyItemText.txt");
+        MyItemList = JsonConvert.DeserializeObject<List<StoreItem>>(jdata_my);
+
+        
 
         TabClick(curType);
     }

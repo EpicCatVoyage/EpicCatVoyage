@@ -10,11 +10,13 @@ using Newtonsoft.Json;
 public class Item
 {
     // 생성자
-    public Item(string _Type, string _Name, string _Explain, string _Number, bool _isUsing)
-    { Type = _Type; Name = _Name; Explain = _Explain; Number = _Number; isUsing = _isUsing; }
+    public Item(string _Type, string _Name, string _Explain, string _Price, string _Number, bool _isUsing)
+    {
+        Type = _Type; Name = _Name; Explain = _Explain; Price = _Price; Number = _Number; isUsing = _isUsing;
+    }
 
     // 타입, 이름, 설명, 개수, 사용여부
-    public string Type, Name, Explain, Number;
+    public string Type, Name, Explain, Price, Number;
     public bool isUsing;
 }
 
@@ -52,7 +54,7 @@ public class InventoryGameManager : MonoBehaviour
         {
             string[] row = line[i].Split('\t');
 
-            AllItemList.Add(new Item(row[0], row[1], row[2], row[3], row[4] == "TRUE"));
+            AllItemList.Add(new Item(row[0], row[1], row[2], row[3], row[4], row[5] == "TRUE"));
         }
         Load();
         //캐싱
@@ -135,28 +137,19 @@ public class InventoryGameManager : MonoBehaviour
         Item CurItem = curItemList[slotNum];
         Item UsingItem = curItemList.Find(x => x.isUsing == true);
 
-        if(curType == "Home")
+        if(curType == "Snack")
         {
-
-            
-            /*if(UsingItem!= null)
+            if (UsingItem != null)
             {
                 UsingItem.isUsing = false;
-            }*/
-            
-            // 선택, 선택 해제
-            if(CurItem.isUsing == true)
-            {
-                CurItem.isUsing = false;
+            }
+            CurItem.isUsing = true;
 
-            }
-            else
-            {
-                CurItem.isUsing = true;
-            }
+
 
         }
         else{
+            CurItem.isUsing = !CurItem.isUsing;
             if(UsingItem!= null)
             {
                 UsingItem.isUsing = false;
@@ -184,12 +177,12 @@ public class InventoryGameManager : MonoBehaviour
             {
                 // 아이템 이미지
                 ItemImage[i].sprite = ItemSprite[AllItemList.FindIndex(x => x.Name == curItemList[i].Name)];
-
+                UsingImage[i].SetActive(curItemList[i].isUsing);
                 // 집꾸미기만 사용중인지 뜨게
-                if(curType == "Home")
+                /*if (curType == "Home")
                 {
                     UsingImage[i].SetActive(curItemList[i].isUsing);
-                }
+                }*/
             }
         }
 
