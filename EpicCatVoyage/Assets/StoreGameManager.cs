@@ -54,6 +54,7 @@ public class StoreGameManager : MonoBehaviour
     RectTransform ExplainRect;
     public GameObject[] Coin;
     public GameObject[] Hungry;
+    public GameObject BuyPanel;
 
 
     void Start()
@@ -66,8 +67,10 @@ public class StoreGameManager : MonoBehaviour
 
             AllItemList.Add(new StoreItem(row[0], row[1], row[2], row[3], row[4], row[5] == "TRUE"));
         }
+        /*CoinList.Add(new Coin("5000"));
+        HPList.Add(new Hungry("50"));*/
 
-        // 돈 정보 불러오기
+        /*// 돈 정보 불러오기
         string[] line_coin = CoinData.text.Substring(0, CoinData.text.Length - 1).Split('\n');
         for (int i = 0; i < line_coin.Length; i++)
         {
@@ -82,16 +85,20 @@ public class StoreGameManager : MonoBehaviour
             string[] row_hungry = line_hungry[i].Split('\t');
             HPList.Add(new Hungry(row_hungry[0]));
             print(HPList[0].HP);
-        }
+        }*/
+
+        Load();
 
         // 돈 출력하기
         Coin[0].GetComponentInChildren<Text>().text = CoinList[0].Money;
+        print(CoinList[0].Money);
 
         // 배고픔 출력하기
         Hungry[0].GetComponentInChildren<Text>().text = HPList[0].HP;
+        print(HPList[0].HP);
 
 
-        Load();
+
 
         ExplainRect = ExplainPanel.GetComponent<RectTransform>();
     }
@@ -102,9 +109,47 @@ public class StoreGameManager : MonoBehaviour
         ExplainRect.anchoredPosition = anchoredPos + new Vector2(-180, -165);
     }
 
+    // 슬롯 클릭하면 구매할 수 있게
     public void SlotClick(int slotNum)
     {
-        //BuyPanel.SetActive(true);
+        BuyPanel.SetActive(true);
+    }
+
+    // 구매하기 버튼
+    // 구매하기 눌렀을 때
+    public void BuyClick(int slotNum)
+    {
+        StoreItem curItem = MyItemList.Find(x => x.Name == CurItemList[slotNum].Name);
+
+        if (curItem != null)
+        {
+            // 아이템 추가
+            curItem.Number = (int.Parse(curItem.Number) + 1).ToString();
+            // 돈 감소
+            CoinList[0].Money = (int.Parse(CoinList[0].Money) - int.Parse(curItem.Price)).ToString();
+        }
+        else
+        {
+            StoreItem curAllItem = AllItemList.Find(x => x.Name == curItem.Name);
+            curAllItem.Number = "1";
+            if (curAllItem != null)
+            {
+                // 아이템 추가
+                MyItemList.Add(curItem);
+                // 돈 감소
+                CoinList[0].Money = (int.Parse(CoinList[0].Money) - int.Parse(curItem.Price)).ToString();
+
+            }
+
+        }
+
+        Save();
+        BuyPanel.SetActive(false);
+    }
+    // 취소하기 버튼
+    public void CancleClick(int slotNum)
+    {
+        BuyPanel.SetActive(false);
     }
 
     public void TabClick(string tabName)
@@ -176,7 +221,18 @@ public class StoreGameManager : MonoBehaviour
         string jdata = JsonConvert.SerializeObject(AllItemList);
         File.WriteAllText(Application.dataPath + "/JSON_files/StoreItemText.txt", jdata);
 
-        string jdata_money = File.ReadAllText(Application.dataPath + "/JSON_files/MoneyData.txt");
+        // 인벤토리 정보 저장
+        string jdata_my = JsonConvert.SerializeObject(MyItemList);
+        File.WriteAllText(Application.dataPath + "/JSON_files/MyItemText.txt", jdata_my);
+
+        // 돈 정보 저장
+        string jdata_coin = JsonConvert.SerializeObject(CoinList);
+        File.WriteAllText(Application.dataPath + "/JSON_files/CoinText.txt", jdata_coin);
+
+        // 체력 정보 저장
+        string jdata_hp = JsonConvert.SerializeObject(HPList);
+        File.WriteAllText(Application.dataPath + "/JSON_files/HPText.txt", jdata_hp);
+
     }
 
     void Load()
@@ -186,6 +242,12 @@ public class StoreGameManager : MonoBehaviour
 
         string jdata_my = File.ReadAllText(Application.dataPath + "/JSON_files/MyItemText.txt");
         MyItemList = JsonConvert.DeserializeObject<List<StoreItem>>(jdata_my);
+
+        string jdata_coin = File.ReadAllText(Application.dataPath + "/JSON_files/CoinText.txt");
+        CoinList = JsonConvert.DeserializeObject<List<Coin>>(jdata_coin);
+
+        string jdata_hp = File.ReadAllText(Application.dataPath + "/JSON_files/HPText.txt");
+        HPList = JsonConvert.DeserializeObject<List<Hungry>>(jdata_hp);
 
         
 
