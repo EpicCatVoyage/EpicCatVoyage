@@ -61,6 +61,7 @@ public class InventoryGameManager : MonoBehaviour
     public GameObject[] Coin;
     public GameObject[] Hungry;
     public GameObject HowPanel;
+    public GameObject UseBtn;
 
     //디버그
     public InputField ItemNameInput, ItemNumberInput;
@@ -170,8 +171,20 @@ public class InventoryGameManager : MonoBehaviour
     public void SlotClick(int slotNum)
     {
         Item curItem = curItemList[slotNum];
-        HowPanel.SetActive(true);
+        //HowPanel.SetActive(true);
+        if (curType == "Home")
+        {
+            HowPanel.SetActive(true);
+            UseBtn.SetActive(false);
+        }
+        else
+        {
+            HowPanel.SetActive(true);
+            UseBtn.SetActive(true);
+        }
         HowPanel.transform.GetChild(1).GetComponent<Text>().text = curItemList[slotNum].Name;
+
+        
 
         /*Item CurItem = curItemList[slotNum];
         Item UsingItem = curItemList.Find(x => x.isUsing == true);
@@ -217,13 +230,29 @@ public class InventoryGameManager : MonoBehaviour
                 curItem.Number = curNumber.ToString();
             }
 
-            // hp 증가
-            HPList[0].HP = (int.Parse(HPList[0].HP) + int.Parse(curItem.Price)).ToString();
+            int curHp = (int.Parse(HPList[0].HP) + int.Parse(curItem.Exp));
+            if (curHp < 100)
+            {
+                // hp 증가
+                HPList[0].HP = curHp.ToString();
+                // hp 갱신
+                Hungry[0].GetComponentInChildren<Text>().text = HPList[0].HP;
+            }
+            else
+            {
+                // hp 증가
+                HPList[0].HP = "100";
+                // hp 갱신
+                Hungry[0].GetComponentInChildren<Text>().text = HPList[0].HP;
+            }
+            /*// hp 증가
+            HPList[0].HP = (int.Parse(HPList[0].HP) + int.Parse(curItem.Exp)).ToString();
 
             // hp 갱신
-            Hungry[0].GetComponentInChildren<Text>().text = HPList[0].HP;
+            Hungry[0].GetComponentInChildren<Text>().text = HPList[0].HP;*/
 
             Save();
+            HowPanel.SetActive(false);
         }
     }
 
@@ -234,15 +263,17 @@ public class InventoryGameManager : MonoBehaviour
         if (curItem != null)
         {
             int curNumber = int.Parse(curItem.Number) - 1;
+            print("현재 개수 : " + curNumber);
 
-
-            if (curNumber <= 0)
+            if (curNumber < 1)
             {
+                print("1개였음");
                 MyItemList.Remove(curItem);
 
             }
             else
             {
+                print("1개 이상이였음");
                 curItem.Number = curNumber.ToString();
             }
 
@@ -253,6 +284,7 @@ public class InventoryGameManager : MonoBehaviour
             Coin[0].GetComponentInChildren<Text>().text = CoinList[0].Money;
 
             Save();
+            HowPanel.SetActive(false);
         }
     }
 
@@ -269,7 +301,8 @@ public class InventoryGameManager : MonoBehaviour
         {
             bool isExist = i < curItemList.Count;
             Slot[i].SetActive(isExist);
-            Slot[i].GetComponentInChildren<Text>().text = isExist ? curItemList[i].Name + "/" + curItemList[i].isUsing : "";
+            Slot[i].GetComponentInChildren<Text>().text = isExist ? curItemList[i].Name : "";
+            //Slot[i].GetComponentInChildren<Text>().text = isExist ? curItemList[i].Name + "/" + curItemList[i].isUsing : "";
 
             if (isExist)
             {
