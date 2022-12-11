@@ -146,16 +146,18 @@ public class StoreGameManager : MonoBehaviour
         else
         {
             print("else 임");
-            /*StoreItem curAllItem = AllItemList.Find(x => x.Name == curItem.Name);
+            StoreItem curAllItem = AllItemList.Find(x => x.Name == BuyPanel.transform.GetChild(1).GetComponent<Text>().text);
             curAllItem.Number = "1";
             if (curAllItem != null)
             {
                 // 아이템 추가
-                MyItemList.Add(curItem);
+                MyItemList.Add(curAllItem);
                 // 돈 감소
-                CoinList[0].Money = (int.Parse(CoinList[0].Money) - int.Parse(curItem.Price)).ToString();
+                CoinList[0].Money = (int.Parse(CoinList[0].Money) - int.Parse(curAllItem.Price)).ToString();
+                // 돈 갱신
+                Coin[0].GetComponentInChildren<Text>().text = CoinList[0].Money;
 
-            }*/
+            }
 
         }
 
