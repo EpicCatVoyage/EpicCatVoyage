@@ -112,25 +112,41 @@ public class StoreGameManager : MonoBehaviour
     // 슬롯 클릭하면 구매할 수 있게
     public void SlotClick(int slotNum)
     {
+        StoreItem curItem = CurItemList[slotNum];
         BuyPanel.SetActive(true);
+        BuyPanel.transform.GetChild(1).GetComponent<Text>().text = CurItemList[slotNum].Name;
+    }
+
+    public void updateStateInfo()
+    {
+
     }
 
     // 구매하기 버튼
     // 구매하기 눌렀을 때
     public void BuyClick(int slotNum)
     {
-        StoreItem curItem = MyItemList.Find(x => x.Name == CurItemList[slotNum].Name);
+        print(BuyPanel.transform.GetChild(1).GetComponent<Text>().text);
+        StoreItem curItem = MyItemList.Find(x => x.Name == BuyPanel.transform.GetChild(1).GetComponent<Text>().text);
+        
 
+        // 아이템을 가지고 있을때는 개수만 1개 추가
         if (curItem != null)
         {
             // 아이템 추가
             curItem.Number = (int.Parse(curItem.Number) + 1).ToString();
             // 돈 감소
             CoinList[0].Money = (int.Parse(CoinList[0].Money) - int.Parse(curItem.Price)).ToString();
+
+            // 돈 갱신
+            Coin[0].GetComponentInChildren<Text>().text = CoinList[0].Money;
         }
+
+        // 없을 때는 아이템 자체를 추가
         else
         {
-            StoreItem curAllItem = AllItemList.Find(x => x.Name == curItem.Name);
+            print("else 임");
+            /*StoreItem curAllItem = AllItemList.Find(x => x.Name == curItem.Name);
             curAllItem.Number = "1";
             if (curAllItem != null)
             {
@@ -139,7 +155,7 @@ public class StoreGameManager : MonoBehaviour
                 // 돈 감소
                 CoinList[0].Money = (int.Parse(CoinList[0].Money) - int.Parse(curItem.Price)).ToString();
 
-            }
+            }*/
 
         }
 
