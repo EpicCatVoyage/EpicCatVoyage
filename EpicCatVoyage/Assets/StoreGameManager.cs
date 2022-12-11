@@ -8,11 +8,11 @@ using UnityEngine.UI;
 [System.Serializable]
 public class StoreItem
 {
-    public StoreItem(string _Type, string _Name, string _Explain, string _Price, string _Number, bool _isUsing)
+    public StoreItem(string _Type, string _Name, string _Explain, string _Price, string _Number, string _Exp, bool _isUsing)
     {
-        Type = _Type; Name = _Name; Explain = _Explain; Price = _Price; Number = _Number; isUsing = _isUsing;
+        Type = _Type; Name = _Name; Explain = _Explain; Price = _Price; Number = _Number; Exp = _Exp;  isUsing = _isUsing;
     }
-    public string Type, Name, Explain, Price, Number;
+    public string Type, Name, Explain, Price, Number, Exp;
     public bool isUsing;
 }
 [System.Serializable]
@@ -65,7 +65,7 @@ public class StoreGameManager : MonoBehaviour
         {
             string[] row = line[i].Split('\t');
 
-            AllItemList.Add(new StoreItem(row[0], row[1], row[2], row[3], row[4], row[5] == "TRUE"));
+            AllItemList.Add(new StoreItem(row[0], row[1], row[2], row[3], row[4], row[5], row[6] == "TRUE"));
         }
         /*CoinList.Add(new Coin("5000"));
         HPList.Add(new Hungry("50"));*/
