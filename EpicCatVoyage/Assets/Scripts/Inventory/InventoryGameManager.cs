@@ -62,6 +62,8 @@ public class InventoryGameManager : MonoBehaviour
     public GameObject[] Hungry;
     public GameObject HowPanel;
     public GameObject UseBtn;
+    public GameObject BackBtn;
+    public GameObject SellBtn;
 
     //µð¹ö±×
     public InputField ItemNameInput, ItemNumberInput;
@@ -168,19 +170,36 @@ public class InventoryGameManager : MonoBehaviour
         HowPanel.SetActive(false);
     }
 
+    public void BackBtnClick()
+    {
+        HowPanel.SetActive(false);
+    }
+
     public void SlotClick(int slotNum)
     {
         Item curItem = curItemList[slotNum];
         //HowPanel.SetActive(true);
-        if (curType == "Home")
-        {
-            HowPanel.SetActive(true);
-            UseBtn.SetActive(false);
-        }
-        else
+        if (curType == "Snack")
         {
             HowPanel.SetActive(true);
             UseBtn.SetActive(true);
+            SellBtn.SetActive(true);
+            BackBtn.SetActive(false);
+        }
+        if(curType == "Gift")
+        {
+            HowPanel.SetActive(true);
+            SellBtn.SetActive(false);
+            BackBtn.SetActive(true);
+        }
+        
+        if(curType == "Home")
+        {
+
+            HowPanel.SetActive(true);
+            UseBtn.SetActive(false);
+            BackBtn.SetActive(false);
+
         }
         HowPanel.transform.GetChild(1).GetComponent<Text>().text = curItemList[slotNum].Name;
 
