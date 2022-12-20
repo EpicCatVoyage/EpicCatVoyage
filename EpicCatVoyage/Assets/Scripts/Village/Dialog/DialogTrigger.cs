@@ -7,27 +7,59 @@ public class DialogTrigger : MonoBehaviour
     DialogManager DM;
 
     public GameObject mentBox;
+    public Dialog2[] dia2 = new Dialog2[2];
+    Animator anim;
 
-    public Dialog dia;
-    public int npcNum = 0;
-      //npcNum은 현재 대화 중인 npc 정보입니다.
-      //0은 초딩, 1은 할머니, 2는 직장인, 3은 생선가게 아저씨, 4은 멍멍이
-
-    int diaNum = 1; //npc에게 말을 건 경우. 멘트 후 choice 박스 등장. (선물하기, 미니게임하기, 애교 부리기)
+    int diaNum = 1; //대화하기
+    int r = 0; //대화 중 호감도에 따른 dia 묶음. (Dialog2)
 
 
     void Awake()
     {
         DM = gameObject.GetComponent<DialogManager>();
+        anim = GetComponent<Animator>();
     }
 
-    public void clickNPC()
+
+    private void openMentBox() { anim.SetBool("Trigger", true); }
+    private void closeMentBox() { anim.SetBool("Trigger", false); }
+
+    public void clickTalk()
     {
         Debug.Log(DM); //너 나중에 보자
-        mentBox.SetActive(true);
-        DM.dialogSet(dia, diaNum, npcNum);
-        Debug.Log("함수 끝");
+        openMentBox();
+        if (StoreInfo.getFriendship() < 25)
+        {
+            r = Random.Range(0, dia2.GetLength(0));
+            DM.dialogSet(dia2[0].dia[r], diaNum);
+        }
+        else if (StoreInfo.getFriendship() < 50)
+        {
+            r = Random.Range(0, dia2.GetLength(1));
+            DM.dialogSet(dia2[1].dia[r], diaNum);
+        }
+        else if (StoreInfo.getFriendship() < 75)
+        {
+            r = Random.Range(0, dia2.GetLength(2));
+            DM.dialogSet(dia2[2].dia[r], diaNum);
+        }
+        else if (StoreInfo.getFriendship() <= 100)
+        {
+            r = Random.Range(0, dia2.GetLength(3));
+            DM.dialogSet(dia2[3].dia[r], diaNum);
+        }
     }
+
+    public void clickPresent() //선물 클릭시. diaNum은 2로 준다.
+    {
+        ;
+    }
+
+    public void clickCharm() //애교부리기. diaNum은 3으로 준다.
+    {
+        ;
+    }
+
 }
 /* 사용 설명서
  * 1. 말하는 주체에게 DialogTrigger와 DialogManager 스크립트를 추가
