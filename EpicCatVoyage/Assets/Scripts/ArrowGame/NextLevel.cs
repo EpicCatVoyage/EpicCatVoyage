@@ -17,7 +17,7 @@ public class NextLevel : MonoBehaviour
         if (reloadedNum == 4)
         {
             Destroy(GameObject.Find("gameMusicHolder"));
-            SceneManager.LoadScene("Clear");
+            SceneManager.LoadScene("ArrowGame_Ending");
         }       
        
     }

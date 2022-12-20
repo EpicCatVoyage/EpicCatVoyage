@@ -26,7 +26,7 @@ public class Timer : MonoBehaviour
         {
             stopTimer = true;
             Destroy(GameObject.Find("gameMusicHolder"));
-            SceneManager.LoadScene("TimeOver");
+            SceneManager.LoadScene("ArrowGame_BadEnding");
         }
         if (stopTimer == false)
         {
