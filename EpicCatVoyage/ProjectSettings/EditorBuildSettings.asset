@@ -12,34 +12,34 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial.unity
     guid: d4f7f5c4bf69e1e4581059ecd42147d2
   - enabled: 1
-    path: Assets/Scenes/miniGame_kneading.unity
+    path: Assets/Scenes/miniGame/miniGame_kneading.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Baking.unity
+    path: Assets/Scenes/miniGame/Baking.unity
     guid: 2c4e08ad02d50c542819422213593c6a
   - enabled: 1
-    path: Assets/Scenes/CatchMouse.unity
+    path: Assets/Scenes/miniGame/CatchMouse.unity
     guid: 2b19808ebafe31542aeb633584827429
   - enabled: 1
     path: Assets/Scenes/Friendship_Level.unity
     guid: 05fbd9a6f80cf714ebf56c0dc870334d
   - enabled: 1
-    path: Assets/Scenes/ArrowGame/GameExplain.unity
+    path: Assets/Scenes/miniGame/ArrowGame/GameExplain.unity
     guid: bf1df1c686864244baf08183020fabb6
   - enabled: 1
-    path: Assets/Scenes/ArrowGame/CountDown.unity
+    path: Assets/Scenes/miniGame/ArrowGame/CountDown.unity
     guid: 1ce8d1957ab29ce4093f74b038d8787e
   - enabled: 1
-    path: Assets/Scenes/ArrowGame/MainGame.unity
+    path: Assets/Scenes/miniGame/ArrowGame/MainGame.unity
     guid: 3ec77706b7f03ed46a65f5d91fed2d20
   - enabled: 1
-    path: Assets/Scenes/ArrowGame/TimeOver.unity
+    path: Assets/Scenes/miniGame/ArrowGame/TimeOver.unity
     guid: c2de3884fb612d24e8adccf55b42708d
   - enabled: 1
-    path: Assets/Scenes/ArrowGame/NextLevel.unity
+    path: Assets/Scenes/miniGame/ArrowGame/NextLevel.unity
     guid: 3ee18545f3da4a749b9eaa4d23d02292
   - enabled: 1
-    path: Assets/Scenes/ArrowGame/Clear.unity
+    path: Assets/Scenes/miniGame/ArrowGame/Clear.unity
     guid: 2a6e6dfa568b23e4eb2a291a4153932a
   - enabled: 1
     path: Assets/Scenes/HowToPlay/HTP_ArrowGame.unity
@@ -51,13 +51,13 @@ EditorBuildSettings:
     path: Assets/Scenes/HowToPlay/HTP_CatchMouse.unity
     guid: 69276016baaec4a46975cdefde325b50
   - enabled: 1
-    path: Assets/Scenes/ArrowGame/MainScene.unity
+    path: Assets/Scenes/miniGame/ArrowGame/MainScene.unity
     guid: d977cdc12c89fa44989f640e0b44026a
   - enabled: 1
-    path: Assets/Scenes/village/LoadingScene.unity
+    path: Assets/Scenes/LoadingScene.unity
     guid: 56cab19ab2c59744f897bf7fe75902c9
   - enabled: 1
-    path: Assets/Scenes/village/Center.unity
+    path: Assets/Scenes/Village.unity
     guid: 81af19bcb699f294c8cdb1f89e161501
   - enabled: 1
     path: Assets/Scenes/village/Home.unity
@@ -75,18 +75,18 @@ EditorBuildSettings:
     path: Assets/Scenes/village/Residential.unity
     guid: 9d27c50d0571b454288485320ca32d86
   - enabled: 1
-    path: Assets/Scenes/NoteGame/NoteGameClear.unity
+    path: Assets/Scenes/miniGame/NoteGame/NoteGameClear.unity
     guid: 1235b7a083ab98242bffa0eeff0aa190
   - enabled: 1
-    path: Assets/Scenes/NoteGame/NoteGameCountDown.unity
+    path: Assets/Scenes/miniGame/NoteGame/NoteGameCountDown.unity
     guid: f6e214f4320c794449eefbc893168ed3
   - enabled: 1
-    path: Assets/Scenes/NoteGame/NoteGameExplain.unity
+    path: Assets/Scenes/miniGame/NoteGame/NoteGameExplain.unity
     guid: 908fa633b10bf30448f8da97cf853f41
   - enabled: 1
-    path: Assets/Scenes/NoteGame/NoteGameFail.unity
+    path: Assets/Scenes/miniGame/NoteGame/NoteGameFail.unity
     guid: 6548ffa334edac2439279c15922616ad
   - enabled: 1
-    path: Assets/Scenes/NoteGame/NoteGameMain.unity
+    path: Assets/Scenes/miniGame/NoteGame/NoteGameMain.unity
     guid: 226e8a161af749246988b9476504bf22
   m_configObjects: {}
