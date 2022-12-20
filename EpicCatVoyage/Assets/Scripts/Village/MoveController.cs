@@ -74,6 +74,9 @@ public class MoveController : MonoBehaviour
         hungryStat.text = hungry.ToString();
         // 0�϶� width = 6.2 // 100�϶� width = 620
 
+        // print(hungryBar.transform.position);
+        // print(loveBar.transform.position);
+
         if (hungry > 0)
         {
             if(hungry > 5)
