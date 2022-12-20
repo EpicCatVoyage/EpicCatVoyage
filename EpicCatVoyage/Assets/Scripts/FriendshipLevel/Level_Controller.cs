@@ -34,7 +34,7 @@ public class Level_Controller : MonoBehaviour
     public void SaveNPCdataToJson()
     {
         string jdata = JsonConvert.SerializeObject(npcData);
-        File.WriteAllText(Application.dataPath + "/JSON_files/NPCdata.json", jdata);
+        File.WriteAllText(Application.streamingAssetsPath + "/JSON_files/NPCdata.json", jdata);
     }
 
     public void LoadNPCdataFromJson()
