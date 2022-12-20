@@ -430,7 +430,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Tutorial
+          m_StringArgument: Village
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 306653512}
@@ -660,7 +660,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Tutorial
+          m_StringArgument: Village
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 306653512}
@@ -1161,7 +1161,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Tutorial
+          m_StringArgument: Village
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 306653512}
@@ -1588,7 +1588,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Tutorial
+          m_StringArgument: Village
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 306653512}
