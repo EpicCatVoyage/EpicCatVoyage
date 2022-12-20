@@ -27,6 +27,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Friendship_Level.unity
     guid: 05fbd9a6f80cf714ebf56c0dc870334d
   - enabled: 1
+    path: Assets/Scenes/Ending/ArrowGame_Ending.unity
+    guid: af9d707392d7bff49b6fcd87b5f29381
+  - enabled: 1
+    path: Assets/Scenes/Ending/ArrowGame_BadEnding.unity
+    guid: d483cc162b76cd54b8bef611038c7ba2
+  - enabled: 1
     path: Assets/Scenes/miniGame/ArrowGame/GameExplain.unity
     guid: bf1df1c686864244baf08183020fabb6
   - enabled: 1
@@ -51,8 +57,20 @@ EditorBuildSettings:
     path: Assets/Scenes/HowToPlay/HTP_Baking.unity
     guid: 0d645b451b36f9744882c5ae817cfa51
   - enabled: 1
+    path: Assets/Scenes/Ending/Baking_Ending.unity
+    guid: 48827aaa5366fbd4ba8ca52c2ffefa9d
+  - enabled: 1
+    path: Assets/Scenes/Ending/Baking_BadEnding.unity
+    guid: 14ac4f944dd09bf4abcaa16b603831ce
+  - enabled: 1
     path: Assets/Scenes/HowToPlay/HTP_CatchMouse.unity
     guid: 69276016baaec4a46975cdefde325b50
+  - enabled: 1
+    path: Assets/Scenes/Ending/CatchMouse_BadEnding.unity
+    guid: 944a4dfb3633f0a42a54b54d837466c7
+  - enabled: 1
+    path: Assets/Scenes/Ending/CatchMouse_Ending.unity
+    guid: fab3cc73849859d47b9eec8c28574e1f
   - enabled: 1
     path: Assets/Scenes/miniGame/ArrowGame/MainScene.unity
     guid: d977cdc12c89fa44989f640e0b44026a
@@ -62,6 +80,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Village.unity
     guid: 81af19bcb699f294c8cdb1f89e161501
+  - enabled: 1
+    path: Assets/Scenes/Ending/NoteGame_Ending.unity
+    guid: a7d4bd3cae86b584fa229c645e912fe2
+  - enabled: 1
+    path: Assets/Scenes/Ending/NoteGame_BadEnding.unity
+    guid: 320f467834e429346afef258da0daf95
   - enabled: 1
     path: Assets/Scenes/miniGame/NoteGame/NoteGameClear.unity
     guid: 1235b7a083ab98242bffa0eeff0aa190
