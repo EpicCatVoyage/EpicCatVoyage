@@ -19,7 +19,7 @@ public class Fish_info : MonoBehaviour
     void Start()
     {
         screenAnim = fishInfoScreen.GetComponent<Animator>();
-        string jdata = File.ReadAllText(Application.dataPath + "/JSON_files/NPCdata.json");
+        string jdata = File.ReadAllText(Application.streamingAssetsPath + "/JSON_files/NPCdata.json");
         npcData = JsonConvert.DeserializeObject<List<NPCdata>>(jdata);
         fishInfoLike.text = "È£°¨µµ : " + npcData[3].friendship_level.ToString();
     }

@@ -19,7 +19,7 @@ public class Worker_info : MonoBehaviour
     void Start()
     {
         screenAnim = workInfoScreen.GetComponent<Animator>();
-        string jdata = File.ReadAllText(Application.dataPath + "/JSON_files/NPCdata.json");
+        string jdata = File.ReadAllText(Application.streamingAssetsPath + "/JSON_files/NPCdata.json");
         npcData = JsonConvert.DeserializeObject<List<NPCdata>>(jdata);
         workInfoLike.text = "È£°¨µµ : " + npcData[2].friendship_level.ToString();
     }

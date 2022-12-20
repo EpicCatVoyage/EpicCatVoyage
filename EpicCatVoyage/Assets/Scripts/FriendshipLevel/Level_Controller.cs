@@ -39,7 +39,7 @@ public class Level_Controller : MonoBehaviour
 
     public void LoadNPCdataFromJson()
     {
-        string jdata = File.ReadAllText(Application.dataPath + "/JSON_files/NPCdata.json");
+        string jdata = File.ReadAllText(Application.streamingAssetsPath + "/JSON_files/NPCdata.json");
         npcData = JsonConvert.DeserializeObject<List<NPCdata>>(jdata);
     }
 
