@@ -24,28 +24,28 @@ public class levelChange : MonoBehaviour
             if (stage == 2)
             {
                 NoteSequence.waitSeconds = 0.8f;
-                NoteSequence.numOfQ = 8;
+                NoteSequence.numOfQ = 4;
                 enterNote.clear = false;
                 Invoke("RestartScript",1f);
             }
             if (stage == 3)
             {
                 NoteSequence.waitSeconds = 0.6f;
-                NoteSequence.numOfQ = 12;   
+                NoteSequence.numOfQ = 5;   
                 enterNote.clear = false;     
                 Invoke("RestartScript",1f);  
             }
             if (stage == 4)
             {
                 NoteSequence.waitSeconds = 0.4f;
-                NoteSequence.numOfQ = 15;   
+                NoteSequence.numOfQ = 6;   
                 enterNote.clear = false;    
                 Invoke("RestartScript",1f); 
             }
             if (stage == 5)
             {
                 NoteSequence.waitSeconds = 0.2f;
-                NoteSequence.numOfQ = 18;   
+                NoteSequence.numOfQ = 7;   
                 enterNote.clear = false; 
                 Invoke("GameClear",1f);
             }
@@ -59,6 +59,6 @@ public class levelChange : MonoBehaviour
 
     void GameClear()
     {
-        SceneManager.LoadScene("NoteGameClear");
+        SceneManager.LoadScene("NoteGame_Ending");
     }
 }
