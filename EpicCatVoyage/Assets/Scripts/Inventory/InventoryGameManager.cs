@@ -308,7 +308,7 @@ public class InventoryGameManager : MonoBehaviour
             {
                 // 아이템 이미지
                 ItemImage[i].sprite = ItemSprite[AllItemList.FindIndex(x => x.Name == curItemList[i].Name)];
-                UsingImage[i].SetActive(curItemList[i].isUsing);
+                /*UsingImage[i].SetActive(curItemList[i].isUsing);*/
                 // 집꾸미기만 사용중인지 뜨게
                 /*if (curType == "Home")
                 {
