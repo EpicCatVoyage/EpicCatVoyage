@@ -45,13 +45,13 @@ EditorBuildSettings:
     path: Assets/Scenes/miniGame/ArrowGame/Clear.unity
     guid: 2a6e6dfa568b23e4eb2a291a4153932a
   - enabled: 1
-    path: Assets/Scenes/HowToPlay/HTP_ArrowGame.unity
+    path: Assets/Scenes/miniGame/HowToPlay/HTP_ArrowGame.unity
     guid: 9dd0dace48984c841b4686395ff08266
   - enabled: 1
-    path: Assets/Scenes/HowToPlay/HTP_Baking.unity
+    path: Assets/Scenes/miniGame/HowToPlay/HTP_Baking.unity
     guid: 0d645b451b36f9744882c5ae817cfa51
   - enabled: 1
-    path: Assets/Scenes/HowToPlay/HTP_CatchMouse.unity
+    path: Assets/Scenes/miniGame/HowToPlay/HTP_CatchMouse.unity
     guid: 69276016baaec4a46975cdefde325b50
   - enabled: 1
     path: Assets/Scenes/miniGame/ArrowGame/MainScene.unity
@@ -63,19 +63,19 @@ EditorBuildSettings:
     path: Assets/Scenes/Village.unity
     guid: 81af19bcb699f294c8cdb1f89e161501
   - enabled: 1
-    path: Assets/Scenes/Ending/ArrowGame_Ending.unity
+    path: Assets/Scenes/miniGame/Ending/ArrowGame_Ending.unity
     guid: 56e875f2e5bcc5a439af4d48a6e94987
   - enabled: 1
-    path: Assets/Scenes/Ending/Baking_Ending.unity
+    path: Assets/Scenes/miniGame/Ending/Baking_Ending.unity
     guid: 48827aaa5366fbd4ba8ca52c2ffefa9d
   - enabled: 1
-    path: Assets/Scenes/Ending/CatchMouse_Ending.unity
+    path: Assets/Scenes/miniGame/Ending/CatchMouse_Ending.unity
     guid: fab3cc73849859d47b9eec8c28574e1f
   - enabled: 1
     path: Assets/Scenes/Ending/Kneading_Ending.unity
     guid: b0389f324a367274798846641c8a6a63
   - enabled: 1
-    path: Assets/Scenes/Ending/NoteGame_Ending.unity
+    path: Assets/Scenes/miniGame/Ending/NoteGame_Ending.unity
     guid: a7d4bd3cae86b584fa229c645e912fe2
   - enabled: 1
     path: Assets/Scenes/miniGame/NoteGame/NoteGameClear.unity

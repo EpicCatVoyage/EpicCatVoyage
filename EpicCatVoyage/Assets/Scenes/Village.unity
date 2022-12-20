@@ -4161,7 +4161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   game:
   - HTP_NoteGame
-  - MainGame
+  - HTP_ArrowGame
   - HTP_Baking
   - HTP_CatchMouse
   - miniGame_kneading
