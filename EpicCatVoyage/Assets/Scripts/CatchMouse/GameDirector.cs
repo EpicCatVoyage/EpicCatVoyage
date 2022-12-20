@@ -30,7 +30,7 @@ public class GameDirector : MonoBehaviour
         this.time -= Time.deltaTime;
         if (this.time < 0)
         {
-            if (this.point > 25)
+            if (this.point > 35)
                 SceneManager.LoadScene("CatchMouse_Ending");
             else
                 SceneManager.LoadScene("CatchMouse_BadEnding");
