@@ -30,6 +30,10 @@ public class MoveController : MonoBehaviour
     // stage Ȯ�ο� - Ŭ���� �̸� ���ľ���
     public static int stage = 3;
 
+    // coin txt
+    public Text coinTxt;
+    public List<CoinMoney> coinList;
+
     private Animator anim;
     private bool animState = false;
 
@@ -96,8 +100,10 @@ public class MoveController : MonoBehaviour
             loveBar.transform.position = new Vector3(like * 6.2f / 2f + 645, 1267.11f, 1);
         }
 
-
-
+        string jdata_coin = File.ReadAllText(Application.streamingAssetsPath + "/JSON_files/CoinText.txt");
+        coinList = JsonConvert.DeserializeObject<List<CoinMoney>>(jdata_coin);
+        int coin = int.Parse(coinList[0].Money);
+        coinTxt.text = coin.ToString();
     }
 
     public void ToCenter()
