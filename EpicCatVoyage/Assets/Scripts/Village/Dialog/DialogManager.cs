@@ -11,9 +11,11 @@ public class DialogManager : MonoBehaviour
 
     private Queue<string> mentList = new Queue<string>();
     private int endNum;
+    private int npc;
 
-    public void dialogSet(Dialog dia, int num)
+    public void dialogSet(Dialog dia, int num, int npc)
     {
+        this.npc = npc;
         nameText.text = dia.name;
         foreach(string str in dia.sentences)
             mentList.Enqueue(str);
@@ -47,13 +49,13 @@ public class DialogManager : MonoBehaviour
 
     void choiceEnd()
     {
-        if (endNum == 1) //¾Ö±³ºÎ¸®±â, ¼±¹°ÇÏ±â, ¹Ì´Ï°ÔÀÓ ÇÏ±â µîÀÇ ÃÊÀÌ½º ¹Ú½º µîÀå.
+        if (endNum == 1) //ï¿½Ö±ï¿½ï¿½Î¸ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½, ï¿½Ì´Ï°ï¿½ï¿½ï¿½ ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì½ï¿½ ï¿½Ú½ï¿½ ï¿½ï¿½ï¿½ï¿½.
         {
             openChoiceBox();
         }
         else
         {
-            Debug.Log("¾ÆÁ÷ ¾÷µ«µÇÁö ¾ÊÀº ´ëÈ­ À¯ÇüÀÔ´Ï´Ù");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È­ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½");
         }
     }
 

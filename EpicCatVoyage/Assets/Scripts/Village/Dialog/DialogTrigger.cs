@@ -9,24 +9,23 @@ public class DialogTrigger : MonoBehaviour
     public GameObject mentBox;
 
     public Dialog dia;
+    public int npcNum = 0;
+      //npcNum은 현재 대화 중인 npc 정보입니다.
+      //0은 초딩, 1은 할머니, 2는 직장인, 3은 생선가게 아저씨, 4은 멍멍이
+
     int diaNum = 1; //npc에게 말을 건 경우. 멘트 후 choice 박스 등장. (선물하기, 미니게임하기, 애교 부리기)
+
 
     void Awake()
     {
         DM = gameObject.GetComponent<DialogManager>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void clickNPC()
     {
         Debug.Log(DM); //너 나중에 보자
         mentBox.SetActive(true);
-        DM.dialogSet(dia, diaNum);
+        DM.dialogSet(dia, diaNum, npcNum);
         Debug.Log("함수 끝");
     }
 }
