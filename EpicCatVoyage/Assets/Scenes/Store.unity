@@ -2019,7 +2019,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -754.18, y: 361}
+  m_AnchoredPosition: {x: -754.18, y: 281}
   m_SizeDelta: {x: 259.64, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &670801175
@@ -4602,7 +4602,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 717970615}
   m_HandleRect: {fileID: 717970614}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -4683,7 +4683,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -754.18, y: 479}
+  m_AnchoredPosition: {x: -754.18, y: 399}
   m_SizeDelta: {x: 259.64, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1283378367
@@ -6614,10 +6614,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 838836a5348c71141a8ae9239663b9db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemDatabase: {fileID: 4900000, guid: 411fa367ea2d2f640b3b03e07870fb7a, type: 3}
-  CoinData: {fileID: 4900000, guid: 0e9897275c1d24e46bac488e50e393af, type: 3}
-  HungryData: {fileID: 4900000, guid: 3a7a84f5c740d3543870e91dd057683e, type: 3}
-  AllItemList: []
   StoreItemList: []
   CurItemList: []
   MyItemList: []
