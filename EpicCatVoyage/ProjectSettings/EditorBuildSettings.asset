@@ -60,21 +60,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Village.unity
     guid: 81af19bcb699f294c8cdb1f89e161501
   - enabled: 1
-    path: Assets/Scenes/village/Home.unity
-    guid: 404c5b673c3170a41bdb325269967b46
-  - enabled: 1
-    path: Assets/Scenes/village/market.unity
-    guid: 442c39f75c8b15848ab7c3bfa0bd1b89
-  - enabled: 1
-    path: Assets/Scenes/village/School.unity
-    guid: 78da5ccdf48498c43a362adb3f1881c6
-  - enabled: 1
-    path: Assets/Scenes/village/City.unity
-    guid: f9b704bd7125f6c4dadda847577f1417
-  - enabled: 1
-    path: Assets/Scenes/village/Residential.unity
-    guid: 9d27c50d0571b454288485320ca32d86
-  - enabled: 1
     path: Assets/Scenes/miniGame/NoteGame/NoteGameClear.unity
     guid: 1235b7a083ab98242bffa0eeff0aa190
   - enabled: 1
