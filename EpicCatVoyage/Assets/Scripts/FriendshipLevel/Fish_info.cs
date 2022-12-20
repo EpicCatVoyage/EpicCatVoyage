@@ -12,7 +12,10 @@ public class Fish_info : MonoBehaviour
 
     public GameObject fishInfoScreen;
     public Text fishInfoLike;
+
     public Text fishInfoTalk;
+    public string[] talks;
+
     public Animator screenAnim;
 
     // Start is called before the first frame update
@@ -22,6 +25,9 @@ public class Fish_info : MonoBehaviour
         string jdata = File.ReadAllText(Application.streamingAssetsPath + "/JSON_files/NPCdata.json");
         npcData = JsonConvert.DeserializeObject<List<NPCdata>>(jdata);
         fishInfoLike.text = "È£°¨µµ : " + npcData[3].friendship_level.ToString();
+
+        int index = (npcData[3].friendship_level - 1) / 25;
+        fishInfoTalk.text = talks[index];
     }
 
     public void clickFish()

@@ -12,6 +12,7 @@ public class Worker_info : MonoBehaviour
 
     public GameObject workInfoScreen;
     public Text workInfoLike;
+    public string[] talks;
     public Text workInfoTalk;
     public Animator screenAnim;
 
@@ -22,6 +23,9 @@ public class Worker_info : MonoBehaviour
         string jdata = File.ReadAllText(Application.streamingAssetsPath + "/JSON_files/NPCdata.json");
         npcData = JsonConvert.DeserializeObject<List<NPCdata>>(jdata);
         workInfoLike.text = "È£°¨µµ : " + npcData[2].friendship_level.ToString();
+
+        int index = (npcData[2].friendship_level - 1) / 25;
+        workInfoTalk.text = talks[index];
     }
 
     public void clickWork()
