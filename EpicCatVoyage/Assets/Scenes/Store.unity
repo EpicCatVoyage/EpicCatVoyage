@@ -4602,7 +4602,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 717970615}
   m_HandleRect: {fileID: 717970614}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -6614,7 +6614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 838836a5348c71141a8ae9239663b9db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemDatabase: {fileID: 4900000, guid: 5561f194fbd7b3142bccc45f00ea1432, type: 3}
+  ItemDatabase: {fileID: 4900000, guid: 411fa367ea2d2f640b3b03e07870fb7a, type: 3}
   CoinData: {fileID: 4900000, guid: 0e9897275c1d24e46bac488e50e393af, type: 3}
   HungryData: {fileID: 4900000, guid: 3a7a84f5c740d3543870e91dd057683e, type: 3}
   AllItemList: []

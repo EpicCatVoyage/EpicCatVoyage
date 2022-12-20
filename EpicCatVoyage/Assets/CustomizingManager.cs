@@ -20,8 +20,8 @@ public class HomeItem
 public class CustomizingManager : MonoBehaviour
 {
 
-    public TextAsset ItemDatabase;
-    public List<HomeItem> AllItemList, StoreItemList, MyItemList, CurItemList;
+    /*public TextAsset ItemDatabase;*/
+    public List<HomeItem> StoreItemList, MyItemList, CurItemList;
     public GameObject[] Slot, UsingImage, UsingItemImage;
     public Image[] ItemImage;
     public Sprite[] ItemSprite;
@@ -30,13 +30,13 @@ public class CustomizingManager : MonoBehaviour
     void Start()
     {
         // 전체 아이템 리스트 불러오기
-        string[] line = ItemDatabase.text.Substring(0, ItemDatabase.text.Length - 1).Split('\n');
+        /*string[] line = ItemDatabase.text.Substring(0, ItemDatabase.text.Length - 1).Split('\n');
         for (int i = 0; i < line.Length; i++)
         {
             string[] row = line[i].Split('\t');
 
             AllItemList.Add(new HomeItem(row[0], row[1], row[2], row[3], row[4], row[5], row[6] == "TRUE"));
-        }
+        }*/
 
         
 
@@ -76,7 +76,7 @@ public class CustomizingManager : MonoBehaviour
 
             if (isExist)
             {
-                ItemImage[i].sprite = ItemSprite[AllItemList.FindIndex(x => x.Name == CurItemList[i].Name)];
+                ItemImage[i].sprite = ItemSprite[StoreItemList.FindIndex(x => x.Name == CurItemList[i].Name)];
                 UsingImage[i].SetActive(CurItemList[i].isUsing);
                 //box.SetActive(false);
 
@@ -131,13 +131,13 @@ public class CustomizingManager : MonoBehaviour
 
     void Save()
     {
-        // 아이템 전체리스트 저장
-        string jdata = JsonConvert.SerializeObject(AllItemList);
-        File.WriteAllText(Application.dataPath + "/JSON_files/StoreItemText.txt", jdata);
+        /*// 아이템 전체리스트 저장
+        string jdata = JsonConvert.SerializeObject(SItemList);
+        File.WriteAllText(Application.streamingAssetsPath + "/JSON_files/StoreItemText.txt", jdata);*/
 
         // 인벤토리 정보 저장
         string jdata_my = JsonConvert.SerializeObject(MyItemList);
-        File.WriteAllText(Application.dataPath + "/JSON_files/MyItemText.txt", jdata_my);
+        File.WriteAllText(Application.streamingAssetsPath + "/JSON_files/MyItemText.txt", jdata_my);
 
         /*// 돈 정보 저장
         string jdata_coin = JsonConvert.SerializeObject(CoinList);
@@ -153,10 +153,10 @@ public class CustomizingManager : MonoBehaviour
 
     void Load()
     {
-        string jdata = File.ReadAllText(Application.dataPath + "/JSON_files/StoreItemText.txt");
+        string jdata = File.ReadAllText(Application.streamingAssetsPath + "/JSON_files/StoreItemText.txt");
         StoreItemList = JsonConvert.DeserializeObject<List<HomeItem>>(jdata);
 
-        string jdata_my = File.ReadAllText(Application.dataPath + "/JSON_files/MyItemText.txt");
+        string jdata_my = File.ReadAllText(Application.streamingAssetsPath + "/JSON_files/MyItemText.txt");
         MyItemList = JsonConvert.DeserializeObject<List<HomeItem>>(jdata_my);
 
         slotUpdate();

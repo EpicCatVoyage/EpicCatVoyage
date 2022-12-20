@@ -37,10 +37,10 @@ public class Hungry
 public class StoreGameManager : MonoBehaviour
 {
 
-    public TextAsset ItemDatabase;
-    public TextAsset CoinData;
-    public TextAsset HungryData;
-    public List<StoreItem> AllItemList, StoreItemList, CurItemList, MyItemList;
+    //public TextAsset ItemDatabase;
+    /*public TextAsset CoinData;
+    public TextAsset HungryData;*/
+    public List<StoreItem> StoreItemList, CurItemList, MyItemList;
     public List<Coin> CoinList;
     public List<Hungry> HPList;
     public string curType = "Snack";
@@ -60,13 +60,13 @@ public class StoreGameManager : MonoBehaviour
     void Start()
     {
         // 상점 아이템 리스트 불러오기
-        string[] line = ItemDatabase.text.Substring(0, ItemDatabase.text.Length - 1).Split('\n');
-        for(int i =0; i< line.Length; i++)
+        /*string[] line = ItemDatabase.text.Substring(0, ItemDatabase.text.Length - 1).Split('\n');
+        for (int i = 0; i < line.Length; i++)
         {
             string[] row = line[i].Split('\t');
 
             AllItemList.Add(new StoreItem(row[0], row[1], row[2], row[3], row[4], row[5], row[6] == "TRUE"));
-        }
+        }*/
         /*CoinList.Add(new Coin("5000"));
         HPList.Add(new Hungry("50"));*/
 
@@ -146,7 +146,7 @@ public class StoreGameManager : MonoBehaviour
         else
         {
             print("else 임");
-            StoreItem curAllItem = AllItemList.Find(x => x.Name == BuyPanel.transform.GetChild(1).GetComponent<Text>().text);
+            StoreItem curAllItem = StoreItemList.Find(x => x.Name == BuyPanel.transform.GetChild(1).GetComponent<Text>().text);
             curAllItem.Number = "1";
             if (curAllItem != null)
             {
@@ -174,7 +174,7 @@ public class StoreGameManager : MonoBehaviour
     {
         // 현재 아이템 리스트에 클릭한 타입만 추가
         curType = tabName;
-        CurItemList = AllItemList.FindAll(x => x.Type == tabName);
+        CurItemList = StoreItemList.FindAll(x => x.Type == tabName);
 
         // 슬롯과 텍스트 보이기
         for(int i =0; i< Slot.Length; i++)
@@ -186,7 +186,7 @@ public class StoreGameManager : MonoBehaviour
 
             if (isExist)
             {
-                ItemImage[i].sprite = ItemSprite[AllItemList.FindIndex(x => x.Name == CurItemList[i].Name)];
+                ItemImage[i].sprite = ItemSprite[StoreItemList.FindIndex(x => x.Name == CurItemList[i].Name)];
             }
 
 
@@ -236,35 +236,38 @@ public class StoreGameManager : MonoBehaviour
     void Save()
     {
         // 상점 전체리스트 저장
-        string jdata = JsonConvert.SerializeObject(AllItemList);
-        File.WriteAllText(Application.dataPath + "/JSON_files/StoreItemText.txt", jdata);
+        string jdata = JsonConvert.SerializeObject(StoreItemList);
+        File.WriteAllText(Application.streamingAssetsPath + "/JSON_files/StoreItemText.txt", jdata);
 
         // 인벤토리 정보 저장
         string jdata_my = JsonConvert.SerializeObject(MyItemList);
-        File.WriteAllText(Application.dataPath + "/JSON_files/MyItemText.txt", jdata_my);
+        File.WriteAllText(Application.streamingAssetsPath + "/JSON_files/MyItemText.txt", jdata_my);
 
         // 돈 정보 저장
         string jdata_coin = JsonConvert.SerializeObject(CoinList);
-        File.WriteAllText(Application.dataPath + "/JSON_files/CoinText.txt", jdata_coin);
+        File.WriteAllText(Application.streamingAssetsPath + "/JSON_files/CoinText.txt", jdata_coin);
 
         // 체력 정보 저장
         string jdata_hp = JsonConvert.SerializeObject(HPList);
-        File.WriteAllText(Application.dataPath + "/JSON_files/HPText.txt", jdata_hp);
+        File.WriteAllText(Application.streamingAssetsPath + "/JSON_files/HPText.txt", jdata_hp);
 
     }
 
     void Load()
     {
-        string jdata = File.ReadAllText(Application.dataPath + "/JSON_files/StoreItemText.txt");
+        string jdata = File.ReadAllText(Application.streamingAssetsPath + "/JSON_files/StoreItemText.txt");
         StoreItemList = JsonConvert.DeserializeObject<List<StoreItem>>(jdata);
 
-        string jdata_my = File.ReadAllText(Application.dataPath + "/JSON_files/MyItemText.txt");
+        /*string jdata_db = File.ReadAllText(Application.streamingAssetsPath + "/JSON_files/ItemDatabase.txt");
+        ItemDatabase = jdata_db;*/
+
+        string jdata_my = File.ReadAllText(Application.streamingAssetsPath + "/JSON_files/MyItemText.txt");
         MyItemList = JsonConvert.DeserializeObject<List<StoreItem>>(jdata_my);
 
-        string jdata_coin = File.ReadAllText(Application.dataPath + "/JSON_files/CoinText.txt");
+        string jdata_coin = File.ReadAllText(Application.streamingAssetsPath + "/JSON_files/CoinText.txt");
         CoinList = JsonConvert.DeserializeObject<List<Coin>>(jdata_coin);
 
-        string jdata_hp = File.ReadAllText(Application.dataPath + "/JSON_files/HPText.txt");
+        string jdata_hp = File.ReadAllText(Application.streamingAssetsPath + "/JSON_files/HPText.txt");
         HPList = JsonConvert.DeserializeObject<List<Hungry>>(jdata_hp);
 
         
