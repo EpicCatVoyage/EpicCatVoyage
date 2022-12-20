@@ -10,18 +10,42 @@ using Newtonsoft.Json;
 public class Item
 {
     // 생성자
-    public Item(string _Type, string _Name, string _Explain, string _Number, bool _isUsing)
-    { Type = _Type; Name = _Name; Explain = _Explain; Number = _Number; isUsing = _isUsing; }
+    public Item(string _Type, string _Name, string _Explain, string _Price, string _Number, string _Exp, bool _isUsing)
+    {
+        Type = _Type; Name = _Name; Explain = _Explain; Price = _Price; Number = _Number; Exp = _Exp; isUsing = _isUsing;
+    }
 
     // 타입, 이름, 설명, 개수, 사용여부
-    public string Type, Name, Explain, Number;
+    public string Type, Name, Explain, Price, Number, Exp;
     public bool isUsing;
+}
+
+[System.Serializable]
+public class CoinMoney
+{
+    public CoinMoney(string _Money)
+    {
+        Money = _Money;
+    }
+    public string Money;
+}
+
+[System.Serializable]
+public class Hungryhp
+{
+    public Hungryhp(string _HP)
+    {
+        HP = _HP;
+    }
+    public string HP;
 }
 
 public class InventoryGameManager : MonoBehaviour
 {
     public TextAsset ItemDatabase;
     public List<Item> AllItemList, MyItemList, curItemList;
+    public List<CoinMoney> CoinList;
+    public List<Hungryhp> HPList;
     // 현재 뭐가 눌려있는지 처음에는 간식
     public string curType = "Snack";
     public GameObject[] Slot, UsingImage;
@@ -34,6 +58,10 @@ public class InventoryGameManager : MonoBehaviour
     public RectTransform CanvasRect;
     IEnumerator PointerCoroutine;
     RectTransform ExplainRect;
+    public GameObject[] Coin;
+    public GameObject[] Hungry;
+    public GameObject HowPanel;
+    public GameObject UseBtn;
 
     //디버그
     public InputField ItemNameInput, ItemNumberInput;
@@ -41,7 +69,6 @@ public class InventoryGameManager : MonoBehaviour
 
     void Start()
     {
-        //print(ItemDatabase.text);
 
         // 전체 아이템 리스트 불러오기
         // 마지막 엔터 지우기
@@ -52,9 +79,17 @@ public class InventoryGameManager : MonoBehaviour
         {
             string[] row = line[i].Split('\t');
 
-            AllItemList.Add(new Item(row[0], row[1], row[2], row[3], row[4] == "TRUE"));
+            AllItemList.Add(new Item(row[0], row[1], row[2], row[3], row[4], row[5], row[6] == "TRUE"));
         }
         Load();
+
+        // 돈 출력하기
+        Coin[0].GetComponentInChildren<Text>().text = CoinList[0].Money;
+        print(CoinList[0].Money);
+
+        // 배고픔 출력하기
+        Hungry[0].GetComponentInChildren<Text>().text = HPList[0].HP;
+        print(HPList[0].HP);
         //캐싱
         ExplainRect = ExplainPanel.GetComponent<RectTransform>();
 
@@ -62,8 +97,7 @@ public class InventoryGameManager : MonoBehaviour
 
     private void Update()
     {
-        
-
+       
         RectTransformUtility.ScreenPointToLocalPointInRectangle(CanvasRect, Input.mousePosition, Camera.main, out Vector2 anchoredPos);
         ExplainRect.anchoredPosition = anchoredPos + new Vector2(-180, -165);
     }
@@ -129,42 +163,131 @@ public class InventoryGameManager : MonoBehaviour
         Save();
     }
 
+    public void PanelClick()
+    {
+        HowPanel.SetActive(false);
+    }
+
     public void SlotClick(int slotNum)
     {
+        Item curItem = curItemList[slotNum];
+        //HowPanel.SetActive(true);
+        if (curType == "Home")
+        {
+            HowPanel.SetActive(true);
+            UseBtn.SetActive(false);
+        }
+        else
+        {
+            HowPanel.SetActive(true);
+            UseBtn.SetActive(true);
+        }
+        HowPanel.transform.GetChild(1).GetComponent<Text>().text = curItemList[slotNum].Name;
+
         
-        Item CurItem = curItemList[slotNum];
+
+        /*Item CurItem = curItemList[slotNum];
         Item UsingItem = curItemList.Find(x => x.isUsing == true);
 
-        if(curType == "Home")
+        if(curType == "Snack")
         {
-
-            
-            /*if(UsingItem!= null)
+            if (UsingItem != null)
             {
                 UsingItem.isUsing = false;
-            }*/
-            
-            // 선택, 선택 해제
-            if(CurItem.isUsing == true)
-            {
-                CurItem.isUsing = false;
+            }
+            CurItem.isUsing = true;
 
-            }
-            else
-            {
-                CurItem.isUsing = true;
-            }
+
 
         }
         else{
+            CurItem.isUsing = !CurItem.isUsing;
             if(UsingItem!= null)
             {
                 UsingItem.isUsing = false;
             }
         }
 
-        Save();
+        Save();*/
     }
+
+    // 사용하기 버튼 눌렀을 때
+    public void UsingItemClick()
+    {
+        Item curItem = MyItemList.Find(x => x.Name == HowPanel.transform.GetChild(1).GetComponent<Text>().text);
+        if (curItem != null)
+        {
+            int curNumber = int.Parse(curItem.Number) - 1;
+
+
+            if (curNumber <= 0)
+            {
+                MyItemList.Remove(curItem);
+
+            }
+            else
+            {
+                curItem.Number = curNumber.ToString();
+            }
+
+            int curHp = (int.Parse(HPList[0].HP) + int.Parse(curItem.Exp));
+            if (curHp < 100)
+            {
+                // hp 증가
+                HPList[0].HP = curHp.ToString();
+                // hp 갱신
+                Hungry[0].GetComponentInChildren<Text>().text = HPList[0].HP;
+            }
+            else
+            {
+                // hp 증가
+                HPList[0].HP = "100";
+                // hp 갱신
+                Hungry[0].GetComponentInChildren<Text>().text = HPList[0].HP;
+            }
+            /*// hp 증가
+            HPList[0].HP = (int.Parse(HPList[0].HP) + int.Parse(curItem.Exp)).ToString();
+
+            // hp 갱신
+            Hungry[0].GetComponentInChildren<Text>().text = HPList[0].HP;*/
+
+            Save();
+            HowPanel.SetActive(false);
+        }
+    }
+
+    // 팔기 버튼 눌렀을 때
+    public void SellingItemClick()
+    {
+        Item curItem = MyItemList.Find(x => x.Name == HowPanel.transform.GetChild(1).GetComponent<Text>().text);
+        if (curItem != null)
+        {
+            int curNumber = int.Parse(curItem.Number) - 1;
+            print("현재 개수 : " + curNumber);
+
+            if (curNumber < 1)
+            {
+                print("1개였음");
+                MyItemList.Remove(curItem);
+
+            }
+            else
+            {
+                print("1개 이상이였음");
+                curItem.Number = curNumber.ToString();
+            }
+
+            // 돈 증가
+            CoinList[0].Money = (int.Parse(CoinList[0].Money) + int.Parse(curItem.Price)*0.8 ).ToString();
+
+            // 돈 갱신
+            Coin[0].GetComponentInChildren<Text>().text = CoinList[0].Money;
+
+            Save();
+            HowPanel.SetActive(false);
+        }
+    }
+
 
     // 아이템 탭 내용 바꾸기
     public void TabClick(string tabName)
@@ -178,18 +301,19 @@ public class InventoryGameManager : MonoBehaviour
         {
             bool isExist = i < curItemList.Count;
             Slot[i].SetActive(isExist);
-            Slot[i].GetComponentInChildren<Text>().text = isExist ? curItemList[i].Name + "/" + curItemList[i].isUsing : "";
+            Slot[i].GetComponentInChildren<Text>().text = isExist ? curItemList[i].Name : "";
+            //Slot[i].GetComponentInChildren<Text>().text = isExist ? curItemList[i].Name + "/" + curItemList[i].isUsing : "";
 
             if (isExist)
             {
                 // 아이템 이미지
                 ItemImage[i].sprite = ItemSprite[AllItemList.FindIndex(x => x.Name == curItemList[i].Name)];
-
+                UsingImage[i].SetActive(curItemList[i].isUsing);
                 // 집꾸미기만 사용중인지 뜨게
-                if(curType == "Home")
+                /*if (curType == "Home")
                 {
                     UsingImage[i].SetActive(curItemList[i].isUsing);
-                }
+                }*/
             }
         }
 
@@ -245,6 +369,18 @@ public class InventoryGameManager : MonoBehaviour
         string jdata = JsonConvert.SerializeObject(MyItemList);
         File.WriteAllText(Application.dataPath + "/JSON_files/MyItemText.txt", jdata);
 
+        // 인벤토리 정보 저장
+        string jdata_my = JsonConvert.SerializeObject(MyItemList);
+        File.WriteAllText(Application.dataPath + "/JSON_files/MyItemText.txt", jdata_my);
+
+        // 돈 정보 저장
+        string jdata_coin = JsonConvert.SerializeObject(CoinList);
+        File.WriteAllText(Application.dataPath + "/JSON_files/CoinText.txt", jdata_coin);
+
+        // 체력 정보 저장
+        string jdata_hp = JsonConvert.SerializeObject(HPList);
+        File.WriteAllText(Application.dataPath + "/JSON_files/HPText.txt", jdata_hp);
+
         TabClick(curType);
 
 
@@ -254,6 +390,15 @@ public class InventoryGameManager : MonoBehaviour
     {
         string jdata = File.ReadAllText(Application.dataPath + "/JSON_files/MyItemText.txt");
         MyItemList = JsonConvert.DeserializeObject<List<Item>>(jdata);
+
+        string jdata_my = File.ReadAllText(Application.dataPath + "/JSON_files/MyItemText.txt");
+        MyItemList = JsonConvert.DeserializeObject<List<Item>>(jdata_my);
+
+        string jdata_coin = File.ReadAllText(Application.dataPath + "/JSON_files/CoinText.txt");
+        CoinList = JsonConvert.DeserializeObject<List<CoinMoney>>(jdata_coin);
+
+        string jdata_hp = File.ReadAllText(Application.dataPath + "/JSON_files/HPText.txt");
+        HPList = JsonConvert.DeserializeObject<List<Hungryhp>>(jdata_hp);
 
         TabClick(curType);
     }
