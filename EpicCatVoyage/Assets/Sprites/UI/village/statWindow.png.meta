@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 065766e4e28deea4799dffa8408112f0
+guid: c143ef089e423334780a19263da0faad
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GrandmaBaker
+      name: statWindow_0
       rect:
         serializedVersion: 2
-        x: 163
-        y: 170
-        width: 247
-        height: 650
+        x: 149
+        y: 1034
+        width: 1755
+        height: 571
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,8 +130,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51fe53cd19d4de447bd0e1babf4a1b92
-      internalID: -636928464
+      spriteID: 4fc9e6709bba37b4cb2dc1601dbb1439
+      internalID: -860280048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statWindow_1
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 625
+        width: 310
+        height: 296
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40e7f7f3a3b94394199f8ad8a4cbf575
+      internalID: 1133673777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statWindow_2
+      rect:
+        serializedVersion: 2
+        x: 1507
+        y: 711
+        width: 207
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf26a9ef4c973be4fa6ef8674381a33d
+      internalID: -788166737
       vertices: []
       indices: 
       edges: []
@@ -147,7 +189,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      GrandmaBaker: -636928464
+      statWindow_2: -788166737
+      statWindow_0: -860280048
+      statWindow_1: 1133673777
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
