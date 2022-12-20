@@ -71,7 +71,7 @@ public class CustomizingManager : MonoBehaviour
         {
             bool isExist = i < CurItemList.Count;
             Slot[i].SetActive(isExist);
-            Slot[i].GetComponentInChildren<Text>().text = isExist ? CurItemList[i].Name + "/" + CurItemList[i].isUsing : "";
+            Slot[i].GetComponentInChildren<Text>().text = isExist ? CurItemList[i].Name : "";
             //Slot[i].GetComponentInChildren<Text>().text = isExist ? CurItemList[i].Name : "";
 
             if (isExist)
