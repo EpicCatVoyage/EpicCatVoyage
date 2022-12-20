@@ -42,7 +42,7 @@ public class Hungryhp
 
 public class InventoryGameManager : MonoBehaviour
 {
-    public TextAsset ItemDatabase;
+    //public TextAsset ItemDatabase;
     public List<Item> AllItemList, MyItemList, curItemList;
     public List<CoinMoney> CoinList;
     public List<Hungryhp> HPList;
@@ -72,7 +72,7 @@ public class InventoryGameManager : MonoBehaviour
 
         // 전체 아이템 리스트 불러오기
         // 마지막 엔터 지우기
-        string[] line = ItemDatabase.text.Substring(0, ItemDatabase.text.Length - 1).Split('\n');
+        /*string[] line = ItemDatabase.text.Substring(0, ItemDatabase.text.Length - 1).Split('\n');
         print(line.Length);
       
         for (int i = 0; i < line.Length; i++)
@@ -80,7 +80,7 @@ public class InventoryGameManager : MonoBehaviour
             string[] row = line[i].Split('\t');
 
             AllItemList.Add(new Item(row[0], row[1], row[2], row[3], row[4], row[5], row[6] == "TRUE"));
-        }
+        }*/
         Load();
 
         // 돈 출력하기
@@ -388,8 +388,8 @@ public class InventoryGameManager : MonoBehaviour
 
     void Load()
     {
-        string jdata = File.ReadAllText(Application.streamingAssetsPath + "/JSON_files/MyItemText.txt");
-        MyItemList = JsonConvert.DeserializeObject<List<Item>>(jdata);
+        string jdata = File.ReadAllText(Application.streamingAssetsPath + "/JSON_files/StoreItemText.txt");
+        AllItemList = JsonConvert.DeserializeObject<List<Item>>(jdata);
 
         string jdata_my = File.ReadAllText(Application.streamingAssetsPath + "/JSON_files/MyItemText.txt");
         MyItemList = JsonConvert.DeserializeObject<List<Item>>(jdata_my);
