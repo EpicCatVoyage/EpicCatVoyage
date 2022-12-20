@@ -1417,6 +1417,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mentBox: {fileID: 357937242}
+  dia2:
+  - dia: []
+  - dia: []
 --- !u!114 &310663224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2629,6 +2632,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mentBox: {fileID: 421633500}
+  dia2:
+  - dia: []
+  - dia: []
 --- !u!114 &617240379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3603,6 +3609,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mentBox: {fileID: 1293730602}
+  dia2:
+  - dia: []
+  - dia: []
 --- !u!114 &839296476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4331,6 +4340,96 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mentBox: {fileID: 1732135834}
+  dia2:
+  - dia:
+    - name:
+      - "\uC0BC\uC0C9\uACE0\uC591\uC774"
+      - "\uAE40\uCD08\uB529"
+      sentences:
+      - "\uB0D0\uB098\uB0D0\uB0D0\uB0D0\uB098\uB1FD (\uB098 \uC880 \uADC0\uC5FD\uC9C0
+        \uC54A\uB0D0?)"
+      - "\uC560\uB4E4\uC740 \uC598\uAC00 \uBB50\uAC00 \uADC0\uC5FD\uB2E4\uB294\uAC70\uC9C0?"
+    - name:
+      - "\uC0BC\uC0C9\uACE0\uC591\uC774"
+      - "\uAE40\uCD08\uB529"
+      sentences:
+      - "(\uBA4B\uC788\uAC8C \uC138\uC218\uD558\uAE30)"
+      - "\uC73C.. \uACE0\uC591\uC774\u2026..."
+    - name:
+      - "\uC0BC\uC0C9\uACE0\uC591\uC774"
+      - "\uAE40\uCD08\uB529"
+      sentences:
+      - "\uC591!"
+      - "\uB0B4\uAC00 \uC544\uC8FC \uB534 \uC560\uB4E4\uC774\uB791 \uB611\uAC19\uC740
+        \uC904 \uC544\uB294\uAD6C\uB098? \uD765!"
+  - dia:
+    - name:
+      - "\uC0BC\uC0C9\uACE0\uC591\uC774"
+      - "\uAE40\uCD08\uB529"
+      sentences:
+      - "\uB0E5! (\uB5BC\uAEC4\uB8E9! \uB8E9\uC5E3\uBBF8!)"
+      - "\uD765!.. \uADC0\uC5FD\uAE30..\uB3C4 \uD55C\uAC70 \uAC19\uACE0! "
+    - name:
+      - "\uAE40\uCD08\uB529"
+      - "\uC0BC\uC0C9\uACE0\uC591\uC774"
+      sentences:
+      - "\uD760\uD760\u2026 \uB108 \uC774\uAC70 \uBA39\uB2C8? \uB098 \uC6B0\uC720
+        \uAC16\uACE0\uC654\uB294\uB370!"
+      - "(\uCCD0\uB2E4\uBCF4\uC9C0\uB3C4 \uC54A\uC73C\uBA70)\uC6B0\uC720 \uBA39\uC73C\uBA74
+        \uBC30\uD0C8\uB098 \uBC14\uBCF4\uC57C"
+    - name:
+      - "\uC0BC\uC0C9\uACE0\uC591\uC774"
+      - "\uAE40\uCD08\uB529"
+      sentences:
+      - "\uCE04\uB974 \uB2EC\uB77C!"
+      - "\uC6B0\uC720\uB294 \uC548 \uBA39\uC5B4?"
+    - name:
+      - "\uC0BC\uC0C9\uACE0\uC591\uC774"
+      - "\uAE40\uCD08\uB529"
+      sentences:
+      - "(\uD59D\uC9DD \uD59D\uC9DD) \uCE04\uB974 \uC918! \uCE04\uB974 \uB2EC\uB77C!"
+      - "\uACE0\uC591\uC774 \uBC25 \uB4E4\uACE0 \uC654\uB294\uB370\u2026 \uC774\uAC83\uB3C4
+        \uC548 \uBA39\uC5B4?"
+  - dia:
+    - name:
+      - "\uAE40\uCD08\uB529"
+      - "\uC0BC\uC0C9\uACE0\uC591\uC774"
+      sentences:
+      - "\uCE04\uB974! \uCE04\uB974\uB3C4 \uC0C0\uC5B4!"
+      - "\uB0D0\uC559! (\uC633\uC9C0)"
+    - name:
+      - "\uC0BC\uC0C9\uACE0\uC591\uC774"
+      - "\uAE40\uCD08"
+      sentences:
+      - "\uC57C\uC624\uC639 (\uC624\uB298\uB3C4 \uC654\uB0D0?)"
+      - "\uB534 \uC560\uB4E4\uC740 \uC774\uB9CC\uD07C \uC548 \uD574\uC8FC\uC9C0?
+        \u314E\u314E\u314E"
+    - name:
+      - "\uC0BC\uC0C9\uACE0\uC591\uC774"
+      - "\uAE40\uCD08\uB529"
+      sentences:
+      - "(\uBD80\uBE44\uC801 \uBD80\uBE44\uC801 \uBC30 \uBC1C\uB791)"
+      - "\uD750\uD5E4\uD5E4\uD5E4\uD5E4"
+  - dia:
+    - name:
+      - "\uC0BC\uC0C9\uACE0\uC591\uC774"
+      - "\uAE40\uCD08\uB529"
+      sentences:
+      - "\uC57C\uC6A9! \uC57C\uC639! (\uADF8\uAC70 \uB9D0\uACE0 \uBA38\uB9AC \uC4F0\uB2F4\uD574\uC918!)"
+      - "\uBE44 \uC624\uB294\uB370\u2026 \uC5B4\uB514\uC11C \uC790? \uB098\uB791
+        \uAC19\uC774 \uC0B4\uB798?"
+    - name:
+      - "\uC0BC\uC0C9\uACE0\uC591\uC774"
+      - "\uAE40\uCD08"
+      sentences:
+      - "\uB0D0\uC639?... \uB0D0\uC639?"
+      - "\uD788\uD788 \uB098\uB791 \uAC19\uC774 \uAC00\uC790!"
+    - name:
+      - "\uC0BC\uC0C9\uACE0\uC591\uC774"
+      - "\uAE40\uCD08\uB529"
+      sentences:
+      - "\uB0E8\u314B\uB0E8\u314B(\uC598 \uB098 \uC88B\uC544\uD558\uB098? \u314B\u314B\u314B\u314B)"
+      - "\u2026..."
 --- !u!114 &967998022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9000,6 +9099,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mentBox: {fileID: 1548392375}
+  dia2:
+  - dia: []
+  - dia: []
 --- !u!114 &1987490080
 MonoBehaviour:
   m_ObjectHideFlags: 0
