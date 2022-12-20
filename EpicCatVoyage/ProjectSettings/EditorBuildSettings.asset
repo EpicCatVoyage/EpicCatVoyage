@@ -63,21 +63,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Village.unity
     guid: 81af19bcb699f294c8cdb1f89e161501
   - enabled: 1
-    path: Assets/Scenes/Ending/ArrowGame_Ending.unity
-    guid: 56e875f2e5bcc5a439af4d48a6e94987
-  - enabled: 1
-    path: Assets/Scenes/Ending/Baking_Ending.unity
-    guid: 48827aaa5366fbd4ba8ca52c2ffefa9d
-  - enabled: 1
-    path: Assets/Scenes/Ending/CatchMouse_Ending.unity
-    guid: fab3cc73849859d47b9eec8c28574e1f
-  - enabled: 1
-    path: Assets/Scenes/Ending/Kneading_Ending.unity
-    guid: b0389f324a367274798846641c8a6a63
-  - enabled: 1
-    path: Assets/Scenes/Ending/NoteGame_Ending.unity
-    guid: a7d4bd3cae86b584fa229c645e912fe2
-  - enabled: 1
     path: Assets/Scenes/miniGame/NoteGame/NoteGameClear.unity
     guid: 1235b7a083ab98242bffa0eeff0aa190
   - enabled: 1

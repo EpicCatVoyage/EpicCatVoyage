@@ -367,19 +367,19 @@ public class InventoryGameManager : MonoBehaviour
     void Save()
     {
         string jdata = JsonConvert.SerializeObject(MyItemList);
-        File.WriteAllText(Application.dataPath + "/JSON_files/MyItemText.txt", jdata);
+        File.WriteAllText(Application.streamingAssetsPath + "/JSON_files/MyItemText.txt", jdata);
 
         // 인벤토리 정보 저장
         string jdata_my = JsonConvert.SerializeObject(MyItemList);
-        File.WriteAllText(Application.dataPath + "/JSON_files/MyItemText.txt", jdata_my);
+        File.WriteAllText(Application.streamingAssetsPath + "/JSON_files/MyItemText.txt", jdata_my);
 
         // 돈 정보 저장
         string jdata_coin = JsonConvert.SerializeObject(CoinList);
-        File.WriteAllText(Application.dataPath + "/JSON_files/CoinText.txt", jdata_coin);
+        File.WriteAllText(Application.streamingAssetsPath + "/JSON_files/CoinText.txt", jdata_coin);
 
         // 체력 정보 저장
         string jdata_hp = JsonConvert.SerializeObject(HPList);
-        File.WriteAllText(Application.dataPath + "/JSON_files/HPText.txt", jdata_hp);
+        File.WriteAllText(Application.streamingAssetsPath + "/JSON_files/HPText.txt", jdata_hp);
 
         TabClick(curType);
 
@@ -388,16 +388,16 @@ public class InventoryGameManager : MonoBehaviour
 
     void Load()
     {
-        string jdata = File.ReadAllText(Application.dataPath + "/JSON_files/MyItemText.txt");
+        string jdata = File.ReadAllText(Application.streamingAssetsPath + "/JSON_files/MyItemText.txt");
         MyItemList = JsonConvert.DeserializeObject<List<Item>>(jdata);
 
-        string jdata_my = File.ReadAllText(Application.dataPath + "/JSON_files/MyItemText.txt");
+        string jdata_my = File.ReadAllText(Application.streamingAssetsPath + "/JSON_files/MyItemText.txt");
         MyItemList = JsonConvert.DeserializeObject<List<Item>>(jdata_my);
 
-        string jdata_coin = File.ReadAllText(Application.dataPath + "/JSON_files/CoinText.txt");
+        string jdata_coin = File.ReadAllText(Application.streamingAssetsPath + "/JSON_files/CoinText.txt");
         CoinList = JsonConvert.DeserializeObject<List<CoinMoney>>(jdata_coin);
 
-        string jdata_hp = File.ReadAllText(Application.dataPath + "/JSON_files/HPText.txt");
+        string jdata_hp = File.ReadAllText(Application.streamingAssetsPath + "/JSON_files/HPText.txt");
         HPList = JsonConvert.DeserializeObject<List<Hungryhp>>(jdata_hp);
 
         TabClick(curType);

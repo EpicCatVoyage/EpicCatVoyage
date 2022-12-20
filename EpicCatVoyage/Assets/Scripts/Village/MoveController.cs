@@ -1,11 +1,12 @@
-using System.Collections;
+using Newtonsoft.Json;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
+using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MoveController : MonoBehaviour
 {
-    public string[] game = {"NoteGameMain", "MainGame", "Baking", "CatchMouse", "miniGame_kneading" };
+    string[] game = { "NoteGameMain", "MainGame", "Baking", "CatchMouse", "miniGame_kneading" };
 
     public GameObject Center;
     public GameObject City;
@@ -15,6 +16,19 @@ public class MoveController : MonoBehaviour
     public GameObject School;
     public GameObject UI;
     public GameObject Fade;
+
+    // �����
+    public List<Hungryhp> HPList;
+    public GameObject hungryBar;
+    public Text hungryStat;
+
+    // ȣ����
+    public List<NPCdata> npcData = new List<NPCdata>();
+    public GameObject loveBar;
+    public Text loveStat;
+
+    // stage Ȯ�ο� - Ŭ���� �̸� ���ľ���
+    public static int stage = 3;
 
     private Animator anim;
     private bool animState = false;
@@ -30,7 +44,7 @@ public class MoveController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void startGame()
@@ -48,6 +62,42 @@ public class MoveController : MonoBehaviour
             animState = false;
 
         anim.SetBool("State", animState);
+
+        // ����� �ҷ�����
+        string jdata_hp = File.ReadAllText(Application.streamingAssetsPath + "/JSON_files/HPText.txt");
+        HPList = JsonConvert.DeserializeObject<List<Hungryhp>>(jdata_hp);
+        int hungry = int.Parse(HPList[0].HP);
+        hungryStat.text = hungry.ToString();
+        // 0�϶� width = 6.2 // 100�϶� width = 620
+
+        if (hungry > 0)
+        {
+            if(hungry > 5)
+            {
+                hungryStat.color = Color.white;
+            }
+            hungryBar.transform.localScale = new Vector3(hungry, 1, 1);
+            hungryBar.transform.position = new Vector3(hungry * 6.2f / 2f + 645, 1161.30f, 1);
+        }
+
+
+        // ȣ���� �ҷ�����
+        string jdata = File.ReadAllText(Application.streamingAssetsPath + "/JSON_files/NPCdata.json");
+        npcData = JsonConvert.DeserializeObject<List<NPCdata>>(jdata);
+        int like = npcData[stage - 1].friendship_level;
+        loveStat.text = like.ToString();
+        if (like > 0)
+        {
+            if (like > 5)
+            {
+                loveStat.color = Color.white;
+            }
+            loveBar.transform.localScale = new Vector3(like, 1, 1);
+            loveBar.transform.position = new Vector3(like * 6.2f / 2f + 645, 1267.11f, 1);
+        }
+
+
+
     }
 
     public void ToCenter()
@@ -84,5 +134,23 @@ public class MoveController : MonoBehaviour
     {
         School.SetActive(true);
         gameObject.SetActive(false);
+    }
+}
+
+
+[System.Serializable]
+public class NPCdata
+{
+    public string name;
+    public int age;
+    public string job;
+    public int friendship_level;
+
+    public NPCdata(string name, int age, string job, int friendship_level)
+    {
+        this.name = name;
+        this.age = age;
+        this.job = job;
+        this.friendship_level = friendship_level;
     }
 }
