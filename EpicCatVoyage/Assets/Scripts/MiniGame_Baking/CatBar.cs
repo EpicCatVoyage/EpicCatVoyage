@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CatBar : MonoBehaviour
 {
@@ -51,12 +52,14 @@ public class CatBar : MonoBehaviour
                 Debug.Log("¿Ã∞Â¥Ÿ");
                 Gameover = true;
                 gameObject.SetActive(false);
+                SceneManager.LoadScene("Baking_Ending");
             }
             else if (S_score <= S_min)
             {
                 Debug.Log("¡≥æÓ");
                 Gameover = true;
                 gameObject.SetActive(false);
+                SceneManager.LoadScene("Baking_BadEnding");
             }
         }
     }
