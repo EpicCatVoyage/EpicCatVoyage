@@ -1,6 +1,6 @@
 # 😼 도전!집냥이 (Epic Cat Voyage) 😼
 
-<img src = "https://github.com/EpicCatVoyage/EpicCatVoyage/blob/jisoo/createUI/images/title.png?raw=true"/>
+<img src = "https://github.com/EpicCatVoyage/EpicCatVoyage/blob/main/images/title.png?raw=true"/>
 <br>
 
 ## 😻 Team - 츄르 Churu
