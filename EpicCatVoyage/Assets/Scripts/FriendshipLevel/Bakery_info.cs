@@ -13,6 +13,7 @@ public class Bakery_info : MonoBehaviour
     public GameObject BakeryInfoScreen;
     public Text BakeryInfoLike;
     public Text BakeryInfoTalk;
+    public string[] talks;
     public Animator screenAnim;
 
     // Start is called before the first frame update
@@ -22,6 +23,9 @@ public class Bakery_info : MonoBehaviour
         string jdata = File.ReadAllText(Application.streamingAssetsPath + "/JSON_files/NPCdata.json");
         npcData = JsonConvert.DeserializeObject<List<NPCdata>>(jdata);
         BakeryInfoLike.text = "È£°¨µµ : " + npcData[1].friendship_level.ToString();
+
+        int index = (npcData[1].friendship_level - 1) / 25;
+        BakeryInfoTalk.text = talks[index];
     }
 
     public void clickBake()
