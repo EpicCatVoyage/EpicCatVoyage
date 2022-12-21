@@ -85,8 +85,10 @@ public class GameController : MonoBehaviour
             Score.text = "score: " + totalScore.ToString();
 
             // 게임 클리어 점수 설정 해야함
-            if (totalScore >= 30)
+            if (totalScore >= 100)
             {
+                StoreInfo.setFriendship(StoreInfo.getFriendship() + 10);
+                StoreInfo.setCoin(StoreInfo.getCoin() + 1000);
                 GameStart = false;
                 Endinganim.SetTrigger("Ending");
                 Invoke("HeartMoving", 2f);

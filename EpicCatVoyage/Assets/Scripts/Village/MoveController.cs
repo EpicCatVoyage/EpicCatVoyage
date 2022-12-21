@@ -53,6 +53,7 @@ public class MoveController : MonoBehaviour
 
     public void startGame()
     {
+        StoreInfo.setHungry(StoreInfo.getHungry() - 5); // 배고픔 감소
         int num = Random.Range(0, 5);
         Fade f = Fade.GetComponent<Fade>();
         f.L_Fadeout(game[num]);
@@ -79,7 +80,7 @@ public class MoveController : MonoBehaviour
 
         if (hungry > 0)
         {
-            if(hungry > 5)
+            if (hungry > 5)
             {
                 hungryStat.color = Color.white;
             }
