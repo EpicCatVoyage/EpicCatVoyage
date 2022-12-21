@@ -50,8 +50,8 @@ public class DialogManager : MonoBehaviour
             return;
         }
 
-        nameText.text = nameList.Dequeue(); //문장별 화자 이름 작성.
-        string str = mentList.Dequeue(); //문장 충전.
+        nameText.text = nameList.Dequeue(); //문장별 화자 이름 출력.
+        string str = mentList.Dequeue(); //문장 출력
         StartCoroutine(printMent(str)); //문장 화면에 나타내기.
     }
 
