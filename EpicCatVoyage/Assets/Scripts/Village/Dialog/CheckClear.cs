@@ -5,18 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class CheckClear : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void check()
     {
         // 스테이지 체크 함수
@@ -39,6 +27,12 @@ public class CheckClear : MonoBehaviour
                 SceneManager.LoadScene("ClearStage4");
             }
         }
+        else if (StoreInfo.getFriendship() > 25)
+            StoreInfo.charm = true;
+        else if (StoreInfo.getFriendship() > 50)
+            StoreInfo.charm = true;
+        else if (StoreInfo.getFriendship() > 75)
+            StoreInfo.charm = true;
         else
         {
             print("현재 호감도" + StoreInfo.getFriendship());
