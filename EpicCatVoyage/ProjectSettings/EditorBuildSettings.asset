@@ -104,4 +104,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/miniGame/NoteGame/NoteGameMain.unity
     guid: 226e8a161af749246988b9476504bf22
+  - enabled: 1
+    path: Assets/Scenes/StageEnding/ClearStage1.unity
+    guid: 7ae71709471c1b14293466ca614bb765
+  - enabled: 1
+    path: Assets/Scenes/StageEnding/ClearStage2.unity
+    guid: ada7c2ecc91588d4d8415bc4b19fd13e
+  - enabled: 1
+    path: Assets/Scenes/StageEnding/ClearStage3.unity
+    guid: f81c2afa6bbcda1429546b525a6dd011
+  - enabled: 1
+    path: Assets/Scenes/StageEnding/ClearStage4.unity
+    guid: 511c455d98deec346bc7bafda8f00bb9
   m_configObjects: {}
