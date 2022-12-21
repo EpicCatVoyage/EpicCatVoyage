@@ -11,6 +11,11 @@ TagManager:
   - arrows
   - singingCatGameMusic
   - ArrowGameScript
+  - Up
+  - Check
+  - lock2
+  - lock3
+  - lock4
   layers:
   - Default
   - TransparentFX
