@@ -92,16 +92,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ending/NoteGame_BadEnding.unity
     guid: 320f467834e429346afef258da0daf95
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/miniGame/NoteGame/NoteGameClear.unity
     guid: 1235b7a083ab98242bffa0eeff0aa190
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/miniGame/NoteGame/NoteGameCountDown.unity
     guid: f6e214f4320c794449eefbc893168ed3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/miniGame/NoteGame/NoteGameExplain.unity
     guid: 908fa633b10bf30448f8da97cf853f41
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/miniGame/NoteGame/NoteGameFail.unity
     guid: 6548ffa334edac2439279c15922616ad
   - enabled: 1
