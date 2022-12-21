@@ -79,7 +79,11 @@ public class DialogManager : MonoBehaviour
         }
         else if (endNum == 3)
         {
-            StoreInfo.setFriendship(StoreInfo.getFriendship() + 5);
+            if (StoreInfo.charm == true)
+            {
+                StoreInfo.setFriendship(StoreInfo.getFriendship() + 5);
+                StoreInfo.charm = false;
+            }
             DT.closeMentBox();
         }
         else
