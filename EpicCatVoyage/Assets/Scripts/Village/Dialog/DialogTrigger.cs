@@ -8,7 +8,7 @@ public class DialogTrigger : MonoBehaviour
 
     public GameObject mentBox;
     public Dialog2[] dia2 = new Dialog2[2];
-    public Dialog[] charm = new Dialog[2];
+    public Dialog charm;
     Animator anim;
 
     int diaNum = 1; //1.대화하기, 2.선물주기 3.애교부리기
@@ -57,8 +57,10 @@ public class DialogTrigger : MonoBehaviour
 
     public void clickCharm() //애교부리기. diaNum은 3으로 준다.
     {
+        Debug.Log("Charm");
         diaNum = 3;
-        
+        openMentBox();
+        DM.dialogSet(charm, diaNum);
     }
 
 }

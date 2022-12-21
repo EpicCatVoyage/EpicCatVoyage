@@ -675,8 +675,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1477,9 +1477,7 @@ MonoBehaviour:
   - dia: []
   - dia: []
   charm:
-  - name: []
-    sentences: []
-  - name: []
+    name: []
     sentences: []
 --- !u!114 &310663224
 MonoBehaviour:
@@ -2099,6 +2097,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2626676696676215832, guid: 438a80688d95ca54486ad61be2cbb22c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 617240377}
+    - target: {fileID: 2626676696676215832, guid: 438a80688d95ca54486ad61be2cbb22c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: clickNext
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a80688d95ca54486ad61be2cbb22c, type: 3}
 --- !u!224 &421633497 stripped
@@ -2372,7 +2378,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 511905102}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 622850287}
+        m_TargetAssemblyTypeName: ChoiceBoxMove, Assembly-CSharp
+        m_MethodName: clickCute
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 622850287}
+        m_TargetAssemblyTypeName: ChoiceBoxMove, Assembly-CSharp
+        m_MethodName: closeChoiceBox
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &511905102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2776,10 +2806,10 @@ MonoBehaviour:
       - "\uC790 \uB0B4\uAC00 \uC0DD\uC120 \uBC1C\uB77C\uB1A8\uB2E4 \uBA39\uC5B4\uB77C!
         \uC624\uB298\uB3C4 \uC77C \uC5F4\uC2EC\uD788 \uD574\uBCF4\uC790 \uC694\uB178\uC11D\uC544!"
   charm:
-  - name: []
-    sentences: []
-  - name: []
-    sentences: []
+    name:
+    - "\uACE0\uC591\uC774"
+    sentences:
+    - "\uBBF8\uC57C\uC544\uC639~"
 --- !u!114 &617240379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3348,7 +3378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3758958, g: 0.6226415, b: 0.36066213, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3870,10 +3900,10 @@ MonoBehaviour:
       - "\uC624\uB298\uBD80\uD130 \uB2C8\uAC00 \uBE75\uC9D1\u2026 \uADF8\uB798, \uB9C8\uC2A4\uCF54\uD2B8\uB2E4
         \uB9C8\uC2A4\uCF54\uD2B8!"
   charm:
-  - name: []
-    sentences: []
-  - name: []
-    sentences: []
+    name:
+    - "\uACE0\uC591\uC774"
+    sentences:
+    - "\uBBF8\uC57C\uC544\uC639~"
 --- !u!114 &839296476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4705,10 +4735,10 @@ MonoBehaviour:
       - "\uB0E8\u314B\uB0E8\u314B(\uC598 \uB098 \uC88B\uC544\uD558\uB098? \u314B\u314B\u314B\u314B)"
       - "\u2026..."
   charm:
-  - name: []
-    sentences: []
-  - name: []
-    sentences: []
+    name:
+    - "\uACE0\uC591\uC774"
+    sentences:
+    - "\uBBF8\uC57C\uC544\uC544\uC639~"
 --- !u!114 &967998022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6393,6 +6423,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPCMentBox
       objectReference: {fileID: 0}
+    - target: {fileID: 2626676696676215832, guid: 438a80688d95ca54486ad61be2cbb22c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 839296474}
+    - target: {fileID: 2626676696676215832, guid: 438a80688d95ca54486ad61be2cbb22c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: clickNext
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a80688d95ca54486ad61be2cbb22c, type: 3}
 --- !u!224 &1293730599 stripped
@@ -7814,6 +7852,14 @@ PrefabInstance:
     - target: {fileID: 2626676696306342851, guid: 438a80688d95ca54486ad61be2cbb22c, type: 3}
       propertyPath: m_Name
       value: NPCMentBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 2626676696676215832, guid: 438a80688d95ca54486ad61be2cbb22c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1987490078}
+    - target: {fileID: 2626676696676215832, guid: 438a80688d95ca54486ad61be2cbb22c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: clickNext
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a80688d95ca54486ad61be2cbb22c, type: 3}
@@ -9788,9 +9834,7 @@ MonoBehaviour:
       - "\uC27F, \uC5EC\uAE30\uC11C \uC2DC\uB044\uB7FD\uAC8C \uD558\uBA74 \uC0AC\uB78C\uB4E4\uC774
         \uC2EB\uC5B4\uD574"
   charm:
-  - name: []
-    sentences: []
-  - name: []
+    name: []
     sentences: []
 --- !u!114 &1987490080
 MonoBehaviour:
