@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 public class StoreInfo : MonoBehaviour
 {
-    private static int currentStage = 0;
+    private static int currentStage = 1;
 
     private static int friendship = 0;
     private static int coin = 0;
