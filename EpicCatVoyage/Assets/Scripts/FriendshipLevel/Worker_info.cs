@@ -8,7 +8,7 @@ using System.IO;
 
 public class Worker_info : MonoBehaviour
 {
-    public List<NPCdata> npcData = new List<NPCdata>();
+    public List<NPCdata> npcData;
 
     public GameObject workInfoScreen;
     public Text workInfoLike;
@@ -20,9 +20,8 @@ public class Worker_info : MonoBehaviour
     void Start()
     {
         screenAnim = workInfoScreen.GetComponent<Animator>();
-        string jdata = File.ReadAllText(Application.streamingAssetsPath + "/JSON_files/NPCdata.json");
-        npcData = JsonConvert.DeserializeObject<List<NPCdata>>(jdata);
-        workInfoLike.text = "호감도 : " + npcData[2].friendship_level.ToString();
+        npcData = StoreInfo.getFriendshipList();
+        workInfoLike.text = "호감도 : " + npcData[2].friendship_level.ToString(); 
 
         int index = (npcData[2].friendship_level - 1) / 25;
         workInfoTalk.text = talks[index];

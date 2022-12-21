@@ -14,7 +14,7 @@ public class StoreInfo : MonoBehaviour
 
     public static List<CoinMoney> CoinList;
     public static List<Hungryhp> HPList;
-    public static List<NPCdata> npcData = new List<NPCdata>();
+    public static List<NPCdata> npcData;
 
     public static void init()
     {
@@ -50,10 +50,18 @@ public class StoreInfo : MonoBehaviour
 
     public static int getFriendship()
     {
+        init();
         currentStage = StageManager.getStage();
         LoadNPCdataFromJson();
         friendship = npcData[currentStage - 1].friendship_level;
         return friendship;
+    }
+
+    public static List<NPCdata> getFriendshipList()
+    {
+        init();
+        LoadNPCdataFromJson();
+        return npcData;
     }
 
     public static int getCoin()
@@ -108,4 +116,21 @@ public class StoreInfo : MonoBehaviour
         npcData = JsonConvert.DeserializeObject<List<NPCdata>>(jdata);
     }
 
+}
+
+[System.Serializable]
+public class NPCdata
+{
+    public string name;
+    public int age;
+    public string job;
+    public int friendship_level;
+
+    public NPCdata(string name, int age, string job, int friendship_level)
+    {
+        this.name = name;
+        this.age = age;
+        this.job = job;
+        this.friendship_level = friendship_level;
+    }
 }
