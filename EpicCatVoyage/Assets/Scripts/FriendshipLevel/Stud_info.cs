@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Stud_info : MonoBehaviour
 {
-    public List<NPCdata> npcData = new List<NPCdata>();
+    public List<NPCdata> npcData;
 
     public GameObject studInfoScreen;
     public Text studInfoLike;
@@ -18,8 +18,7 @@ public class Stud_info : MonoBehaviour
     void Start()
     {
         screenAnim = studInfoScreen.GetComponent<Animator>();
-        string jdata = File.ReadAllText(Application.streamingAssetsPath + "/JSON_files/NPCdata.json");
-        npcData = JsonConvert.DeserializeObject<List<NPCdata>>(jdata);
+        npcData = StoreInfo.getFriendshipList();
         studInfoLike.text = "È£°¨µµ : " + npcData[0].friendship_level.ToString();
 
         int index = (npcData[0].friendship_level - 1) / 25;

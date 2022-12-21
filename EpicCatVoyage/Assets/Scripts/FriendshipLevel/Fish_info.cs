@@ -8,7 +8,7 @@ using System.IO;
 
 public class Fish_info : MonoBehaviour
 {
-    public List<NPCdata> npcData = new List<NPCdata>();
+    public List<NPCdata> npcData;
 
     public GameObject fishInfoScreen;
     public Text fishInfoLike;
@@ -22,8 +22,7 @@ public class Fish_info : MonoBehaviour
     void Start()
     {
         screenAnim = fishInfoScreen.GetComponent<Animator>();
-        string jdata = File.ReadAllText(Application.streamingAssetsPath + "/JSON_files/NPCdata.json");
-        npcData = JsonConvert.DeserializeObject<List<NPCdata>>(jdata);
+        npcData = StoreInfo.getFriendshipList();
         fishInfoLike.text = "È£°¨µµ : " + npcData[3].friendship_level.ToString();
 
         int index = (npcData[3].friendship_level - 1) / 25;

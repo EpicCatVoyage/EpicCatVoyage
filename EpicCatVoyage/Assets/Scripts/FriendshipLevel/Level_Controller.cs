@@ -12,19 +12,12 @@ public class Level_Controller : MonoBehaviour
     public Text workerLike;
     public Text fishOwnerLike;
 
-    public List<NPCdata> npcData = new List<NPCdata>();
+    public List<NPCdata> npcData;
 
     private void Start()
     {
-        // 이미 저장되어 있어서 후에 데이터 조정은 json 수정으로!
-        // npcData.Add(new NPCdata("김초딩", 10, "초등학생", 10));
-        // npcData.Add(new NPCdata("김빵", 68, "빵집 주인", 5));
-        // npcData.Add(new NPCdata("김직장", 33, "직장인", 0));
-        // npcData.Add(new NPCdata("김생선", 48, "생선가게주인", -5));
-
-        SaveNPCdataToJson();
-        LoadNPCdataFromJson();
-
+        npcData = StoreInfo.getFriendshipList();
+        print(npcData);
         //json data 불러오기
         studentLike.text = "호감도 : " + npcData[0].friendship_level.ToString();
         bakeryOwnerLike.text = "호감도 : " + npcData[1].friendship_level.ToString();
@@ -42,22 +35,5 @@ public class Level_Controller : MonoBehaviour
     {
         string jdata = File.ReadAllText(Application.streamingAssetsPath + "/JSON_files/NPCdata.json");
         npcData = JsonConvert.DeserializeObject<List<NPCdata>>(jdata);
-    }
-
-    [System.Serializable]
-    public class NPCdata
-    {
-        public string name;
-        public int age;
-        public string job;
-        public int friendship_level;
-
-        public NPCdata(string name, int age, string job, int friendship_level)
-        {
-            this.name = name;
-            this.age = age;
-            this.job = job;
-            this.friendship_level = friendship_level;
-        }
     }
 }

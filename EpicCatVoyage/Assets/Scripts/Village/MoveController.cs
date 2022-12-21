@@ -154,21 +154,3 @@ public class MoveController : MonoBehaviour
         gameObject.SetActive(false);
     }
 }
-
-
-[System.Serializable]
-public class NPCdata
-{
-    public string name;
-    public int age;
-    public string job;
-    public int friendship_level;
-
-    public NPCdata(string name, int age, string job, int friendship_level)
-    {
-        this.name = name;
-        this.age = age;
-        this.job = job;
-        this.friendship_level = friendship_level;
-    }
-}
