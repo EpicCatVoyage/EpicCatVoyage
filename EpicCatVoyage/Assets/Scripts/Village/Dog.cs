@@ -34,5 +34,6 @@ public class Dog : MonoBehaviour
     private void dogTrue()
     {
         DM.dialogSet(diaT, diaNum);
+        shop.SetActive(true);
     }
 }
