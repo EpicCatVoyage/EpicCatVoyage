@@ -22,6 +22,16 @@ public class DDM : MonoBehaviour
         }
     }
 
+    public void goToStage()
+    {
+        SceneManager.LoadScene("StageChoice");
+    }
+
+    public void goToVillage()
+    {
+        SceneManager.LoadScene("Village");
+    }
+
     public void buttonSetting()
     {
         if (Set.activeSelf == true)
