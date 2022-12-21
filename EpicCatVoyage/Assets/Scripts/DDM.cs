@@ -22,6 +22,16 @@ public class DDM : MonoBehaviour
         }
     }
 
+    public void goToInven()
+    {
+        SceneManager.LoadScene("Inventory");
+    }
+
+    public void goToCust()
+    {
+        SceneManager.LoadScene("Customizing");
+    }
+
     public void goToStage()
     {
         SceneManager.LoadScene("StageChoice");
