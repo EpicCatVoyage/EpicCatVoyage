@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class MoveController : MonoBehaviour
 {
-    string[] game = { "NoteGameMain", "MainGame", "Baking", "CatchMouse", "miniGame_kneading" };
+    string[] game = { "HTP_NoteGame", "HTP_ArrowGame", "HTP_Baking", "HTP_CatchMouse", "miniGame_kneading" };
 
     public GameObject Center;
     public GameObject City;
