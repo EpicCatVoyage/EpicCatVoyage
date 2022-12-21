@@ -53,6 +53,7 @@ public class MoveController : MonoBehaviour
 
     public void startGame()
     {
+        StoreInfo.setHungry(StoreInfo.getHungry() - 5); // 배고픔 감소
         int num = Random.Range(0, 5);
         Fade f = Fade.GetComponent<Fade>();
         f.L_Fadeout(game[num]);
@@ -79,9 +80,13 @@ public class MoveController : MonoBehaviour
 
         if (hungry > 0)
         {
-            if(hungry > 5)
+            if (hungry > 5 )
             {
                 hungryStat.color = Color.white;
+            }
+            if (hungry > 100)
+            {
+                hungry = 100;
             }
             hungryBar.transform.localScale = new Vector3(hungry, 1, 1);
             hungryBar.transform.position = new Vector3(hungry * 6.2f / 2f + 645, 1161.30f, 1);
@@ -98,6 +103,10 @@ public class MoveController : MonoBehaviour
             if (like > 5)
             {
                 loveStat.color = Color.white;
+            }
+            if (like > 100)
+            {
+                like = 100;
             }
             loveBar.transform.localScale = new Vector3(like, 1, 1);
             loveBar.transform.position = new Vector3(like * 6.2f / 2f + 645, 1267.11f, 1);

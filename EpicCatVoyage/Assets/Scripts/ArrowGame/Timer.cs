@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
     public Slider timerSlider;
+    public GameObject gamescriptholder;
     public static float gameTime = 10;
     private bool stopTimer;
     // Start is called before the first frame update
@@ -26,6 +27,7 @@ public class Timer : MonoBehaviour
         {
             stopTimer = true;
             Destroy(GameObject.Find("gameMusicHolder"));
+            Destroy(gamescriptholder);
             SceneManager.LoadScene("ArrowGame_BadEnding");
         }
         if (stopTimer == false)
