@@ -8,10 +8,22 @@ public class StageManager : MonoBehaviour
     public static bool[] clearStage = { false, false, false, false };
     private static int stage = 1;
 
-    public void setStage1() { stage = 1; }
-    public void setStage2() { stage = 2; }
-    public void setStage3() { stage = 3; } 
-    public void setStage4() { stage = 4; }
+    public void setStage1() {
+        stage = 1;
+        StoreInfo.setFriendship(10);
+    }
+    public void setStage2() { 
+        stage = 2;
+        StoreInfo.setFriendship(5);
+    }
+    public void setStage3() { 
+        stage = 3;
+        StoreInfo.setFriendship(0);
+    } 
+    public void setStage4() { 
+        stage = 4;
+        StoreInfo.setFriendship(-5);
+    }
 
     public static int getStage()
     {
