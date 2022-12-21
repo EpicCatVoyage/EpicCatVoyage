@@ -284,10 +284,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txt:
-  - {fileID: 2013348659}
   - {fileID: 143678446}
   - {fileID: 1077822511}
-  - {fileID: 870046133}
   m_text:
   - "\uACE0\uC591\uC774\uAC00 \uBD80\uB974\uB294 \uC74C\uC744 \uB4E3\uACE0"
   - "\uC624\uB978\uCABD \uD0A4\uBCF4\uB4DC\uC5D0 \uB530\uB77C \uCCD0\uBD10\uC694!"
@@ -707,8 +705,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: HTP_ArrowGame, Assembly-CSharp
+      - m_Target: {fileID: 633285845}
+        m_TargetAssemblyTypeName: HTP_NoteGame, Assembly-CSharp
         m_MethodName: clickOK
         m_Mode: 1
         m_Arguments:
