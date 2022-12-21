@@ -16,7 +16,7 @@ public class HTP_NoteGame : MonoBehaviour
 
     public void clickOK()
     {
-        SceneManager.LoadScene("NoteGameMain"); //Á¤È®È÷ ¾î¶² ¾ÀÀ¸·Î ÀÌµ¿ÇØ¾ßµÇ´ÂÁö È®ÀÎ ÇÊ¿ä
+        SceneManager.LoadScene("NoteGameMain"); //ï¿½ï¿½È®ï¿½ï¿½ ï¿½î¶² ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½Ø¾ßµÇ´ï¿½ï¿½ï¿½ È®ï¿½ï¿½ ï¿½Ê¿ï¿½
     }
 
 

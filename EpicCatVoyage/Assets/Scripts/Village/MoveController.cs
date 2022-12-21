@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class MoveController : MonoBehaviour
 {
-    string[] game = { "NoteGameMain", "MainGame", "Baking", "CatchMouse", "miniGame_kneading" };
+    string[] game = { "HTP_NoteGame", "HTP_ArrowGame", "HTP_Baking", "HTP_CatchMouse", "miniGame_kneading" };
 
     public GameObject Center;
     public GameObject City;
@@ -28,7 +28,7 @@ public class MoveController : MonoBehaviour
     public Text loveStat;
 
     // stage Ȯ�ο� - Ŭ���� �̸� ���ľ���
-    public static int stage = 3;
+    // public static int stage = 3;
 
     // coin txt
     public Text coinTxt;
@@ -91,7 +91,7 @@ public class MoveController : MonoBehaviour
         // ȣ���� �ҷ�����
         string jdata = File.ReadAllText(Application.streamingAssetsPath + "/JSON_files/NPCdata.json");
         npcData = JsonConvert.DeserializeObject<List<NPCdata>>(jdata);
-        int like = npcData[stage - 1].friendship_level;
+        int like = npcData[StageManager.getStage() - 1].friendship_level;
         loveStat.text = like.ToString();
         if (like > 0)
         {
