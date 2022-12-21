@@ -10,7 +10,11 @@ public class StageManager : MonoBehaviour
 
     public void setStage1() {
         stage = 1;
-        StoreInfo.setFriendship(10);
+        StoreInfo.setFriendship(10);    // 각각 stage 마다 호감도 설정
+
+        // 초기 배고픔, coin 설정
+        StoreInfo.setHungry(100);
+        StoreInfo.setCoin(4000);
     }
     public void setStage2() { 
         stage = 2;
