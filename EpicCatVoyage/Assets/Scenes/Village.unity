@@ -1420,6 +1420,11 @@ MonoBehaviour:
   dia2:
   - dia: []
   - dia: []
+  charm:
+  - name: []
+    sentences: []
+  - name: []
+    sentences: []
 --- !u!114 &310663224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2633,8 +2638,92 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mentBox: {fileID: 421633500}
   dia2:
-  - dia: []
-  - dia: []
+  - dia:
+    - name:
+      - "\uACE0\uB4F1\uC5B4 \uACE0\uC591\uC774"
+      - "\uAE40\uC0DD\uC120"
+      sentences:
+      - "\uB0E5 \uB0E5 \uB098\uB0D0\uB0E5 (\uC624\uB298 \uC800\uB141\uC740 \uC0DD\uC120\uC774\uC624~)"
+      - "\uC774 \uACE0\uC591\uC774 \uC790\uC2DD\uC774!"
+    - name:
+      - "\uACE0\uB4F1\uC5B4 \uACE0\uC591\uC774"
+      - "\uAE40\uC0DD\uC120"
+      sentences:
+      - "\uB1F8 (\uC785\uC5D0 \uBB3C\uACE0\uAE30\uB97C \uBB3C\uACE0)"
+      - "\uC57C!!"
+    - name:
+      - "\uACE0\uB4F1\uC5B4 \uACE0\uC591\uC774"
+      - "\uAE40\uC0DD\uC120"
+      sentences:
+      - "\uB1F8\uB1F8\uB1F8"
+      - "\uC6B0\uC528 \uC774 \uB3C4\uB451\uACE0\uC591\uC774 \uB140\uC11D \uAC19\uC73C\uB2C8!!!!"
+  - dia:
+    - name:
+      - "\uACE0\uB4F1\uC5B4 \uACE0\uC591\uC774"
+      - "\uAE40\uC0DD\uC120"
+      sentences:
+      - "\uC591? (\uAE30\uBD84 \uB098\uBE60? \uD558\uB098 \uC918?)"
+      - "\uC74C? \uBB50\uC57C, \uC92C\uB2E4 \uBE90\uB294 \uC2EC\uBCF4\uB294!"
+    - name:
+      - "\uACE0\uB4F1\uC5B4 \uACE0\uC591\uC774"
+      - "\uAE40\uC0DD\uC120"
+      sentences:
+      - "\uD0A4\uC57C\uC544\uC624\uC639 (\uC5EC\uAE30 \uBB3C\uACE0\uAE30\uB294 \uB098\uB9CC
+        \uBE8F\uB294\uB2E4!)"
+      - "\uC624..?!"
+    - name:
+      - "\uACE0\uB4F1\uC5B4 \uACE0\uC591\uC774"
+      - "\uAE40\uC0DD\uC120"
+      sentences:
+      - "\uC57C\uC559 (\uC544 \uC798\uD55C\uAC70\uC57C?)"
+      - "\uD5C8\uD5C8\uD5C8 \uADC0\uC5FD\uB124"
+  - dia:
+    - name:
+      - "\uACE0\uB4F1\uC5B4 \uACE0\uC591\uC774"
+      - "\uAE40\uC0DD\uC120"
+      sentences:
+      - "\uACE0\uB9D9. \uBC25\uC918. \uADF8\uB9AC\uACE0 \uC0B0\uCC45\uAC00\uC790. "
+      - "\uACE0\uC591\uC774\uAC00 \uC0B0\uCC45\uC740 \uBB54 \uC0B0\uCC45\uC774\uC57C!"
+    - name:
+      - "\uACE0\uB4F1\uC5B4 \uACE0\uC591\uC774"
+      - "\uAE40\uC0DD\uC120"
+      sentences:
+      - "\uC5B4\uB514 \uCE04\uB974 \uC904 \uC778\uAC04 \uC5C6\uB098.. \uBC30\uACE0\uD508\uB370"
+      - "\uC544\uAE4C \uC0DD\uC120 \uC92C\uC796\uC5B4! \uBB58 \uADF8\uB807\uAC8C
+        \uB354 \uBC14\uB77C\uB294\uAC70\uC5EC!"
+    - name:
+      - "\uACE0\uB4F1\uC5B4 \uACE0\uC591\uC774"
+      - "\uAE40\uC0DD\uC120"
+      sentences:
+      - "\uB514\uB7ED\uC2A4 \uB85C\uC584 \uCE04\uB974\uAC00 \uB599\uAE34\uB2E4!"
+      - "\uBB50\uB77C\uCE74\uB178\u2026"
+    - name:
+      - "\uACE0\uB4F1\uC5B4 \uACE0\uC591\uC774"
+      - "\uAE40\uC0DD\uC120"
+      sentences:
+      - "\uC120\uBB3C\uC740 \uACE0\uB9C8\uC6B4\uB370 \uC870\uC6A9\uD788 \uD574 \uB098
+        \uC790\uC796\uC544"
+      - "\uBCFC\uC218\uB85D \uADC0\uC5FD\uAE34 \uD558\uB124"
+  - dia:
+    - name:
+      - "\uACE0\uB4F1\uC5B4 \uACE0\uC591\uC774"
+      - "\uAE40\uC0DD\uC120"
+      sentences:
+      - "\uACE0\uB871\uACE0\uB871\uACE0\uB871 (\uC55E\uC73C\uB85C\uB3C4 \uB534 \uC560\uB4E4
+        \uCAD3\uC544\uB0B4?\u314B\u314B)"
+      - "\uC6B0\uC6C5 \uC6B0\uB9AC \uAC00\uAC8C \uB9C8\uC2A4\uCF54\uD2B8 \uC654\uC5B4?"
+    - name:
+      - "\uACE0\uB4F1\uC5B4 \uACE0\uC591\uC774"
+      - "\uAE40\uC0DD\uC120"
+      sentences:
+      - "\uB0B4\uAC00 \uCD5C\uACE0\uC9C0?"
+      - "\uC790 \uB0B4\uAC00 \uC0DD\uC120 \uBC1C\uB77C\uB1A8\uB2E4 \uBA39\uC5B4\uB77C!
+        \uC624\uB298\uB3C4 \uC77C \uC5F4\uC2EC\uD788 \uD574\uBCF4\uC790 \uC694\uB178\uC11D\uC544!"
+  charm:
+  - name: []
+    sentences: []
+  - name: []
+    sentences: []
 --- !u!114 &617240379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3616,8 +3705,106 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mentBox: {fileID: 1293730602}
   dia2:
-  - dia: []
-  - dia: []
+  - dia:
+    - name:
+      - "\uCE58\uC988\uACE0\uC591\uC774"
+      - "\uAE40\uBE75 \uD560\uBA38\uB2C8"
+      sentences:
+      - "(\uACE0\uB871\uACE0\uB871.. \uD558\uB2E4\uAC00 \uB298\uC5B4\uC838\uC11C
+        \uC7A0\uC790\uAE30)"
+      - "\uBC00\uAC00\uB8E8\uB97C \uC5B4\uB514 \uB480\uB354\uB77C\u2026?"
+    - name:
+      - "\uCE58\uC988\uACE0\uC591\uC774"
+      - "\uAE40\uBE75 \uD560\uBA38\uB2C8"
+      sentences:
+      - Zzzzzz
+      - "\uC5B4\uBA38 \uAD2D\uC774\uB124?"
+    - name:
+      - "\uCE58\uC988\uACE0\uC591\uC774"
+      - "\uAE40\uBE75 \uD560\uBA38\uB2C8"
+      sentences:
+      - "(\uBC1C \uD59D\uC73C\uBA70)"
+      - "\uC58C\uC804\uD788 \uC788\uC5B4\uB77C\uC789~"
+    - name:
+      - "\uCE58\uC988\uACE0\uC591\uC774"
+      - "\uAE40\uBE75 \uD560\uBA38\uB2C8"
+      sentences:
+      - "(\uC624\uBE10 \uC55E\uC5D0 \uADF8\uB989\uAC70\uB9B0\uB2E4)"
+      - "\uBE75 \uB0C4\uC0C8\uAC00 \uADF8\uB9AC\uB3C4 \uC88B\uB0D0?"
+  - dia:
+    - name:
+      - "\uCE58\uC988\uACE0\uC591\uC774"
+      - "\uAE40\uBE75 \uD560\uBA38\uB2C8"
+      sentences:
+      - "\uC560\uC6A9~ \uC560\uC6A9\uC560\uC6A9 \uC774\uC57C\uC6A9~ (\uBE75\uC774\uB098
+        \uC8FC\uC138\uC694\uB0E5)"
+      - "\uC544\uC774\uAD81\u2026. \uBA39\uC744 \uAC8C \uC5C6\uB2C8?"
+    - name:
+      - "\uAE40\uBE75 \uD560\uBA38\uB2C8"
+      - "\uCE58\uC988\uACE0\uC591\uC774"
+      sentences:
+      - "\uB108 \uBC00\uAC00\uB8E8\uB294 \uBA39\uB2C8? \uBABB\uBA39\uC5B4? \uC5D0\uAD81\u2026"
+      - "\uACE0\uB9C8\uC6E1 \uADFC\uB370 \uB098 \uC798\uAEBC\uC57C (\uD55C\uB208
+        \uB728\uACE0 \uB2E4\uC2DC \uAC10\uAE30)"
+    - name:
+      - "\uCE58\uC988\uACE0\uC591\uC774"
+      - "\uAE40\uBE75 \uD560\uBA38\uB2C8"
+      sentences:
+      - "\uC228\uC5B4\uC57C\uC9C0\uB0E5"
+      - "\uC624\uB298\uC740 \uC548 \uC654\uB124 \uC694\uB140\uC11D"
+  - dia:
+    - name:
+      - "\uCE58\uC988\uACE0\uC591\uC774"
+      - "\uAE40\uBE75 \uD560\uBA38\uB2C8"
+      sentences:
+      - "\uC591~ (\uCAD8~\u314E\u314E)"
+      - "\uBB3C \uC904\uAE4C? \uBC25 \uC904\uAE4C? \uB354 \uC918?"
+    - name:
+      - "\uCE58\uC988\uACE0\uC591\uC774"
+      - "\uAE40\uBE75 \uD560\uBA38\uB2C8"
+      sentences:
+      - "\uC57C\uC624\uC639~ (\uB098 \uADC0\uC5FD\uC9C0 \uD560\uBB34\uB2C8?)"
+      - "\uC544\uC774\uAD6C \uB0B4 \uC0C8\uB07C \uB108\uBB34 \uADC0\uC5EC\uC6CC\uB77C
+        \uD640\uD640"
+    - name:
+      - "\uCE58\uC988\uACE0\uC591\uC774"
+      - "\uAE40\uBE75 \uD560\uBA38\uB2C8"
+      sentences:
+      - "(\uB4B9\uAD74\uB4B9\uAD74)"
+      - "\uC624\uB0D0\uC624\uB0D0 \uBB34\uB98E\uC704\uC5D0 \uC549\uC544"
+    - name:
+      - "\uCE58\uC988\uACE0\uC591\uC774"
+      - "\uAE40\uBE75 \uD560\uBA38\uB2C8"
+      sentences:
+      - "\uC9D1\uC0AC\uAC00 \uBD80\uB974\uB2C8\uAE4C \uC774\uBC88 \uD55C\uBC88\uCBE4
+        \uC560\uAD50\uB97C \uBD80\uB824\uC904\uAE4C\uB0E5"
+      - "\uAE54\uAE54\uAE54"
+    - name:
+      - "\uCE58\uC988\uACE0\uC591\uC774"
+      - "\uAE40\uBE75 \uD560\uBA38\uB2C8"
+      sentences:
+      - "\uC560\uC694\uC624\uC624\uC624\uC639 (\uBC30\uACE0\uD30C\uC694\uC624\uC624)"
+      - "\uC624\uAD6C\uC624\uAD6C\uC624\uAD6C \uBC43\uAC00\uC8FD\uC774 \uB4F1\uC5D0
+        \uBD99\uC5C8\uAD6C\uBA3C \uC6B0\uB9AC \uC0C8\uB07C"
+  - dia:
+    - name:
+      - "\uCE58\uC988\uACE0\uC591\uC774"
+      - "\uAE40\uBE75 \uD560\uBA38\uB2C8"
+      sentences:
+      - "\uC560\uC694\uC624\uC639 (\uD560\uBB34\uC774\uC774)"
+      - "\uC544\uAC00~ \uCD94\uC6B0\uB2C8\uAE4C \uB098\uB791 \uC0B4\uC790"
+    - name:
+      - "\uCE58\uC988\uACE0\uC591\uC774"
+      - "\uAE40\uBE75 \uD560\uBA38\uB2C8"
+      sentences:
+      - "(\uB208 \uB054\uBED1)"
+      - "\uC624\uB298\uBD80\uD130 \uB2C8\uAC00 \uBE75\uC9D1\u2026 \uADF8\uB798, \uB9C8\uC2A4\uCF54\uD2B8\uB2E4
+        \uB9C8\uC2A4\uCF54\uD2B8!"
+  charm:
+  - name: []
+    sentences: []
+  - name: []
+    sentences: []
 --- !u!114 &839296476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4436,6 +4623,11 @@ MonoBehaviour:
       sentences:
       - "\uB0E8\u314B\uB0E8\u314B(\uC598 \uB098 \uC88B\uC544\uD558\uB098? \u314B\u314B\u314B\u314B)"
       - "\u2026..."
+  charm:
+  - name: []
+    sentences: []
+  - name: []
+    sentences: []
 --- !u!114 &967998022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7794,7 +7986,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1710532064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8922,7 +9114,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1974200853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9108,8 +9300,95 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mentBox: {fileID: 1548392375}
   dia2:
-  - dia: []
-  - dia: []
+  - dia:
+    - name:
+      - "\uD131\uC2DC\uB3C4 \uACE0\uC591\uC774"
+      - "\uC9C1\uC7A5\uC778"
+      sentences:
+      - "\uC774\uC774\uC774\uC774\uC774\uC774\uC57C\uC544\uC559 (\uC4F0\uB808\uAE30
+        \uBD09\uD22C \uCC3E\uC73C\uB7EC \uAC00\uC57C\uACA0\uB2E4)"
+      - "\uC544\uC774 \uC2DC\uB044\uB7FD\uB124.. \uBB50\uC57C?"
+    - name:
+      - "\uD131\uC2DC\uB3C4 \uACE0\uC591\uC774"
+      - "\uC9C1\uC7A5\uC778"
+      sentences:
+      - "\uC774\uC57C\uC544\uC559 (\uC774\uAD6C\uC5ED \uC9F1\uC740 \uB098\uB2E4!)"
+      - "\uC624\uB298\uB3C4 \uC2DC\uB044\uB7FD\uB124\u2026..."
+    - name:
+      - "\uD131\uC2DC\uB3C4 \uACE0\uC591\uC774"
+      - "\uC9C1\uC7A5\uC778"
+      sentences:
+      - "(\uC601\uC5ED\uD45C\uC2DC)"
+    - name:
+      - "\uD131\uC2DC\uB3C4 \uACE0\uC591\uC774"
+      - "\uC9C1\uC7A5\uC778"
+      sentences:
+      - "\uC774\uC774\uC774\uC57C\uC544\uC544\uC544\uC774\uC774\uC774\uC774"
+      - "\uC544\uC720 \uC870\uC6A9\uD55C \uB0A0\uC774 \uC5C6\uC5B4\uC694 \uB0A0\uC774!"
+  - dia:
+    - name:
+      - "\uD131\uC2DC\uB3C4 \uACE0\uC591\uC774"
+      - "\uC9C1\uC7A5\uC778"
+      sentences:
+      - "\uB098\uB0D0\uB0D0\uB0E5! (\uB0B4\uAC00 \uC9F1\uC774\uB2C8 \uACF5\uBB3C\uC744
+        \uBC14\uCCD0\uB77C!)"
+      - ...
+    - name:
+      - "\uD131\uC2DC\uB3C4 \uACE0\uC591\uC774"
+      - "\uC9C1\uC7A5\uC778"
+      sentences:
+      - "(\uBD80\uC2A4\uB7ED \uBD80\uC2A4\uB7ED)"
+      - "(\uC800\uAC70 \uD30C\uD5E4\uCE58\uBA74 \uD63C\uB0A0\uD150\uB370\u2026)"
+    - name:
+      - "\uD131\uC2DC\uB3C4 \uACE0\uC591\uC774"
+      - "\uC9C1\uC7A5\uC778"
+      sentences:
+      - "\uC774\uC57C\uC544\uC544\uC544\uC639!!(\uB0B4\uAC00 \uCD5C\uACE0\uB2E4!)"
+      - "\uB2E4\uB978 \uACE0\uC591\uC774\uB791 \uC2F8\uC6B0\uB098\u2026?"
+  - dia:
+    - name:
+      - "\uD131\uC2DC\uB3C4 \uACE0\uC591\uC774"
+      - "\uC9C1\uC7A5\uC778"
+      sentences:
+      - "\uC774.. \uCCA0\uB369\uC774\uB3C4 \uB0B4\uAEBC! (\uB07C\uC774\uC774\uC775)"
+      - "\uADC0\uC5FD\uAE34 \uD558\uB124\u2026"
+    - name:
+      - "\uD131\uC2DC\uB3C4 \uACE0\uC591\uC774"
+      - "\uC9C1\uC7A5\uC778"
+      sentences:
+      - "\uBBF8\uC57C\uC544\uC544\uC639\u2026"
+      - "\uBC30\uAC00 \uACE0\uD508\uAC00\u2026?"
+    - name:
+      - "\uD131\uC2DC\uB3C4 \uACE0\uC591\uC774"
+      - "\uC9C1\uC7A5\uC778"
+      sentences:
+      - "\uCEAC\uC544\uC639!!(\uB9DB\uC788\uB294 \uB0C4\uC0C8\uAC00 \uB098\uB294\uB370?!)"
+      - "\uC774\u2026 \uC774\uAC74 \uC548\uB3FC! \uB300\uC2E0 \uC774\uAC70 \uBA39\uC5B4!"
+  - dia:
+    - name:
+      - "\uD131\uC2DC\uB3C4 \uACE0\uC591\uC774"
+      - "\uC9C1\uC7A5\uC778"
+      sentences:
+      - "\uB0D0\uC544\uC639 \uB0D0\uC639(\uB2C8\uAC00 \uC88B\uC544)"
+      - "\uC544 \uADC0\uC5EC\uC6CC\u2026 \uADF8\uB0E5 \uB370\uB824\uAC00\uBC84\uB9B4\uAE4C?"
+    - name:
+      - "\uD131\uC2DC\uB3C4 \uACE0\uC591\uC774"
+      - "\uC9C1\uC7A5\uC778"
+      sentences:
+      - "\uBBF8\uC57C\uC639!! \uC57C\uC639!!(\uC624\uB298\uC740 \uBB58 \uAC00\uC838\uC654\uB0D0!)"
+      - "\uC790, \uC5EC\uAE30 \uB124\uAC00 \uC88B\uC544\uD558\uB294 \uCE04\uB974."
+    - name:
+      - "\uD131\uC2DC\uB3C4 \uACE0\uC591\uC774"
+      - "\uC9C1\uC7A5\uC778"
+      sentences:
+      - "\uCEAC\uC639!! \uBBF8\uC57C\uC544\uC544\uC544\uC639!!!"
+      - "\uC27F, \uC5EC\uAE30\uC11C \uC2DC\uB044\uB7FD\uAC8C \uD558\uBA74 \uC0AC\uB78C\uB4E4\uC774
+        \uC2EB\uC5B4\uD574"
+  charm:
+  - name: []
+    sentences: []
+  - name: []
+    sentences: []
 --- !u!114 &1987490080
 MonoBehaviour:
   m_ObjectHideFlags: 0
