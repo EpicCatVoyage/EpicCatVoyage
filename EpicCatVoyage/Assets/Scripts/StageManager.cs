@@ -15,6 +15,9 @@ public class StageManager : MonoBehaviour
         // 초기 배고픔, coin 설정
         StoreInfo.setHungry(100);
         StoreInfo.setCoin(4000);
+
+        // 초기 바나나
+        StoreInfo.setInventory();
     }
     public void setStage2() { 
         stage = 2;
