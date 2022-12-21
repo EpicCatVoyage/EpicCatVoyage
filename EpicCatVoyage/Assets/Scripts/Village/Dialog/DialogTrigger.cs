@@ -21,38 +21,35 @@ public class DialogTrigger : MonoBehaviour
         anim = mentBox.GetComponent<Animator>();
     }
 
-    private void openMentBox() { anim.SetBool("Trigger", true); }
+    public void openMentBox() { anim.SetBool("Trigger", true); }
     public void closeMentBox() { anim.SetBool("Trigger", false); }
 
     public void clickTalk()
     {
+        Debug.Log("Trigger ClickTalk");
         diaNum = 1;
         openMentBox();
+
         if (StoreInfo.getFriendship() < 25)
         {
-            r = Random.Range(0, dia2.GetLength(0)-1);
+            r = Random.Range(0, dia2[0].dia.Length);
             DM.dialogSet(dia2[0].dia[r], diaNum);
         }
         else if (StoreInfo.getFriendship() < 50)
         {
-            r = Random.Range(0, dia2.GetLength(1)-1);
+            r = Random.Range(0, dia2[1].dia.Length);
             DM.dialogSet(dia2[1].dia[r], diaNum);
         }
         else if (StoreInfo.getFriendship() < 75)
         {
-            r = Random.Range(0, dia2.GetLength(2)-1);
+            r = Random.Range(0, dia2[2].dia.Length);
             DM.dialogSet(dia2[2].dia[r], diaNum);
         }
         else if (StoreInfo.getFriendship() <= 100)
         {
-            r = Random.Range(0, dia2.GetLength(3)-1);
+            r = Random.Range(0, dia2[3].dia.Length);
             DM.dialogSet(dia2[3].dia[r], diaNum);
         }
-    }
-
-    public void clickPresent() //선물 클릭시. diaNum은 2로 준다.
-    {
-        diaNum = 2;
     }
 
     public void clickCharm() //애교부리기. diaNum은 3으로 준다.

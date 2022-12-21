@@ -73,6 +73,10 @@ public class DialogManager : MonoBehaviour
         {
             DT.closeMentBox();
         }
+        else if (endNum == 2)
+        {
+           DT.closeMentBox();
+        }
         else if (endNum == 3)
         {
             StoreInfo.setFriendship(StoreInfo.getFriendship() + 5);
