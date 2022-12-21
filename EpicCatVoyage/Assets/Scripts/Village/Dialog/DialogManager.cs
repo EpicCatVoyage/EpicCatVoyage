@@ -25,6 +25,7 @@ public class DialogManager : MonoBehaviour
 
     public void dialogSet(Dialog dia, int num)
     {
+        Debug.Log("Set");
         endNum = num; //대화 종료 시 처리 결정.
 
         foreach (string name in dia.name) //문장 별 화자 저장.
@@ -50,8 +51,8 @@ public class DialogManager : MonoBehaviour
             return;
         }
 
-        nameText.text = nameList.Dequeue(); //문장별 화자 이름 작성.
-        string str = mentList.Dequeue(); //문장 충전.
+        nameText.text = nameList.Dequeue(); //문장별 화자 이름 출력.
+        string str = mentList.Dequeue(); //문장 출력
         StartCoroutine(printMent(str)); //문장 화면에 나타내기.
     }
 
@@ -70,6 +71,19 @@ public class DialogManager : MonoBehaviour
     {
         if (endNum == 1) //�ֱ��θ���, �����ϱ�, �̴ϰ��� �ϱ� ���� ���̽� �ڽ� ����.
         {
+            DT.closeMentBox();
+        }
+        else if (endNum == 2)
+        {
+           DT.closeMentBox();
+        }
+        else if (endNum == 3)
+        {
+            if (StoreInfo.charm == true)
+            {
+                StoreInfo.setFriendship(StoreInfo.getFriendship() + 5);
+                StoreInfo.charm = false;
+            }
             DT.closeMentBox();
         }
         else

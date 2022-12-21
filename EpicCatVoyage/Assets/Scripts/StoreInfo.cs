@@ -12,6 +12,8 @@ public class StoreInfo : MonoBehaviour
     private static int coin = 0;
     private static int hungry = 0;
 
+    public static bool dog = false;
+    public static bool charm = true;
     public static List<CoinMoney> CoinList;
     public static List<Hungryhp> HPList;
     public static List<NPCdata> npcData;
