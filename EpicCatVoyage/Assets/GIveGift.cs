@@ -24,19 +24,14 @@ public class Gift
 public class GIveGift : MonoBehaviour
 {
     public List<Gift> MyItemList, GiftList;
+    public GameObject usingGift;
     // Start is called before the first frame update
     void Start()
     {
         Load();
-        Give();
+        //Give();
 
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void Give()
@@ -65,7 +60,19 @@ public class GIveGift : MonoBehaviour
             }
 
             Save();
+
+            // 뭘 선물로 줬는지 보이게
+            usingGift.SetActive(true);
+            usingGift.transform.GetChild(1).GetComponent<Text>().text = GiftItem.Name;
+            Destroy(usingGift, 1.0f);
+            //usingGift.SetActive(false);
         }
+        else
+        {
+            // 선물이 없습니다.
+        }
+
+        
 
 
     }
