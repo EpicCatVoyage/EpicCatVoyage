@@ -1,24 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour
 {
     public GameObject choiceBox;
-    public TextMeshProUGUI nameText;
-    public TextMeshProUGUI mentText;
+    public Text nameText;
+    public Text mentText;
     public int npcNum = 0;
     //npcNum은 현재 대화 중인 npc 정보입니다.
     //0은 초딩, 1은 할머니, 2는 직장인, 3은 생선가게 아저씨, 4은 멍멍이
 
     Animator anim;
+    DialogTrigger DT;
     private Queue<string> mentList = new Queue<string>();
     private Queue<string> nameList = new Queue<string>();
     private int endNum;
 
     void Awake() {
         anim = choiceBox.GetComponent<Animator>();
+        DT = gameObject.GetComponent<DialogTrigger>();
     }
 
     public void dialogSet(Dialog dia, int num)
@@ -37,6 +39,7 @@ public class DialogManager : MonoBehaviour
     public void openChoiceBox()
     {
         anim.SetBool("choice", true);
+        ChoiceBoxMove.npc = this.npcNum;
     }
 
     public void clickNext()
@@ -67,7 +70,7 @@ public class DialogManager : MonoBehaviour
     {
         if (endNum == 1) //�ֱ��θ���, �����ϱ�, �̴ϰ��� �ϱ� ���� ���̽� �ڽ� ����.
         {
-            openChoiceBox();
+            DT.closeMentBox();
         }
         else
         {
