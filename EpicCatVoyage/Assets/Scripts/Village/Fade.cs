@@ -17,7 +17,7 @@ public class Fade : MonoBehaviour
         image = fadeimage.GetComponent<Image>();
         color = image.color;
 
-        fadeimage.SetActive(true); //¾À ±¸¼º ¸¶¹«¸®ÇÏ¸é Áö¿ì°í image È°¼ºÈ­½ÃÅ°´Â °Ô ³ªÀ» µí
+        fadeimage.SetActive(true); //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ image È°ï¿½ï¿½È­ï¿½ï¿½Å°ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
     }
 
     void Start()
@@ -31,8 +31,8 @@ public class Fade : MonoBehaviour
 
     }
 
-    //¸¸¾à true¸é ½ÃÇà.
-    IEnumerator Fadein() //È­¸éÀÌ ³ª¿À´Â °Í. 
+    //ï¿½ï¿½ï¿½ï¿½ trueï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
+    IEnumerator Fadein() //È­ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½. 
     {
         while (color.a > 0)
         {
@@ -45,7 +45,7 @@ public class Fade : MonoBehaviour
         fadeimage.SetActive(false);
     }
 
-    IEnumerator Fadeout(string Name, bool Loading) //¾À ÀÌµ¿
+    IEnumerator Fadeout(string Name, bool Loading) //ï¿½ï¿½ ï¿½Ìµï¿½
     {
         while (color.a < 1)
         {
@@ -58,7 +58,7 @@ public class Fade : MonoBehaviour
         if (color.a >= 1)
         {
             if (Loading)
-            LoadingSceneController.LoadScene(Name); //·Îµù¾ÀÀ» ÀÌ¿ëÇÑ ·Îµù.
+            LoadingSceneController.LoadScene(Name); //ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½ï¿½ ï¿½Îµï¿½.
             else
             SceneManager.LoadScene(Name);
             yield break;
@@ -77,7 +77,7 @@ public class Fade : MonoBehaviour
         StartCoroutine(Fadeout(Name, true));
     }
 }
-/*»ç¿ë¼³¸í¼­ 
- * 1. ·Îµù ¾È ÇÏ°í ¾À ÀüÈ¯ÇÏ°í ½Í´Ù >> B_Fadeout È£Ãâ
- * 2. ·ÎµùÇÏ°í ¾À ÀüÈ¯ÇÏ°í ½Í´Ù >> L_Fadeout È£Ãâ
+/*ï¿½ï¿½ë¼³ï¿½ï¿½ï¿½ï¿½ 
+ * 1. ï¿½Îµï¿½ ï¿½ï¿½ ï¿½Ï°ï¿½ ï¿½ï¿½ ï¿½ï¿½È¯ï¿½Ï°ï¿½ ï¿½Í´ï¿½ >> B_Fadeout È£ï¿½ï¿½
+ * 2. ï¿½Îµï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ ï¿½ï¿½È¯ï¿½Ï°ï¿½ ï¿½Í´ï¿½ >> L_Fadeout È£ï¿½ï¿½
  */
