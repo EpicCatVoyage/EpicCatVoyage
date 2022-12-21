@@ -17,11 +17,15 @@ public class StoreInfo : MonoBehaviour
     public static List<CoinMoney> CoinList;
     public static List<Hungryhp> HPList;
     public static List<NPCdata> npcData;
+    public static List<MyItem> MyItemList;
 
     public static void init()
     {
         coinHPLoad();
         LoadNPCdataFromJson();
+        LoadInventoryFromJson();
+
+
     }
 
     public static void setFriendship(int score)
@@ -32,6 +36,15 @@ public class StoreInfo : MonoBehaviour
         friendship = score;
         npcData[currentStage - 1].friendship_level = friendship;
         SaveNPCdataToJson();
+    }
+    // 인벤토리 초기화
+    public static void setInventory()
+    {
+        init();
+        MyItemList = new List<MyItem>();
+        MyItemList.Add(new MyItem("Snack", "바나나", "체력 10 상승", "300", "3", "10", false));
+        SaveInventoryToJson();
+
     }
 
     public static void setCoin(int getCoin)
@@ -92,6 +105,7 @@ public class StoreInfo : MonoBehaviour
         string jdata_hp = JsonConvert.SerializeObject(HPList);
         File.WriteAllText(Application.streamingAssetsPath + "/JSON_files/HPText.txt", jdata_hp);
 
+        
 
     }
 
@@ -104,6 +118,22 @@ public class StoreInfo : MonoBehaviour
         string jdata_hp = File.ReadAllText(Application.streamingAssetsPath + "/JSON_files/HPText.txt");
         HPList = JsonConvert.DeserializeObject<List<Hungryhp>>(jdata_hp);
 
+       
+
+    }
+
+    public static void SaveInventoryToJson()
+    {
+        // 인벤토리 정보 저장
+        string jdata_my = JsonConvert.SerializeObject(MyItemList);
+        File.WriteAllText(Application.streamingAssetsPath + "/JSON_files/MyItemText.txt", jdata_my);
+
+    }
+
+    public static void LoadInventoryFromJson()
+    {
+        string jdata_my = File.ReadAllText(Application.streamingAssetsPath + "/JSON_files/MyItemText.txt");
+        MyItemList = JsonConvert.DeserializeObject<List<MyItem>>(jdata_my);
     }
 
     private static void SaveNPCdataToJson()
@@ -135,4 +165,19 @@ public class NPCdata
         this.job = job;
         this.friendship_level = friendship_level;
     }
+}
+
+// 직렬화
+[System.Serializable]
+public class MyItem
+{
+    // 생성자
+    public MyItem(string _Type, string _Name, string _Explain, string _Price, string _Number, string _Exp, bool _isUsing)
+    {
+        Type = _Type; Name = _Name; Explain = _Explain; Price = _Price; Number = _Number; Exp = _Exp; isUsing = _isUsing;
+    }
+
+    // 타입, 이름, 설명, 개수, 사용여부
+    public string Type, Name, Explain, Price, Number, Exp;
+    public bool isUsing;
 }
