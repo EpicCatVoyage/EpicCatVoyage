@@ -17,35 +17,34 @@ public class DialogTrigger : MonoBehaviour
     void Awake()
     {
         DM = gameObject.GetComponent<DialogManager>();
-        anim = GetComponent<Animator>();
+        anim = mentBox.GetComponent<Animator>();
     }
 
 
     private void openMentBox() { anim.SetBool("Trigger", true); }
-    private void closeMentBox() { anim.SetBool("Trigger", false); }
+    public void closeMentBox() { anim.SetBool("Trigger", false); }
 
     public void clickTalk()
     {
-        Debug.Log(DM); //너 나중에 보자
         openMentBox();
         if (StoreInfo.getFriendship() < 25)
         {
-            r = Random.Range(0, dia2.GetLength(0));
+            r = Random.Range(0, dia2.GetLength(0)-1);
             DM.dialogSet(dia2[0].dia[r], diaNum);
         }
         else if (StoreInfo.getFriendship() < 50)
         {
-            r = Random.Range(0, dia2.GetLength(1));
+            r = Random.Range(0, dia2.GetLength(1)-1);
             DM.dialogSet(dia2[1].dia[r], diaNum);
         }
         else if (StoreInfo.getFriendship() < 75)
         {
-            r = Random.Range(0, dia2.GetLength(2));
+            r = Random.Range(0, dia2.GetLength(2)-1);
             DM.dialogSet(dia2[2].dia[r], diaNum);
         }
         else if (StoreInfo.getFriendship() <= 100)
         {
-            r = Random.Range(0, dia2.GetLength(3));
+            r = Random.Range(0, dia2.GetLength(3)-1);
             DM.dialogSet(dia2[3].dia[r], diaNum);
         }
     }
