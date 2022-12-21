@@ -37,44 +37,60 @@ public class GIveGift : MonoBehaviour
     public void Give()
     {
         // 내 아이템 리스트에서 Gift 중 랜덤으로 하나 뽑기
+
         GiftList = MyItemList.FindAll(x => x.Type == "Gift");
         print(GiftList.Count + "선물 개수");
+        
         int i = Random.Range(0,GiftList.Count);
-        Gift GiftItem = GiftList[i];
-        print(GiftItem.Name + "아이템");
-
-        // 아이템 삭제하기
-
-        if (GiftItem != null)
+        if (i > 0)
         {
-            int curNumber = int.Parse(GiftItem.Number) - 1;
+            Gift GiftItem = GiftList[i];
+            print(GiftItem.Name + "아이템");
 
-            if (curNumber <= 0)
+            // 아이템 삭제하기
+
+            if (GiftItem != null)
             {
-                MyItemList.Remove(GiftItem);
+                int curNumber = int.Parse(GiftItem.Number) - 1;
+
+                if (curNumber <= 0)
+                {
+                    MyItemList.Remove(GiftItem);
+
+                }
+                else
+                {
+                    GiftItem.Number = curNumber.ToString();
+                }
+
+                Save();
+
+                // 뭘 선물로 줬는지 보이게
+                usingGift.SetActive(true);
+                usingGift.transform.GetChild(1).GetComponent<Text>().text = GiftItem.Name;
 
             }
-            else
-            {
-                GiftItem.Number = curNumber.ToString();
-            }
-
-            Save();
-
-            // 뭘 선물로 줬는지 보이게
-            usingGift.SetActive(true);
-            usingGift.transform.GetChild(1).GetComponent<Text>().text = GiftItem.Name;
-            Destroy(usingGift, 1.0f);
-            //usingGift.SetActive(false);
+            
         }
         else
         {
             // 선물이 없습니다.
+            usingGift.SetActive(true);
+            usingGift.transform.GetChild(1).GetComponent<Text>().text = "선물";
+            usingGift.transform.GetChild(0).GetComponent<Text>().text = "이 없습니다.";
         }
 
-        
 
 
+
+
+
+
+    }
+
+    public void PanelClick()
+    {
+        usingGift.SetActive(false);
     }
 
     void Save()
