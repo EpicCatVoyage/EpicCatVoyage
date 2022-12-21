@@ -8389,7 +8389,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1733273818}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1733273820}
+        m_TargetAssemblyTypeName: UnityEngine.Component, UnityEngine
+        m_MethodName: SendMessage
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1733273818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8440,6 +8452,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66b8f7d285bab874ebafca6d2ddc2a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MyItemList: []
+  GiftList: []
 --- !u!1 &1763042758
 GameObject:
   m_ObjectHideFlags: 0
