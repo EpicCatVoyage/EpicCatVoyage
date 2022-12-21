@@ -33,7 +33,7 @@ public class NoteSequence : MonoBehaviour
         }
         if (levelChange.stage == 1)
         {
-            numOfQ = 5;
+            numOfQ = 3;
             waitSeconds = 1f; 
         }
         Question(numOfQ);

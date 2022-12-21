@@ -102,6 +102,6 @@ EditorBuildSettings:
     path: Assets/Scenes/miniGame/NoteGame/NoteGameFail.unity
     guid: 6548ffa334edac2439279c15922616ad
   - enabled: 1
-    path: Assets/Scenes/miniGame/NoteGame/NoteGameMain.unity
+    path: Assets/Scenes/miniGame/NoteGameMain.unity
     guid: 226e8a161af749246988b9476504bf22
   m_configObjects: {}

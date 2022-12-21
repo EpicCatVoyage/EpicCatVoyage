@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 47ea8f08e7674a44aaf158a0af5bbc62
+guid: 63d6c63e35d16e948b14d8bee0b91c2b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,43 +116,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cat-removebg-preview_0
+      name: threecat_0
       rect:
         serializedVersion: 2
-        x: 66
-        y: 358
-        width: 190
-        height: 173
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 115
+        y: 270
+        width: 254
+        height: 183
+      alignment: 9
+      pivot: {x: 0.48857254, y: 0.024165586}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba7caca54a9fc8b41960aab5a8986036
-      internalID: -548223732
+      spriteID: aac0d8c8d759ddb43b381788d57d2215
+      internalID: -1067462723
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cat-removebg-preview_1
+      name: threecat_1
       rect:
         serializedVersion: 2
-        x: 86
-        y: 1
-        width: 263
-        height: 347
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 41
+        y: 47
+        width: 362
+        height: 222
+      alignment: 9
+      pivot: {x: 0.5481092, y: 0.9739583}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28a9c07016c3e0c4593e27a2175c5a8b
-      internalID: 608193491
+      spriteID: a8e07960c495c1242b531733fec384d7
+      internalID: -711390821
       vertices: []
       indices: 
       edges: []
@@ -168,8 +168,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      cat-removebg-preview_1: 608193491
-      cat-removebg-preview_0: -548223732
+      threecat_0: -1067462723
+      threecat_1: -711390821
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
