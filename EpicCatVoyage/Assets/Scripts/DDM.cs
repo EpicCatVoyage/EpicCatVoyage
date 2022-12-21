@@ -22,6 +22,11 @@ public class DDM : MonoBehaviour
         }
     }
 
+    public void Exit()
+    {
+        Application.Quit();
+    }
+
     public void goToInven()
     {
         SceneManager.LoadScene("Inventory");
