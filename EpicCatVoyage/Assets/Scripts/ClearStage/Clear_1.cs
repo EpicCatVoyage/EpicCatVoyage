@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Clear_1 : MonoBehaviour
 {
+    private int currentStage;
     // Start is called before the first frame update
     void Start()
     {
+        currentStage = StageManager.getStage();
+        StageManager.clearStage[currentStage - 1] = true;   // clear check
         Invoke("StageSelect", 3);
     }
 

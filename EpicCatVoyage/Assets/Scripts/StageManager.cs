@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class StageManager : MonoBehaviour
 {
+    // 스테이지 클리어 확인용도
+    public static bool[] clearStage = { false, false, false, false };
     private static int stage = 1;
 
     public void setStage1() { stage = 1; }
