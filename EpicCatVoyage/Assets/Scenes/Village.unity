@@ -1414,7 +1414,8 @@ GameObject:
   - component: {fileID: 310663226}
   - component: {fileID: 310663225}
   - component: {fileID: 310663224}
-  - component: {fileID: 310663223}
+  - component: {fileID: 310663228}
+  - component: {fileID: 310663227}
   - component: {fileID: 310663222}
   m_Layer: 5
   m_Name: "\uBA4D\uBA4D\uC774"
@@ -1460,25 +1461,6 @@ MonoBehaviour:
   nameText: {fileID: 357937241}
   mentText: {fileID: 357937240}
   npcNum: 4
---- !u!114 &310663223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 310663220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d1fc638b5d20c54c8f147b0b0bb0139, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mentBox: {fileID: 357937242}
-  dia2:
-  - dia: []
-  - dia: []
-  charm:
-    name: []
-    sentences: []
 --- !u!114 &310663224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1523,9 +1505,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 310663222}
-        m_TargetAssemblyTypeName: DialogManager, Assembly-CSharp
-        m_MethodName: openChoiceBox
+      - m_Target: {fileID: 310663227}
+        m_TargetAssemblyTypeName: Dog, Assembly-CSharp
+        m_MethodName: ClickDog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 310663228}
+        m_TargetAssemblyTypeName: DialogTrigger, Assembly-CSharp
+        m_MethodName: openMentBox
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1573,6 +1567,69 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 310663220}
   m_CullTransparentMesh: 1
+--- !u!114 &310663227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310663220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3844256024aafb4aab1b5f10550d3d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diaF:
+    name:
+    - "\uAC15\uC544\uC9C0"
+    - "\uACE0\uC591\uC774(\uB098)"
+    - "\uAC15\uC544\uC9C0"
+    - "\uACE0\uC591\uC774(\uB098)"
+    - "\uAC15\uC544\uC9C0"
+    - "\uACE0\uC591\uC774(\uB098)"
+    sentences:
+    - "\uD06C\uB974\uB974\uB974\uB989..."
+    - "(\uC774\uAC74 \uBB50\uC57C?)"
+    - "\uCEF9!!! \uCEF9!!!! \uD06C\uB974\uB974...."
+    - "\uBBF8\uC57C\uC544\uC544\uC639!!!!!"
+    - "\uAE68\uAC31...\uAE7D..."
+    - "\uD765, \uBCC4 \uAC83\uB3C4 \uC544\uB2CC\uAC8C."
+  diaT:
+    name:
+    - "\uACE0\uC591\uC774(\uB098)"
+    - "\uAC15\uC544\uC9C0"
+    - "\uACE0\uC591\uC774(\uB098)"
+    - "\uAC15\uC544\uC9C0"
+    - "\uAC15\uC544\uC9C0"
+    - "\uACE0\uC591\uC774"
+    sentences:
+    - "\uC57C"
+    - "\uB124, \uB124??"
+    - "\uBB50 \uBA39\uC744 \uAC70 \uC5C6\uB0D0\uC639? \uBC30\uACE0\uD508\uB370."
+    - "\uADF8... \uB7F0\uAC74 \uC5C6\uC9C0\uB9CC..."
+    - "\uC6B0\uCE21 \uC0C1\uB2E8\uC5D0 \uC0C1\uC810 \uBC84\uD2BC\uC744 \uB204\uB974\uBA74
+      \uCF54\uC778\uC73C\uB85C \uBA39\uC744 \uAC78 \uC0B4 \uC218 \uC788\uC5B4"
+    - "(\uC624\uD638\uB77C..?)"
+  shop: {fileID: 0}
+--- !u!114 &310663228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310663220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d1fc638b5d20c54c8f147b0b0bb0139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mentBox: {fileID: 357937242}
+  dia2:
+  - dia: []
+  - dia: []
+  charm:
+    name: []
+    sentences: []
 --- !u!1 &347811204
 GameObject:
   m_ObjectHideFlags: 0
@@ -1780,6 +1837,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 310663221}
     m_Modifications:
+    - target: {fileID: 2626676696018839942, guid: 438a80688d95ca54486ad61be2cbb22c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -52
+      objectReference: {fileID: 0}
     - target: {fileID: 2626676696306342850, guid: 438a80688d95ca54486ad61be2cbb22c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1867,6 +1928,22 @@ PrefabInstance:
     - target: {fileID: 2626676696306342851, guid: 438a80688d95ca54486ad61be2cbb22c, type: 3}
       propertyPath: m_Name
       value: NPCMentBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 2626676696480838469, guid: 438a80688d95ca54486ad61be2cbb22c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 830.6813
+      objectReference: {fileID: 0}
+    - target: {fileID: 2626676696480838469, guid: 438a80688d95ca54486ad61be2cbb22c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -403.64172
+      objectReference: {fileID: 0}
+    - target: {fileID: 2626676696676215832, guid: 438a80688d95ca54486ad61be2cbb22c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 310663222}
+    - target: {fileID: 2626676696676215832, guid: 438a80688d95ca54486ad61be2cbb22c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: clickNext
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438a80688d95ca54486ad61be2cbb22c, type: 3}
@@ -2681,7 +2758,6 @@ GameObject:
   - component: {fileID: 617240379}
   - component: {fileID: 617240378}
   - component: {fileID: 617240377}
-  - component: {fileID: 617240382}
   m_Layer: 5
   m_Name: fisher
   m_TagString: Untagged
@@ -2823,7 +2899,7 @@ MonoBehaviour:
         \uC624\uB298\uB3C4 \uC77C \uC5F4\uC2EC\uD788 \uD574\uBCF4\uC790 \uC694\uB178\uC11D\uC544!"
   charm:
     name:
-    - "\uACE0\uC591\uC774"
+    - "\uACE0\uB4F1\uC5B4 \uACE0\uC591\uC774"
     sentences:
     - "\uBBF8\uC57C\uC544\uC639~"
 --- !u!114 &617240379
@@ -2932,26 +3008,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 617240375}
   m_CullTransparentMesh: 1
---- !u!95 &617240382
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 617240375}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6c51bfd466e75194cbd34976a12144ea, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &622850282
 GameObject:
   m_ObjectHideFlags: 0
@@ -3917,7 +3973,7 @@ MonoBehaviour:
         \uB9C8\uC2A4\uCF54\uD2B8!"
   charm:
     name:
-    - "\uACE0\uC591\uC774"
+    - "\uCE58\uC988 \uACE0\uC591\uC774"
     sentences:
     - "\uBBF8\uC57C\uC544\uC639~"
 --- !u!114 &839296476
@@ -4752,7 +4808,7 @@ MonoBehaviour:
       - "\u2026..."
   charm:
     name:
-    - "\uACE0\uC591\uC774"
+    - "\uC0BC\uC0C9\uACE0\uC591\uC774"
     sentences:
     - "\uBBF8\uC57C\uC544\uC544\uC639~"
 --- !u!114 &967998022
@@ -9890,8 +9946,10 @@ MonoBehaviour:
       - "\uC27F, \uC5EC\uAE30\uC11C \uC2DC\uB044\uB7FD\uAC8C \uD558\uBA74 \uC0AC\uB78C\uB4E4\uC774
         \uC2EB\uC5B4\uD574"
   charm:
-    name: []
-    sentences: []
+    name:
+    - "\uD131\uC2DC\uB3C4 \uACE0\uC591\uC774"
+    sentences:
+    - "\uBBF8\uC57C\uC544\uC544\uC639~"
 --- !u!114 &1987490080
 MonoBehaviour:
   m_ObjectHideFlags: 0
