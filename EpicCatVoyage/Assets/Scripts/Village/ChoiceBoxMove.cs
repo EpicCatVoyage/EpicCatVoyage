@@ -24,7 +24,13 @@ public class ChoiceBoxMove : MonoBehaviour
     public void clickTalk()
     {
         DT = npcArray[npc].GetComponent<DialogTrigger>();
-        Debug.Log(npc);
         DT.clickTalk();
+    }
+
+    public void clickCute()
+    {
+        Debug.Log("들어왔다.");
+        DT = npcArray[npc].GetComponent<DialogTrigger>();
+        DT.clickCharm();
     }
 }

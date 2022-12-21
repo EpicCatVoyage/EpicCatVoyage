@@ -25,6 +25,7 @@ public class DialogManager : MonoBehaviour
 
     public void dialogSet(Dialog dia, int num)
     {
+        Debug.Log("Set");
         endNum = num; //대화 종료 시 처리 결정.
 
         foreach (string name in dia.name) //문장 별 화자 저장.
@@ -70,6 +71,11 @@ public class DialogManager : MonoBehaviour
     {
         if (endNum == 1) //�ֱ��θ���, �����ϱ�, �̴ϰ��� �ϱ� ���� ���̽� �ڽ� ����.
         {
+            DT.closeMentBox();
+        }
+        else if (endNum == 3)
+        {
+            StoreInfo.setFriendship(StoreInfo.getFriendship() + 5);
             DT.closeMentBox();
         }
         else
