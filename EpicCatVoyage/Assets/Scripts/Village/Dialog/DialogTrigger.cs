@@ -8,9 +8,10 @@ public class DialogTrigger : MonoBehaviour
 
     public GameObject mentBox;
     public Dialog2[] dia2 = new Dialog2[2];
+    public Dialog[] charm = new Dialog[2];
     Animator anim;
 
-    int diaNum = 1; //대화하기
+    int diaNum = 1; //1.대화하기, 2.선물주기 3.애교부리기
     int r = 0; //대화 중 호감도에 따른 dia 묶음. (Dialog2)
 
 
@@ -20,12 +21,12 @@ public class DialogTrigger : MonoBehaviour
         anim = mentBox.GetComponent<Animator>();
     }
 
-
     private void openMentBox() { anim.SetBool("Trigger", true); }
     public void closeMentBox() { anim.SetBool("Trigger", false); }
 
     public void clickTalk()
     {
+        diaNum = 1;
         openMentBox();
         if (StoreInfo.getFriendship() < 25)
         {
@@ -51,12 +52,13 @@ public class DialogTrigger : MonoBehaviour
 
     public void clickPresent() //선물 클릭시. diaNum은 2로 준다.
     {
-        ;
+        diaNum = 2;
     }
 
     public void clickCharm() //애교부리기. diaNum은 3으로 준다.
     {
-        ;
+        diaNum = 3;
+        
     }
 
 }
