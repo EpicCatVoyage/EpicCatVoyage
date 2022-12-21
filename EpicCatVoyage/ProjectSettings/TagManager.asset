@@ -9,6 +9,7 @@ TagManager:
   - HowToPlay
   - gameMusic
   - arrows
+  - singingCatGameMusic
   layers:
   - Default
   - TransparentFX

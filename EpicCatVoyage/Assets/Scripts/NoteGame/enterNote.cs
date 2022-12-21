@@ -51,7 +51,7 @@ public class enterNote : MonoBehaviour
 
     void Fail()
     {
-        SceneManager.LoadScene("NoteGame_Ending");
+        SceneManager.LoadScene("NoteGame_BadEnding");
     }
 
 }
