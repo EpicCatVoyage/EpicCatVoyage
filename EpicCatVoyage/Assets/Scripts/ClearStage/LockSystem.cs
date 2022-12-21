@@ -21,10 +21,17 @@ public class LockSystem : MonoBehaviour
     void checkStage()
     {
         int currentStage = StageManager.getStage();
-
-        if(StageManager.clearStage[currentStage - 1] == true)
-        {
-            locks[currentStage - 1].SetActive(false);
+        int check = 0;
+        foreach (GameObject l in locks){
+            if (StageManager.clearStage[check] == true)
+            {
+                l.SetActive(false);
+            }
+            else
+            {
+                l.SetActive(true);
+            }
+            check++;
         }
     }
 }

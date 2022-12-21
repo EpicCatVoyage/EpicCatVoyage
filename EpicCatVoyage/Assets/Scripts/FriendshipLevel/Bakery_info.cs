@@ -8,7 +8,7 @@ using System.IO;
 
 public class Bakery_info : MonoBehaviour
 {
-    public List<NPCdata> npcData = new List<NPCdata>();
+    public List<NPCdata> npcData;
 
     public GameObject BakeryInfoScreen;
     public Text BakeryInfoLike;
@@ -20,8 +20,7 @@ public class Bakery_info : MonoBehaviour
     void Start()
     {
         screenAnim = BakeryInfoScreen.GetComponent<Animator>();
-        string jdata = File.ReadAllText(Application.streamingAssetsPath + "/JSON_files/NPCdata.json");
-        npcData = JsonConvert.DeserializeObject<List<NPCdata>>(jdata);
+        npcData = StoreInfo.getFriendshipList();
         BakeryInfoLike.text = "È£°¨µµ : " + npcData[1].friendship_level.ToString();
 
         int index = (npcData[1].friendship_level - 1) / 25;
