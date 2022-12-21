@@ -1,1 +1,1 @@
-[{"Type":"Snack","Name":"바나나","Explain":"체력 10 상승","Price":"300","Number":"3","Exp":"10","isUsing":false},{"Type":"Snack","Name":"참치캔","Explain":"체력 10 상승","Price":"800","Number":"1","Exp":"10","isUsing":false},{"Type":"Home","Name":"그릇","Explain":"그릇에 먹는 고상한 고양이가 되어보자","Price":"2000","Number":"1","Exp":"0","isUsing":false}]
+[{"Type":"Snack","Name":"바나나","Explain":"체력 10 상승","Price":"300","Number":"3","Exp":"10","isUsing":false}]
