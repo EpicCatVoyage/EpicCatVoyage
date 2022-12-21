@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 public class StoreInfo : MonoBehaviour
 {
-    private static int currentStage = 0;
+    private static int currentStage = 1;
 
     private static int friendship = 0;
     private static int coin = 0;
@@ -16,9 +16,17 @@ public class StoreInfo : MonoBehaviour
     public static List<Hungryhp> HPList;
     public static List<NPCdata> npcData = new List<NPCdata>();
 
+    public static void init()
+    {
+        coinHPLoad();
+        LoadNPCdataFromJson();
+    }
+
     public static void setFriendship(int score)
     {
+        init();
         currentStage = StageManager.getStage();
+        // print("currentStage" + currentStage); // test
         friendship = score;
         npcData[currentStage - 1].friendship_level = friendship;
         SaveNPCdataToJson();
@@ -26,6 +34,7 @@ public class StoreInfo : MonoBehaviour
 
     public static void setCoin(int getCoin)
     {
+        init();
         coin = getCoin;
         CoinList[0].Money = coin.ToString();
         coinHPSave();
@@ -33,6 +42,7 @@ public class StoreInfo : MonoBehaviour
 
     public static void setHungry(int h)
     {
+        init();
         hungry = h;
         HPList[0].HP = h.ToString();
         coinHPSave();
